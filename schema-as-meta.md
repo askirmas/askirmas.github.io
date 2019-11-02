@@ -119,7 +119,7 @@ end
 subgraph Logical
 04.Logical[anyOf<br/>allOf<br/>oneOf<br/>not]
 subgraph dependencies
-04.dependencies=?["dependencies: ?"]
+04.dependencies=?["?dependencies: ?"]
 end
 end
 
@@ -163,9 +163,9 @@ end
 subgraph Logical
 06.anyOf[anyOf]
 06.Logical[allOf<br/>oneOf<br/>not]
-06.contains[<b>contains]
+06.contains[<b>?contains]
 subgraph dependencies
-06.dependencies=empty["dependencies: []"]
+06.dependencies=empty["?dependencies: []"]
 end
 end
 
@@ -201,7 +201,7 @@ end
 
 subgraph Logical
 07.if><b>if-then-else]
-07.Logical[anyOf<br/>allOf<br/>oneOf<br/>not<hr/>contains<hr/>dependencies]
+07.Logical[anyOf<br/>allOf<br/>oneOf<br/>not<hr/>?contains<hr/>?dependencies]
 end
 
 subgraph Predicate
@@ -325,6 +325,16 @@ end
 
 ###### : (data, Schema[]) => boolean
 
+###### oneOf implementation
+
+| index                   |       | 0     | 1     | 2     | 3     | 4     | 5     | 6     | 7     |
+| ----------------------- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| **value**               |       | **0** | **0** | **1** | **0** | **0** | **1** | **0** | **0** |
+| acc := !(v && or)       |       | 1     | 1     | 1     | 1     | 1     | 0     |       |       |
+| or := v \|\| or         | 0     | 0     | 0     | 1     | 1     | 1     | 1     | 1     | 1     |
+| acc ? while : return or |       | ->    | ->    | ->    | ->    | ->    | !     |       |       |
+| **result**              | **0** | **0** | **0** | **1** | **1** | **1** | **0** |       |       |
+
 ##### not
 
 ###### :  (data, Schema) => boolean
@@ -377,7 +387,7 @@ end
 
 ##### examples: any[]
 
-#### ?Controller
+#### ?Controls
 
 ##### readOnly: boolean
 
