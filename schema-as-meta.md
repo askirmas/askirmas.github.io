@@ -10,9 +10,9 @@ graph TB
 subgraph RDF
 rdf.object((object))
 rdf.subject[subject]
-rdf.predicate{predicate}
-rdf.object --> rdf.predicate
-rdf.predicate --> rdf.subject
+rdf.deductor{deductor}
+rdf.object --> rdf.deductor
+rdf.deductor --> rdf.subject
 end
 
 subgraph AST/PT
@@ -45,12 +45,12 @@ end
 
 subgraph action
 action.NT((NT))
-action.predicate[predicate]
+action.deductor[deductor]
 action.h{h}
 end
 
-data.object --> action.predicate
-action.predicate --> schema.subject
+data.object --> action.deductor
+action.deductor --> schema.subject
 
 data.T0 --> action.NT
 schema.T1 --> action.NT
@@ -76,14 +76,15 @@ schema.g --> action.h
 ```mermaid
 graph LR
 Meta
-Monad[Monad<hr/>Tupling]
+Predicate0[Predicate0<hr/>Predicate1]
 Logical[Logical<br/>Context]
 
-Meta --> Monad
-Monad --> Logical
-Logical --> Predicate
-Predicate --> Meta
+Meta --> Predicate0
+Predicate0 --> Logical
+Logical --> Deductor
+Deductor --> Meta
 
+?Controls
 ```
 
 ### Graph
@@ -103,16 +104,16 @@ end
 04.type[type]
 end
 
-subgraph Tupling
+subgraph Predicate1
 subgraph required
 04.required=?["required: ?"]
 end
 04.enum[enum]
 end
 
-subgraph Monad
+subgraph Predicate0
 04.exclusive[exclusive<br/>Min and Max<br/>:boolean]
-04.Monad[min/max<br/>multipleOf<hr/>minLength<br/>maxLength<br/>pattern<br/>format<hr/>minItems<br/>maxItems<br/>uniqueItems<hr/>minProperties<br/>maxProperties]
+04.Predicate0[min/max<br/>multipleOf<hr/>minLength<br/>maxLength<br/>pattern<br/>format<hr/>minItems<br/>maxItems<br/>uniqueItems<hr/>minProperties<br/>maxProperties]
 end
 
 
@@ -123,8 +124,8 @@ subgraph dependencies
 end
 end
 
-subgraph Predicate
-04.Predicate[items<br/>additionalItems<hr/>properties<br/>additionalProperties<br/>patternProperties]
+subgraph Deductor
+04.Deductor[items<br/>additionalItems<hr/>properties<br/>additionalProperties<br/>patternProperties]
 end
 
 subgraph UI
@@ -147,16 +148,16 @@ end
 end
 
 
-subgraph Tupling
+subgraph Predicate1
 subgraph required
 06.required=empty["required: []"]
 end
 06.enum[enum]
 end
 
-subgraph Monad
+subgraph Predicate0
 06.exclusive[exclusive<br/>Min and Max<br/>:number]
-06.Monad[min/max<br/>multipleOf<hr/>minLength<br/>maxLength<br/>pattern<br/>format<hr/>minItems<br/>maxItems<br/>uniqueItems<hr/>minProperties<br/>maxProperties]
+06.Predicate0[min/max<br/>multipleOf<hr/>minLength<br/>maxLength<br/>pattern<br/>format<hr/>minItems<br/>maxItems<br/>uniqueItems<hr/>minProperties<br/>maxProperties]
 06.const>const]
 end
 
@@ -169,8 +170,8 @@ subgraph dependencies
 end
 end
 
-subgraph Predicate
-06.Predicate[items<br/>additionalItems<hr/>properties<br/>additionalProperties<br/>patternProperties]
+subgraph Deductor
+06.Deductor[items<br/>additionalItems<hr/>properties<br/>additionalProperties<br/>patternProperties]
 06.propertyNames[<b>propertyNames]
 end
 
@@ -191,12 +192,12 @@ subgraph UI
 07.$comment[<b>$comment]
 end
 
-subgraph Tupling
-07.Tupling[required<hr/>enum]
+subgraph Predicate1
+07.Predicate1[required<hr/>enum]
 end
 
-subgraph Monad
-07.Monad[const<hr/>exclusive<br/>min/max<br/>multipleOf<hr/>minLength<br/>maxLength<br/>pattern<br/>format<hr/>minItems<br/>maxItems<br/>uniqueItems<hr/>minProperties<br/>maxProperties]
+subgraph Predicate0
+07.Predicate0[const<hr/>exclusive<br/>min/max<br/>multipleOf<hr/>minLength<br/>maxLength<br/>pattern<br/>format<hr/>minItems<br/>maxItems<br/>uniqueItems<hr/>minProperties<br/>maxProperties]
 end
 
 subgraph Logical
@@ -204,8 +205,8 @@ subgraph Logical
 07.Logical[anyOf<br/>allOf<br/>oneOf<br/>not<hr/>?contains<hr/>?dependencies]
 end
 
-subgraph Predicate
-07.Predicate[items<br/>additionalItems<hr/>properties<br/>additionalProperties<br/>patternProperties<br/>propertyNames]
+subgraph Deductor
+07.Deductor[items<br/>additionalItems<hr/>properties<br/>additionalProperties<br/>patternProperties<br/>propertyNames]
 end
 
 subgraph ?Controls
@@ -230,17 +231,17 @@ end
 06.$schema=true -.- 07.Meta
 06.$schema=false -.- 07.Meta
 
-06.const -.- 07.Monad
-04.Monad -.- 06.Monad
-06.Monad -.- 07.Monad
+06.const -.- 07.Predicate0
+04.Predicate0 -.- 06.Predicate0
+06.Predicate0 -.- 07.Predicate0
 04.exclusive ==change type==> 06.exclusive
-06.exclusive -.- 07.Monad
+06.exclusive -.- 07.Predicate0
 
 04.enum -.- 06.enum
 04.enum --"enum[x]"--> 06.const
-06.enum -.- 07.Tupling
+06.enum -.- 07.Predicate1
 04.required=? == <b>? ? ?</b> ==> 06.required=empty
-06.required=empty -.- 07.Tupling
+06.required=empty -.- 07.Predicate1
 
 04.dependencies=? == <b>? ? ?</b> ==> 06.dependencies=empty
 06.contains -.- 07.Logical
@@ -251,9 +252,9 @@ end
 06.anyOf --> 07.if
 04.Logical -.- 06.Logical
 
-04.Predicate -.- 06.Predicate
-06.Predicate -.- 07.Predicate
-06.propertyNames -.- 07.Predicate
+04.Deductor -.- 06.Deductor
+06.Deductor -.- 07.Deductor
+06.propertyNames -.- 07.Deductor
 
 04.UI -.- 06.UI
 06.UI -.- 07.UI
@@ -276,13 +277,13 @@ end
 
 ##### type: (string | string[]) => boolean
 
-#### Tupling = (data, any[]) => boolean
+#### Predicate1 = (data, any[]) => boolean
 
 ##### required: string[]
 
 ##### enum: any[]
 
-#### Monad (data, primitive) => boolean
+#### Predicate0 (data, primitive) => boolean
 ##### multipleOf: number
 
 ##### maximum: number
@@ -347,7 +348,7 @@ end
 
 ###### : Schema | Schema[]
 
-#### Predicate
+#### Deductor
 
 = (data, Schema!) => (data[k], Schema[k])
 
