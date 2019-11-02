@@ -1,5 +1,5 @@
 # Index
-
+[TOC]
 ## Repos
 
 | name | url  | Side | Keys |
@@ -22,3 +22,6 @@
 |workspaces|https://github.com/askirmas/workspaces|front|Browser extension|
 |surfer_manager|https://github.com/askirmas/surfer_manager|front|Browser extension|
 |marker|https://github.com/askirmas/marker|front|Browser extension|
+
+# Further
+[](./schema-as-meta)
