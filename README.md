@@ -24,4 +24,4 @@
 |marker|https://github.com/askirmas/marker|front|Browser extension|
 
 # Further
-[](./schema-as-meta)
+- [Schema as Meta-programming](./schema-as-meta)
