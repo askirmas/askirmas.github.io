@@ -4,6 +4,7 @@
 
 | name | url  | Side | Keys |
 | ---- | ---- | ---- | ---- |
+|git-shell-scripts|https://github.com/askirmas/git-shell-scripts|cli|git|
 |IDEs-scheming|https://github.com/askirmas/IDEs-scheming|cli|Schema|
 |sandbox-json-css-ts|https://github.com/askirmas/sandbox-json-css-ts|front|sandbox|
 |unit-test-json|https://github.com/askirmas/unit-test-json|cli|Metaprogramming|
