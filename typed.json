@@ -1,0 +1,625 @@
+{
+    "$ref": "#/definitions/Schema",
+    "definitions": {
+        "Schema[]": {
+            "$id": "Schema[]",
+            "title": "Array of Schemas",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Schema"
+            },
+            "additionalItems": false
+        },
+        "Schema{}": {
+            "$id": "Schema{}",
+            "title": "Assoc of Schemas",
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#/definitions/Schema"
+            }
+        },
+        "Schema": {
+            "$id": "Schema",
+            "oneOf": [
+                {
+                    "type": "boolean"
+                },
+                {
+                    "title": "Schema -> TypeSchema",
+                    "$ref": "#/definitions/TypedSchema"
+                }
+            ]
+        },
+        "SchemaObj": {
+            "$id": "SchemaObject",
+            "type": "object",
+            "title": "Core Schema",
+            "additionalProperties": false,
+            "propertyNames": {
+                "anyOf": [
+                    {
+                        "$ref": "#/definitions/Meta/propertyNames"
+                    },
+                    {
+                        "$ref": "#/definitions/Defined/definitions"
+                    },
+                    {
+                        "$ref": "#/definitions/Predicate/properties/array/propertyNames"
+                    },
+                    {
+                        "$ref": "#/definitions/Predicate/properties/object/propertyNames"
+                    },
+                    {
+                        "$ref": "#/definitions/Recursive/properties/object/propertyNames"
+                    },
+                    {
+                        "$ref": "#/definitions/Recursive/properties/array/propertyNames"
+                    }
+                ]
+            },
+            "patternProperties": {
+                "^$": {
+                    "$comment": "Lazy to copypaste type defs"
+                },
+                "^(definitions|properties)$": {
+                    "$ref": "#/definitions/Schema{}"
+                },
+                "^(items|additionalItems|additionalProperties|propertyNames)$": {
+                    "$ref": "#/definitions/Schema"
+                },
+                "^(title|description|\\$comment)$": {
+                    "type": "string"
+                },
+                "^(\\$id|\\$ref)$": {
+                    "format": "uri-reference"
+                }
+            },
+            "properties": {
+                "patternProperties": {
+                    "title": "Assoc with regexp of Schemas",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/Schema"
+                    },
+                    "propertyNames": {
+                        "format": "regex"
+                    }
+                },
+                "type": {
+                    "enum": [
+                        "boolean",
+                        "array",
+                        "object"
+                    ]
+                },
+                "uniqueItems": {
+                    "$ref": "#/definitions/Predicate/properties/array/properties/uniqueItems"
+                }
+            }
+        },
+        "Meta": {
+            "propertyNames": {
+                "enum": [
+                    "$schema",
+                    "$id",
+                    "$ref",
+                    "definitions",
+                    "title",
+                    "description",
+                    "$comment"
+                ]
+            },
+            "properties": {
+                "$schema": {
+                    "type": "string"
+                },
+                "$id": {
+                    "type": "string"
+                },
+                "$ref": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "$comment": {
+                    "type": "string"
+                },
+                "definitions": {
+                    "$ref": "#/definitions/Schema{}"
+                }
+            }
+        },
+        "TypeSystem": {
+            "title": "TypeSystem",
+            "properties": {
+                "Scalar": {
+                    "title": "Scalar type",
+                    "type": "string",
+                    "enum": [
+                        "null",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "string"
+                    ]
+                },
+                "Proto": {
+                    "title": "assoc/arr",
+                    "type": "string",
+                    "enum": [
+                        "array",
+                        "object"
+                    ]
+                },
+                "Single": {
+                    "title": "Type",
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/TypeSystem/properties/Scalar"
+                        },
+                        {
+                            "$ref": "#/definitions/TypeSystem/properties/Proto"
+                        }
+                    ]
+                }
+            }
+        },
+        "Typed": {
+            "description": "Typed schemas",
+            "propertyNames": {
+                "$ref": "#/definitions/TypeSystem/properties/Single",
+                "$comment": "not validates"
+            },
+            "properties": {
+                "number": {
+                    "title": "Number predicate",
+                    "allOf": [
+                        {
+                            "propertyNames": {
+                                "anyOf": [
+                                    {
+                                        "$ref": "#/definitions/Defined/definitions/propertyNames"
+                                    },
+                                    {
+                                        "enum": [
+                                            "multipleOf",
+                                            "minimum",
+                                            "maximum",
+                                            "exclusiveMinimum",
+                                            "exclusiveMaximum"
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "$ref": "#/definitions/Defined/properties/number"
+                        },
+                        {
+                            "properties": {
+                                "multipleOf": {
+                                    "exclusiveMinimum": 0
+                                },
+                                "maximum": {
+                                    "type": "number"
+                                },
+                                "exclusiveMaximum": {
+                                    "type": "number"
+                                },
+                                "minimum": {
+                                    "type": "number"
+                                },
+                                "exclusiveMinimum": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "string": {
+                    "allOf": [
+                        {
+                            "propertyNames": {
+                                "anyOf": [
+                                    {
+                                        "$ref": "#/definitions/Defined/definitions/propertyNames"
+                                    },
+                                    {
+                                        "enum": [
+                                            "format",
+                                            "pattern",
+                                            "minLength",
+                                            "maxLength",
+                                            "title",
+                                            "description"
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "$ref": "#/definitions/Defined/properties/string"
+                        },
+                        {
+                            "properties": {
+                                "format": {
+                                    "title": "Supported format",
+                                    "type": "string",
+                                    "enum": [
+                                        "regex",
+                                        "uri",
+                                        "uri-reference"
+                                    ]
+                                },
+                                "pattern": {
+                                    "format": "regex"
+                                },
+                                "maxLength": {
+                                    "$ref": "#/definitions/length"
+                                },
+                                "minLength": {
+                                    "$ref": "#/definitions/length"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "array": {
+                    "propertyNames": {
+                        "enum": [
+                            "uniqueItems",
+                            "minItems",
+                            "maxItems",
+                            "default"
+                        ]
+                    },
+                    "properties": {
+                        "uniqueItems": {
+                            "type": "boolean"
+                        },
+                        "maxItems": {
+                            "$ref": "#/definitions/length"
+                        },
+                        "minItems": {
+                            "$ref": "#/definitions/length"
+                        }
+                    }
+                },
+                "object": {
+                    "propertyNames": {
+                        "enum": [
+                            "required",
+                            "propertyNames",
+                            "minProperties",
+                            "maxProperties"
+                        ]
+                    },
+                    "properties": {
+                        "required": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "uniqueItems": true
+                        },
+                        "propertyNames": {
+                            "$ref": "#/definitions/Predicate/properties/string"
+                        },
+                        "maxProperties": {
+                            "$ref": "#/definitions/length"
+                        },
+                        "minProperties": {
+                            "$ref": "#/definitions/length"
+                        }
+                    }
+                }
+            }
+        },
+        "Predicate": {
+            "description": "Instant Predicates",
+            "propertyNames": {
+                "$ref": "#/definitions/TypeSystem/properties/Single",
+                "$comment": "not validates"
+            },
+            "properties": {
+                "number": {
+                    "definitions": {
+                        "propertyNames": {
+                            "enum": [
+                                "multipleOf",
+                                "minimum",
+                                "maximum",
+                                "exclusiveMinimum",
+                                "exclusiveMaximum"
+                            ]
+                        }
+                    },
+                    "title": "Number predicate",
+                    "properties": {
+                        "multipleOf": {
+                            "exclusiveMinimum": 0
+                        },
+                        "maximum": {
+                            "type": "number"
+                        },
+                        "exclusiveMaximum": {
+                            "type": "number"
+                        },
+                        "minimum": {
+                            "type": "number"
+                        },
+                        "exclusiveMinimum": {
+                            "type": "number"
+                        }
+                    }
+                },
+                "string": {
+                    "definitions": {
+                        "propertyNames": {
+                            "enum": [
+                                "format",
+                                "pattern",
+                                "minLength",
+                                "maxLength",
+                                "title",
+                                "description"
+                            ]
+                        }
+                    },
+                    "properties": {
+                        "format": {
+                            "title": "Supported format",
+                            "type": "string",
+                            "enum": [
+                                "regex",
+                                "uri",
+                                "uri-reference"
+                            ]
+                        },
+                        "pattern": {
+                            "format": "regex"
+                        },
+                        "maxLength": {
+                            "$ref": "#/definitions/length"
+                        },
+                        "minLength": {
+                            "$ref": "#/definitions/length"
+                        }
+                    }
+                },
+                "array": {
+                    "propertyNames": {
+                        "enum": [
+                            "uniqueItems",
+                            "minItems",
+                            "maxItems",
+                            "default"
+                        ]
+                    },
+                    "properties": {
+                        "uniqueItems": {
+                            "type": "boolean"
+                        },
+                        "maxItems": {
+                            "$ref": "#/definitions/length"
+                        },
+                        "minItems": {
+                            "$ref": "#/definitions/length"
+                        }
+                    }
+                },
+                "object": {
+                    "propertyNames": {
+                        "enum": [
+                            "required",
+                            "propertyNames",
+                            "minProperties",
+                            "maxProperties"
+                        ]
+                    },
+                    "properties": {
+                        "required": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "uniqueItems": true
+                        },
+                        "propertyNames": {
+                            "$ref": "#/definitions/Predicate/properties/string"
+                        },
+                        "maxProperties": {
+                            "$ref": "#/definitions/length"
+                        },
+                        "minProperties": {
+                            "$ref": "#/definitions/length"
+                        }
+                    }
+                }
+            }
+        },
+        "Recursive": {
+            "description": "Interpreter deductive methods - Recursive predicates",
+            "propertyNames": {
+                "$ref": "#/definitions/TypeSystem/properties/Proto"
+            },
+            "additionalProperties": false,
+            "properties": {
+                "array": {
+                    "propertyNames": {
+                        "enum": [
+                            "items",
+                            "additionalItems",
+                            "contains"
+                        ]
+                    },
+                    "properties": {
+                        "items": {
+                            "oneOf": [
+                                {
+                                    "$ref": "#/definitions/Schema"
+                                },
+                                {
+                                    "$ref": "#/definitions/Schema[]"
+                                }
+                            ]
+                        },
+                        "additionalItems": {
+                            "$ref": "#/definitions/Schema"
+                        },
+                        "contains": {
+                            "$ref": "#/definitions/Schema"
+                        }
+                    }
+                },
+                "object": {
+                    "propertyNames": {
+                        "enum": [
+                            "properties",
+                            "additionalProperties",
+                            "patternProperties"
+                        ]
+                    },
+                    "properties": {
+                        "properties": {
+                            "$ref": "#/definitions/Schema{}"
+                        },
+                        "additionalProperties": {
+                            "$ref": "#/definitions/Schema"
+                        },
+                        "patternProperties": {
+                            "title": "Assoc with regexp to Schemas",
+                            "additionalProperties": {
+                                "$ref": "#/definitions/Schema"
+                            },
+                            "propertyNames": {
+                                "format": "regex"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "Logical": {
+            "propertyNames": {
+                "enum": [
+                    "allOf",
+                    "anyOf",
+                    "oneOf",
+                    "not",
+                    "if",
+                    "then",
+                    "else",
+                    "$id",
+                    "title"
+                ]
+            },
+            "properties": {
+                "allOf": {
+                    "$ref": "#/definitions/Schema[]"
+                },
+                "anyOf": {
+                    "$ref": "#/definitions/Schema[]"
+                },
+                "oneOf": {
+                    "$ref": "#/definitions/Schema[]"
+                },
+                "not": {
+                    "$ref": "#/definitions/Schema"
+                },
+                "if": {
+                    "$ref": "#/definitions/Schema"
+                },
+                "then": {
+                    "$ref": "#/definitions/Schema"
+                },
+                "else": {
+                    "$ref": "#/definitions/Schema"
+                }
+            }
+        },
+        "TypedSchema": {
+            "title": "TypedSchema",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/Typed/properties/number"
+                },
+                {
+                    "$ref": "#/definitions/Typed/properties/string"
+                },
+                {
+                    "$ref": "#/definitions/SchemaObj"
+                },
+                {
+                    "$ref": "#/definitions/Logical"
+                }
+            ]
+        },
+        "Defined": {
+            "definitions": {
+                "propertyNames": {
+                    "enum": [
+                        "type",
+                        "enum",
+                        "const",
+                        "default"
+                    ]
+                }
+            },
+            "properties": {
+                "number": {
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "number"
+                        },
+                        "default": {
+                            "type": "number",
+                            "default": 0
+                        },
+                        "const": {
+                            "$ref": "#/definitions/Defined/properties/number/properties/default"
+                        },
+                        "enum": {
+                            "$ref": "#/definitions/enum",
+                            "items": {
+                                "$ref": "#/definitions/Defined/properties/number/properties/default"
+                            }
+                        }
+                    }
+                },
+                "string": {
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "string"
+                        },
+                        "const": {
+                            "$ref": "#/definitions/Defined/properties/string/properties/default"
+                        },
+                        "default": {
+                            "type": "string",
+                            "default": ""
+                        },
+                        "enum": {
+                            "$ref": "#/definitions/enum",
+                            "items": {
+                                "$ref": "#/definitions/Defined/properties/string/properties/default"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "length": {
+            "exclusiveMinimum": 0
+        },
+        "enum": {
+            "type": "array",
+            "uniqueItems": true
+        }
+    }
+}
