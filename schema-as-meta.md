@@ -408,3 +408,40 @@ end
 | string         | enum                 | min/maxLength             | pattern, format   | pattern    | -                       |
 | array          | additionaltems       | min/maxItems              | -                 | contains   | uniqueItems             |
 | object         | additionalProperties | min/maxProperties         | patternProperties | -          | required, propertyNames |
+
+## Schema Support
+
+### Storages
+
+#### ajv-cli (cli, fs): draft04-07
+
+#### mysql: ^8.0.12: draft04
+
+https://dev.mysql.com/doc/refman/8.0/en/json-validation-functions.html
+
+#### mongodb: ^3.6: draft04
+
+https://docs.mongodb.com/manual/core/schema-validation/#json-schema
+
+https://docs.mongodb.com/manual/reference/operator/query/jsonSchema/#op._S_jsonSchema
+
+#### elasticsearch: null
+
+> We discussed this as part...
+>
+> We have discussed this quite a few times. We would like to have this.
+>
+> ...those spec would be part of the elasticsearch repo together with the existing spec.
+>
+> ...so it is probably easier if it comes from us.
+>
+> https://github.com/elastic/elasticsearch/issues/24065#issuecomment-294171535
+>
+> Apr 14 2017
+
+### Connectors
+
+#### RDF Sparql: ???
+
+https://w3c.github.io/wot-thing-description/ontology/jsonschema.html
+
