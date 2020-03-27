@@ -178,43 +178,21 @@
                     "title": "Number predicate",
                     "allOf": [
                         {
-                            "propertyNames": {
-                                "anyOf": [
-                                    {
-                                        "$ref": "#/definitions/Defined/definitions/propertyNames"
-                                    },
-                                    {
-                                        "enum": [
-                                            "multipleOf",
-                                            "minimum",
-                                            "maximum",
-                                            "exclusiveMinimum",
-                                            "exclusiveMaximum"
-                                        ]
-                                    }
-                                ]
-                            }
-                        },
-                        {
                             "$ref": "#/definitions/Defined/properties/number"
                         },
                         {
-                            "properties": {
-                                "multipleOf": {
-                                    "exclusiveMinimum": 0
-                                },
-                                "maximum": {
-                                    "type": "number"
-                                },
-                                "exclusiveMaximum": {
-                                    "type": "number"
-                                },
-                                "minimum": {
-                                    "type": "number"
-                                },
-                                "exclusiveMinimum": {
-                                    "type": "number"
-                                }
+                            "$ref": "#/definitions/Predicate/properties/number"
+                        },
+                        {
+                            "propertyNames": {
+                                "anyOf": [
+                                    {
+                                        "$ref": "#/definitions/Predicate/properties/number/definitions"
+                                    },
+                                    {
+                                        "$ref": "#/definitions/Defined/definitions/propertyNames"
+                                    }
+                                ]
                             }
                         }
                     ]
@@ -222,11 +200,14 @@
                 "string": {
                     "allOf": [
                         {
+                            "$ref": "#/definitions/Defined/properties/string"
+                        },
+                        {
+                            "$ref": "#/definitions/Predicate/properties/string"
+                        },
+                        {
                             "propertyNames": {
                                 "anyOf": [
-                                    {
-                                        "$ref": "#/definitions/Defined/definitions/propertyNames"
-                                    },
                                     {
                                         "enum": [
                                             "format",
@@ -236,33 +217,11 @@
                                             "title",
                                             "description"
                                         ]
-                                    }
+                                    },
+                                    {
+                                        "$ref": "#/definitions/Defined/definitions/propertyNames"
+                                    }                                    
                                 ]
-                            }
-                        },
-                        {
-                            "$ref": "#/definitions/Defined/properties/string"
-                        },
-                        {
-                            "properties": {
-                                "format": {
-                                    "title": "Supported format",
-                                    "type": "string",
-                                    "enum": [
-                                        "regex",
-                                        "uri",
-                                        "uri-reference"
-                                    ]
-                                },
-                                "pattern": {
-                                    "format": "regex"
-                                },
-                                "maxLength": {
-                                    "$ref": "#/definitions/length"
-                                },
-                                "minLength": {
-                                    "$ref": "#/definitions/length"
-                                }
                             }
                         }
                     ]
