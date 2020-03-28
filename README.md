@@ -1,5 +1,7 @@
 # Index
 [TOC]
+## JSON schemas
+- Jest [https://github.com/askirmas//jest.schema.json](https://github.com/askirmas//jest.schema.json)
 ## Repos
 
 | name | url  | Side | Keys |
