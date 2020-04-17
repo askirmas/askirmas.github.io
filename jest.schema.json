@@ -63,7 +63,8 @@
     "coverageDirectory": {
       "type": "string",
       "description": "The directory where Jest should output its coverage files.",
-      "title": "The directory where Jest should output its coverage files"
+      "title": "The directory where Jest should output its coverage files",
+      "examples": ["coverage"]
     },
     "coveragePathIgnorePatterns": {
       "type": "array",
@@ -97,7 +98,15 @@
         "null"
       ],
       "description": "This will be used to configure minimum threshold enforcement for coverage results. Thresholds can be specified as global, as a glob, and as a directory or file path. If thresholds aren't met, jest will fail. Thresholds specified as a positive number are taken to be the minimum percentage required. Thresholds specified as a negative number represent the maximum number of uncovered entities allowed.",
-      "title": "An object that configures minimum threshold enforcement for coverage results"
+      "title": "An object that configures minimum threshold enforcement for coverage results",
+      "examples": [{
+        "global": {
+          "branches": 100,
+          "functions": 100,
+          "lines": 100,
+          "statements": 100
+        }    
+      }]
     },
     "dependencyExtractor": {
       "type": [
@@ -709,5 +718,34 @@
       "title": "Watch files for changes and rerun all tests. If you want to re-run only the tests related to the changed files, use the `--watch` option. ",
       "description": "Watch files for changes and rerun all tests when something changes. If you want to re-run only the tests that depend on the changed files, use the --watch option."
     }
-  }
+  },
+  "examples": [
+    {
+      "preset": "ts-jest",
+      "transform": {
+        "^.+\\.[tj]sx?$": "ts-jest"
+      },
+      "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.[tj]sx?$"
+    },
+    {
+      "transform": {
+          "\\.[tj]sx?$": ["babel-jest", {
+              "presets": [
+                  ["@babel/preset-env",
+                    {
+                      "targets": {
+                        "node": 10
+                      }
+                    }
+                  ]
+                ],
+                "plugins": [
+                  "@babel/plugin-proposal-class-properties",
+                  "@babel/plugin-transform-typescript"
+                ]            
+          }]
+      },
+      "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.[tj]sx?$"
+    } 
+  ]
 }
