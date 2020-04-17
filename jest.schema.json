@@ -751,11 +751,7 @@
     {
       
       "preset": "ts-jest",
-      "testEnvironment": "node",
-      "transform": {
-        "^.+\\.[tj]sx?$": "ts-jest"
-      },
-      "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.[tj]sx?$"
+      "testEnvironment": "node"
     },
     {
       "transform": {
@@ -775,9 +771,14 @@
                 ]            
           }]
       },
-      "testEnvironment": "node",
-      "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.[tj]sx?$"
-    } 
+      "testEnvironment": "node"
+    },
+    {
+      "transform": {
+      "^.+\\.[tj]sx?$": "ts-jest"
+    }
+  }
+
   ],
   "default": {
     "testEnvironment": "node"
