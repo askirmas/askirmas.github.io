@@ -749,7 +749,9 @@
   },
   "examples": [
     {
+      
       "preset": "ts-jest",
+      "testEnvironment": "node",
       "transform": {
         "^.+\\.[tj]sx?$": "ts-jest"
       },
@@ -773,7 +775,11 @@
                 ]            
           }]
       },
+      "testEnvironment": "node",
       "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.[tj]sx?$"
     } 
-  ]
+  ],
+  "default": {
+    "testEnvironment": "node"
+  }
 }
