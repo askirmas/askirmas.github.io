@@ -500,7 +500,31 @@
         "additionalItems": {
           "type": "object"
         }
-      }
+      },
+      "examples": [
+        {"^.+\\.[tj]sx?$": "ts-jest"},
+        {
+          "\\.[tj]sx?$": ["babel-jest", {
+            "presets": [
+                ["@babel/preset-env",
+                  {
+                    "targets": {
+                      "node": 10
+                    }
+                  }
+                ]
+              ],
+              "plugins": [
+                "@babel/plugin-proposal-class-properties",
+                "@babel/plugin-transform-typescript"
+              ]            
+        }]
+
+        },
+        {
+
+        }
+      ]
     },
     "useStderr": {
       "type": "boolean"
