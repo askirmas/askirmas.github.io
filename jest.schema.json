@@ -495,7 +495,11 @@
         "format": "regex"
       },
       "additionalProperties": {
-        "type": "string"
+        "type": ["string", "array"],
+        "items": [{"type": "string"}],
+        "additionalItems": {
+          "type": "object"
+        }
       }
     },
     "useStderr": {
