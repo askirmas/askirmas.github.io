@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "http://askirmas.github.io/jest.schema.json",
-  "id": "http://askirmas.github.io/jest.schema.json",
+  "$id": "https://askirmas.github.io/jest.schema.json",
+  "id": "https://askirmas.github.io/jest.schema.json",
   "title": "Jest Config schema. Merged from Jest Docs and default config",
   "description": "For a detailed explanation regarding each configuration property, visit: https://jestjs.io/docs/en/configuration.html",
   "type": "object",
@@ -16,7 +16,7 @@
     "$schema": {
       "type": "string",
       "format": "uri-reference",
-      "default": "http://askirmas.github.io/jest.schema.json"
+      "default": "https://askirmas.github.io/jest.schema.json"
     },
     "automock": {
       "type": "boolean",
