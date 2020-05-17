@@ -749,38 +749,49 @@
   },
   "examples": [
     {
-      
       "preset": "ts-jest",
       "testEnvironment": "node"
     },
     {
       "transform": {
-          "\\.[tj]sx?$": ["babel-jest", {
-              "presets": [
-                  ["@babel/preset-env",
-                    {
-                      "targets": {
-                        "node": 10
-                      }
-                    }
-                  ]
-                ],
-                "plugins": [
-                  "@babel/plugin-proposal-class-properties",
-                  "@babel/plugin-transform-typescript"
-                ]            
-          }]
-      },
-      "testEnvironment": "node"
-    },
-    {
-      "transform": {
-      "^.+\\.[tj]sx?$": "ts-jest"
+        "^.+\\.[tj]sx?$": "ts-jest"
+      }
     }
-  }
-
   ],
   "default": {
-    "testEnvironment": "node"
+    "transform": {
+      "\\.[tj]sx?$": [
+        "babel-jest",
+        {
+          "presets": [
+            [
+              "@babel/preset-env",
+              {
+                "targets": {
+                  "node": 10
+                }
+              }
+            ]
+          ],
+          "plugins": [
+            "@babel/plugin-proposal-class-properties",
+            "@babel/plugin-transform-typescript"
+          ]
+        }
+      ]
+    },
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "collectCoverageFrom": [
+      "*.[tj]sx?"
+    ]
   }
 }
