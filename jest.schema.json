@@ -759,6 +759,16 @@
     }
   ],
   "default": {
+    "collectCoverage": true,
+    "collectCoverageFrom": ["*.[tj]sx?"],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
     "transform": {
       "\\.[tj]sx?$": [
         "babel-jest",
@@ -780,18 +790,6 @@
         }
       ]
     },
-    "testEnvironment": "node",
-    "collectCoverage": true,
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    },
-    "collectCoverageFrom": [
-      "*.[tj]sx?"
-    ]
+    "testEnvironment": "node"
   }
 }
