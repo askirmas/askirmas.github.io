@@ -1,0 +1,122 @@
+[submodule "json-schemas"]
+	path = json/json-schemas
+	url = git@github.com:askirmas/json-schemas.git
+	branch = master
+[submodule "jcss"]
+	path = jcssing/jcss
+	url = git@github.com:askirmas/json-schemas.git
+	branch = master
+[submodule "scheming"]
+	path = json/scheming
+	url = git@github.com:askirmas/scheming.git
+	branch = master
+[submodule "schema2types"]
+	path = json/schema2types
+	url = git@github.com:askirmas/schema2types.git
+	branch = master
+[submodule "sandbox-js"]
+	path = js/sandbox-js
+	url = git@github.com:askirmas/sandbox-js.git
+	branch = master
+[submodule "render-on-demand"]
+	path = dom/render-on-demand
+	url = git@github.com:askirmas/render-on-demand.git
+	branch = master
+[submodule "patterning"]
+	path = js/patterning
+	url = git@github.com:askirmas/patterning.git
+	branch = master
+[submodule "no-js"]
+	path = css/no-js
+	url = git@github.com:askirmas/no-js.git
+	branch = master
+[submodule "merger"]
+	path = js/merger
+	url = git@github.com:askirmas/merger.git
+	branch = master
+[submodule "js-performance"]
+	path = js/js-performance
+	url = git@github.com:askirmas/js-performance.git
+	branch = master
+[submodule "assoc"]
+	path = js/assoc
+	url = git@github.com:askirmas/assoc.git
+	branch = master
+[submodule "configs"]
+	path = configs
+	url = git@github.com:askirmas/configs.git
+	branch = master
+[submodule "git-hooks-wrapper"]
+	path = bash/git-hooks-wrapper
+	url = git@github.com:askirmas/git-hooks-wrapper.git
+	branch = master
+[submodule "workspaces"]
+	path = extension/workspaces
+	url = git@github.com:askirmas/workspaces.git
+	branch = master
+[submodule "trpl"]
+	path = js/trpl
+	url = git@github.com:askirmas/trpl.git
+	branch = master
+[submodule "cypress-plugin-snapshots"]
+	path = forks/cypress-plugin-snapshots
+	url = git@github.com:askirmas/cypress-plugin-snapshots
+[submodule "jest"]
+	path = forks/jest
+	url = git@github.com:askirmas/jest.git
+[submodule "json2react-project"]
+	path = dom/json2react-project
+	url = git@github.com:askirmas/json2react-project.git
+	branch = master
+[submodule "chat"]
+	path = full/chat
+	url = git@github.com:askirmas/chat.git
+	branch = master
+[submodule "unit-test-json"]
+	path = js/unit-test-json
+	url = git@github.com:askirmas/unit-test-json.git
+	branch = master
+[submodule "sandbox-json-css-ts"]
+	path = full/sandbox-json-css-ts
+	url = git@github.com:askirmas/sandbox-json-css-ts.git
+	branch = master
+[submodule "subscribers"]
+	path = full/subscribers
+	url = git@github.com:askirmas/subscribers.git
+	branch = master
+[submodule "ips_dashboard"]
+	path = full/ips_dashboard
+	url = git@github.com:askirmas/ips_dashboard.git
+	branch = master
+[submodule "gaming"]
+	path = css/gaming
+	url = git@github.com:askirmas/gaming.git
+	branch = master
+[submodule "stateful-dom"]
+	path = css/stateful-dom
+	url = git@github.com:askirmas/stateful-dom.git
+	branch = master
+[submodule "assoc_old"]
+	path = js/assoc_old
+	url = git@github.com:askirmas/assoc_old.git
+	branch = master
+[submodule "ts-play"]
+	path = js/ts-play
+	url = git@github.com:askirmas/ts-play.git
+	branch = master
+[submodule "marker"]
+	path = extension/marker
+	url = git@github.com:askirmas/marker.git
+	branch = master
+[submodule "json-program"]
+	path = json/json-program
+	url = git@github.com:askirmas/json-program.git
+	branch = master
+[submodule "tab_manager"]
+	path = extension/tab_manager
+	url = git@github.com:askirmas/tab_manager.git
+	branch = master
+[submodule "surfer_manager"]
+	path = extension/surfer_manager
+	url = git@github.com:askirmas/surfer_manager.git
+	branch = master
