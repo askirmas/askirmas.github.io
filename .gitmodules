@@ -140,3 +140,6 @@
 	path = jcssing/sass-loader
 	url = git@github.com:webpack-contrib/sass-loader.git
 	branch = master
+[submodule "classnaming"]
+	path = js/classnaming
+	url = git@github.com:askirmas/classnaming.git
