@@ -101,7 +101,7 @@
 	url = git@github.com:askirmas/assoc_old.git
 	branch = master
 [submodule "ts-play"]
-	path = js/ts-play
+	path = js/ts-swiss
 	url = git@github.com:askirmas/ts-play.git
 	branch = master
 [submodule "marker"]
