@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$ref": "#/definitions/enums-oneof",
+  "definitions": {
+    "enums-ref": {
+      "oneOf": [
+        {"x": "#/definitions/x"},
+        {"y": "#/definitions/y"}    
+      ]
+    },
+    "enums-oneof": {
+      "oneOf": [
+        {"const": "x", "title": "X"},
+        {"const": "y", "title": "Y"}
+      ]
+    },
+    "x": {"const": "x", "title": "X"},
+    "y": {"const": "y", "title": "Y"}
+  }
+}

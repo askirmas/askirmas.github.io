@@ -143,3 +143,12 @@
 [submodule "classnaming"]
 	path = js/classnaming
 	url = git@github.com:askirmas/classnaming.git
+[submodule "dom/renderers"]
+	path = dom/renderers
+	url = git@github.com:askirmas/renderers.git
+[submodule "dom/dom-data"]
+	path = dom/dom-data
+	url = git@github.com:askirmas/dom-data.git
+[submodule "dom/cypress-wraps"]
+	path = dom/cypress-wraps
+	url = git@github.com:askirmas/cypress-wraps.git

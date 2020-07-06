@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "properties": {
+    "files": {
+      "anyOf": [
+        {"const": ["x", 0]},
+        {"const": ["x", 1]},
+        {"const": ["y", 0]},
+        {"const": ["y", 2]}
+      ]
+    }
+  }
+}
