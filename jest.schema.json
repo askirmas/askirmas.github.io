@@ -105,6 +105,15 @@
         "object",
         "null"
       ],
+      "propertyNames": {
+        "oneOf": [
+          {"const": "global"},
+          {"format": "uri-reference"}
+        ]
+      },
+      "additionalProperties": {
+        "$ref": "#/definitions/CoverageThreshold"
+      },
       "description": "This will be used to configure minimum threshold enforcement for coverage results. Thresholds can be specified as global, as a glob, and as a directory or file path. If thresholds aren't met, jest will fail. Thresholds specified as a positive number are taken to be the minimum percentage required. Thresholds specified as a negative number represent the maximum number of uncovered entities allowed.",
       "title": "An object that configures minimum threshold enforcement for coverage results",
       "examples": [{
@@ -805,5 +814,16 @@
       ]
     },
     "testEnvironment": "node"
+  },
+  "definitions": {
+    "CoverageThreshold": {
+      "type": "object",
+      "propertyNames": {"enum": ["branches", "functions", "lines", "statements"]},
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 100
+      }
+    }
   }
 }
