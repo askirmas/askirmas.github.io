@@ -46,10 +46,6 @@
 	path = configs
 	url = git@github.com:askirmas/configs.git
 	branch = master
-[submodule "git-hooks-wrapper"]
-	path = bash/git-hooks-wrapper
-	url = git@github.com:askirmas/git-hooks-wrapper.git
-	branch = master
 [submodule "workspaces"]
 	path = extension/workspaces
 	url = git@github.com:askirmas/workspaces.git
@@ -152,3 +148,6 @@
 [submodule "dom/cypress-wraps"]
 	path = dom/cypress-wraps
 	url = git@github.com:askirmas/cypress-wraps.git
+[submodule "bash/git-hooks-wrapper"]
+	path = bash/git-hooks-wrapper
+	url = git@github.com:askirmas/git-hooks-wrapper.git
