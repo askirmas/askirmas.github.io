@@ -5,7 +5,6 @@
 
 [<img src="./GitHub-Mark-32px.png" style="zoom:70%;" />github.com/askirmas](https://github.com/askirmas)	[<img src="linkedin.svg" />linkedin.com/in/kirmas](https://www.linkedin.com/in/kirmas/)
 
-[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 18" class="d-block" height="18"><path d="M3.94 2A2 2 0 1 1 2 0a2 2 0 0 1 1.94 2zM4 5.48H0V18h4zm6.32 0H6.34V18h3.94v-6.57c0-3.66 4.77-4 4.77 0V18H19v-7.93c0-6.17-7.06-5.94-8.72-2.91z" fill="currentColor"></path></svg> hi](https://)
 [[_TOC_]]
 ### Objective
 
