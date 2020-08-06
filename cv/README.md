@@ -99,7 +99,7 @@ Moscow Institute  of Physics and Technology. Moscow, Russia
 
 Moscow Institute  of Physics and Technology. Moscow, Russia
 
-#### 1996 - 2006  Awardee of international  and republic math olympiads
+#### 1996 - 2006 Awardee of international and republic math olympiads
 
 Kharkiv Physics and Mathematics Lyceum #27. Kharkiv, Ukraine
 
