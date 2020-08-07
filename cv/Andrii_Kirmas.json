@@ -1,0 +1,102 @@
+{
+  "$schema": "https://askirmas.github.io/cv/Andrii_Kirmas.schema.json",
+  "title":"Andrii Kirmas",
+  "description": "Senior Software Engineer",
+  "links": {
+    "email": "kirmas@phystech.edu",
+    "phone": "+972-54-351-0754",
+    "residence": "Israel/Netanya",
+    "github": "https://github.com/askirmas",
+    "linkedin": "https://www.linkedin.com/in/kirmas/"
+  },
+  "salary": 30000,
+  "Objective":"Passionate for systematic and iterative procedures. High educability and deep knowledge of computer science makes me efficient in engineering and architecture that provides a logical flow of knowledge and progress.",
+  "Skills": {
+    "Paradigms": {
+      "XP": true,
+      "TDD": true,
+      "Coverage": 100,
+      "Git Trunk": true,
+      "CI/CD": true,
+      "ERM": true,
+      "BEM+AtomicCss": true,
+      "PBP": true,
+      "Functional": true,
+      "Reactive": true,
+      "OOP": true
+    }
+  },
+  "Experience": {
+    "2020": {
+      "start": 2019,
+      "title": "Senior Fullstack Engineer",
+      "description": "Cloudwize.io /*Cloud Management*/ Israel/Netanya",
+      "items": [
+        "Implemented IDE-like website",
+        "Created styling system for the company",
+        "Built company’s internal infrastructure",
+        "Updated repositories structure for better usability"  
+      ]
+    },
+    "2019": {
+      "start": 2018,
+      "title": "Lead Software Engineer",
+      "description": "Go-Be Marketing Ltd /*Sales Company*/ @Israel/Tel-Aviv",
+      "items": [
+        "Communicating with outsources, supports, consulting affiliates",
+        "Support and fast solving common operational issues",
+        "Continuous deployment",
+        "Software integrations with delegated configurations",
+        "Legacy code solving",
+        "Built websites and landing pages"    
+      ]
+    },
+    "2017": {
+      "start": 2015,
+      "title": "Software Engineer",
+      "description": "Intetics Inc /*Outsource Software Development*/ @Ukraine/Kharkiv. Area9 @Denmark/Copenhagen",
+      "items": [
+        "Web client for media viewing with mobile optimizations",
+        "Extended Compiler, Type system, Running platform and Build system of Proprietary programming language",
+        "Backend service for PDF resources conversion and storage",
+        "Implemented algorithm of specifications learning from examples for Programming by example system"    
+      ]
+    },
+    "2015": {
+      "start": 2014,
+      "title": "Freelance Developer",
+      "description": "Eikoncraft /*Software service company*/ @USA/Dallas",
+      "items": [
+        "Created internal timelog system"  
+      ]
+    },
+    "2014": {
+      "start": 2008,
+      "title": "Co-Founder, Branch Manager",
+      "description": "New Educational Initiatives Llc ​/*eLearning company*/ @Russia/Moscow"
+    }
+  },
+  "Education": {
+    "2014": {
+      "start": 2012,
+      "title": "Master of Computer Science",
+      "description": "Institute of Cybernetics of National Academy of Science of Ukraine @Ukraine/Kyiv. Moscow Institute  of Physics and Technology @Russia/Moscow"
+    },
+    "2012": {
+      "start": 2006,
+      "title": "Bachelor of Applied Mathematics",
+      "description": "Moscow Institute  of Physics and Technology @Russia/Moscow"
+    },
+    "2006": {
+      "start": 1996,
+      "title": "Awardee of international and republic Math olympiads",
+      "description": "Kharkiv Physics and Mathematics Lyceum #27 @Ukraine/Kharkiv"
+    }
+  },
+  "Human Languages": {
+    "English": "Fluent",
+    "Hebrew": "Basic",
+    "Ukrainian": "Mother tongue",
+    "Russian": "Mother tongue"
+  }
+}

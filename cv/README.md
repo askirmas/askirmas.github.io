@@ -3,7 +3,7 @@
 
 [<img src="https://fonts.gstatic.com/s/i/materialicons/email/v6/24px.svg" /> kirmas@phystech.edu](mailto:kirmas@phystech.edu)	[<img src="https://fonts.gstatic.com/s/i/materialicons/smartphone/v7/24px.svg"/>+972-54-351-0754](tel:+972-54-351-0754)	🇮🇱 Netanya, Israel
 
-[<img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Font_Awesome_5_brands_github.svg" style="height:24px;"/> github.com/askirmas](https://github.com/askirmas)	[<img src="https://upload.wikimedia.org/wikipedia/commons/8/80/LinkedIn_Logo_2013.svg" style="height:24px;width:36px;object-fit:cover;object-position: 100% 0;"/>linkedin.com/in/kirmas](https://www.linkedin.com/in/kirmas/)
+[<img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Font_Awesome_5_brands_github.svg" style="height:24px;"/> github.com/askirmas](https://github.com/askirmas)	[<img src="https://upload.wikimedia.org/wikipedia/commons/8/80/LinkedIn_Logo_2013.svg" style="height:24px;width:30px;object-fit:cover;object-position: 100% 0;"/>linkedin.com/in/kirmas](https://www.linkedin.com/in/kirmas/)
 
 [[_TOC_]]
 ### Objective
@@ -44,7 +44,7 @@ MySQL (ACID, Transactions, Routine, Window functions, Join, Normalization, Index
 
 - Semantic Versioning, Markdown (mermaidjs), graphviz
 - Babel, Webpack4, JsonSchema, FetchAPI, Ajax, eslint, stylint, pdf.js, Browser extensions, benchmark.js and own package
-- bash [^bash],  git SVC, ssh
+- bash[^bash],  git SVC, ssh
 - OMeta, Open MPI, OpenCV
 
 #### Passive
@@ -102,7 +102,7 @@ New Educational Initiatives LLC ​(eLearning company) Moscow, Russia
 
 #### 2012 - 2014 Master of Computer Science
 
-Institute of Cybernetics of National Academy of Science of Ukraine. Kyiv, Ukrain
+Institute of Cybernetics of National Academy of Science of Ukraine. Kyiv, Ukraine
 
 Moscow Institute  of Physics and Technology. Moscow, Russia
 
@@ -116,11 +116,12 @@ Kharkiv Physics and Mathematics Lyceum #27. Kharkiv, Ukraine
 
 ### Human Languages
 
-English - Fluent
+English: Fluent
 
-Hebrew - Basic
+Hebrew: Basic
 
-Ukrainian, Russian - Mother tongue
+Ukrainian, Russian: Mother tongue
 
-[^bash]: jq, grab, sed, preg, trap, function, array, find, curl, kill
+
+[^bash]: bash: jq, grab, sed, preg, trap, function, array, find, curl, kill
 
