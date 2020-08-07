@@ -14,23 +14,23 @@ Passionate for systematic and iterative procedures. High educability and deep kn
 
 #### Paradigm
 
-OOP, TDD, Coverage 100%, Git Trunk, XP, CI/CD, ERM, BEM, Atomic
+TDD, Coverage 100%, XP,  Git Trunk, CI/CD, ERM, BEM+AtomicCss, OPP, Functional, Reactive, [OOP](https://medium.com/better-programming/object-oriented-programming-the-trillion-dollar-disaster-92a4b666c7c7)
 
 #### Test
 
-Jest, Cypress, Puppeteer, Chai, istanbul, nyc
+Jest, Cypress, Puppeteer, chai, // istanbul, nyc
 
 #### Full
 
-NextJs, *PHP*
+Next.js, *PHP<span style="font-size: 0px">💩</span>*
 
 #### Back
 
-Node.js, HTTP, WebSocket, RestAPI, CORS, Content Security policy, JWT, Proxy, *HyperSchema, SWAG/OpenAPI, HATEOAS*
+Node.js, Express, HTTP, WebSocket, RestAPI, CORS, Content Security policy, jwt, Proxy, *HyperSchema, SWAG/OpenAPI, HATEOAS*
 
 #### Front
 
-PureCss, Strong HTML5, CSS3, SCSS, MaterialUI, React, WebComponent, ReactiveX (RxJs), Pixi.js, Chrome, Firefox
+[PureCss](https://askirmas.github.io/no-js/), Strong HTML5, CSS3, SCSS, MaterialUI, [React](github.com/askirmas/render-on-demand), WebComponent, ReactiveX (RxJs), Chrome, Firefox
 
 #### Storage
 
@@ -38,31 +38,46 @@ MySQL (ACID, Transactions, Routine, Window functions, Join, Normalization, Index
 
 #### JavaScript
 
-ESNext, ES6, TypeScript, JSDoc
+[TypeScript](github.com/askirmas/ts-swiss), ESNext, ES6,  JSDoc
 
 #### Utils
 
-OMeta, Pdf.js, Open MPI, OpenCV, Babel, WepPack4, JsonSchema, Markdown (mermaidjs), graphviz, Semantic Versioning, Bash (jq, grab, sed, preg, trap, function, array, find, curl, kill), Benchmark.js and own package , Git SVC, SSH, FetchAPI, Ajax, Browser extensions, Eslint, Stylint
+- Semantic Versioning, Markdown (mermaidjs), graphviz
+
+- babel, webpack4, JsonSchema, FetchAPI, Ajax, eslint, stylint, pdf.js, Browser extensions, benchmark.js and own package
+
+- bash
+
+  [^bash]: jq, grab, sed, preg, trap, function, array, find, curl, kill
+
+  git SVC, ssh
+- OMeta, Open MPI, OpenCV
 
 #### Passive
 
-C/C++, Python, Haxe, OAuth, Docker, GitLab CI, Apache, Nginx, MacOs, Ubuntu, Windows, Jenkins, nwjs
+- C/C++, Python, Haxe
+- Docker, GitLab CI, Jenkins, Apache, nginx
+- OAuth, MacOs, Ubuntu
+- nwjs, Pixi.js
 
 #### Etc
 
-GitHub, GitLab, SourceForge, BitBucket, SourceTree, Tortoise Git, GitKraken, Video and audio processing
+- GitHub, GitLab, *SourceForge, BitBucket*
+- *Jira, Confluence*
+- SourceTree, Tortoise Git, GitKraken
+- Video and audio processing
 
 ### Experience
 
 #### 2019 - 2020 Senior Fullstack Engineer
 
 Cloudwize.io (Cloud Management) Netanya, Israel
-● Implemented IDE-like Website
+● Implemented IDE-like website
 ● Created styling system for the company
-● Launched company’s internal infrastructure
-● Updated repository architecture for better usability
+● Built company’s internal infrastructure
+● Updated repositories structure for better usability
 
-#### 2018 - 2019 Lead Software engineer
+#### 2018 - 2019 Lead Software Engineer
 
 Go-Be Marketing ltd. (Sales Company) Tel Aviv, Israel 	
 ● Communicating with outsources, supports, consulting affiliates
@@ -72,13 +87,13 @@ Go-Be Marketing ltd. (Sales Company) Tel Aviv, Israel
 ● Legacy code solving
 ● Built websites and landing pages
 
-#### 2015 - 2017 Software engineer
+#### 2015 - 2017 Software Engineer
 
 Intetics Inc. (Outsource Software Development) Kharkiv, Ukraine 
-● Client for media viewing on web 
-● PDF resources storage and conversion back-end
-● Implemented algorithm of specifications learning from examples for Programming by example system
+● Web client for media viewing with mobile optimizations
+● Backend service for PDF resources conversion and storage
 ● Extended Compiler, Running platform and Build system of Proprietary programming language
+● Implemented algorithm of specifications learning from examples for Programming by example system
 
 #### 2014 - 2015 Freelance Developer
 
@@ -101,7 +116,7 @@ Moscow Institute  of Physics and Technology. Moscow, Russia
 
 Moscow Institute  of Physics and Technology. Moscow, Russia
 
-#### 1996 - 2006 Awardee of international and republic math olympiads
+#### 1996 - 2006 Awardee of international and republic Math olympiads
 
 Kharkiv Physics and Mathematics Lyceum #27. Kharkiv, Ukraine
 
