@@ -1,9 +1,9 @@
 # Andrii Kirmas
 ## Senior Software Engineer
 
-[<img src="https://fonts.gstatic.com/s/i/materialicons/email/v6/24px.svg" /> kirmas@phystech.edu](mailto:kirmas@phystech.edu)	[<img src="https://fonts.gstatic.com/s/i/materialicons/smartphone/v7/24px.svg"/>+972-54-351-0754](tel:+972-54-351-0754)	:israel:Netanya, Israel
+[<img src="https://fonts.gstatic.com/s/i/materialicons/email/v6/24px.svg" /> kirmas@phystech.edu](mailto:kirmas@phystech.edu)	[<img src="https://fonts.gstatic.com/s/i/materialicons/smartphone/v7/24px.svg"/>+972-54-351-0754](tel:+972-54-351-0754)	:israel:Netanya, Israel🇮🇱
 
-[<img src="./GitHub-Mark-32px.png" style="zoom:70%;" />github.com/askirmas](https://github.com/askirmas)	[<img src="linkedin.svg" />linkedin.com/in/kirmas](https://www.linkedin.com/in/kirmas/)
+[<img src="github.svg" /> github.com/askirmas](https://github.com/askirmas)	[<img src="linkedin.svg" /> linkedin.com/in/kirmas](https://www.linkedin.com/in/kirmas/)
 
 [[_TOC_]]
 ### Objective
@@ -121,8 +121,6 @@ English - Fluent
 Hebrew - Basic
 
 Ukrainian, Russian - Mother tongue
-
-## Notes
 
 [^bash]: jq, grab, sed, preg, trap, function, array, find, curl, kill
 
