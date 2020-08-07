@@ -1,14 +1,6 @@
-[submodule "jcss"]
-	path = jcssing/jcss
-	url = git@github.com:askirmas/json-schemas.git
-	branch = master
 [submodule "no-js"]
 	path = css/no-js
 	url = git@github.com:askirmas/no-js.git
-	branch = master
-[submodule "trpl"]
-	path = js/trpl
-	url = git@github.com:askirmas/trpl.git
 	branch = master
 [submodule "cypress-plugin-snapshots"]
 	path = forks/cypress-plugin-snapshots
@@ -16,10 +8,3 @@
 [submodule "jest"]
 	path = forks/jest
 	url = git@github.com:askirmas/jest.git
-[submodule "ts-play"]
-	path = js/ts-swiss
-	url = git@github.com:askirmas/ts-play.git
-	branch = master
-[submodule "bash/git-hooks-wrapper"]
-	path = bash/git-hooks-wrapper
-	url = git@github.com:askirmas/git-hooks-wrapper.git
