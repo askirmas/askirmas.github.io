@@ -66,33 +66,33 @@ MySQL (ACID, Transactions, Routine, Window functions, Join, Normalization, Index
 #### 2019 - 2020 Senior Fullstack Engineer
 
 Cloudwize.io (Cloud Management) Netanya, Israel
-● Implemented IDE-like website
-● Created styling system for the company
-● Built company’s internal infrastructure
-● Updated repositories structure for better usability
+- Implemented IDE-like website
+- Created styling system for the company
+- Built company’s internal infrastructure
+- Updated repositories structure for better usability
 
 #### 2018 - 2019 Lead Software Engineer
 
 Go-Be Marketing ltd. (Sales Company) Tel Aviv, Israel 	
-● Communicating with outsources, supports, consulting affiliates
-● Support and fast solving common operational issues
-● Continuous deployment
-● Software integrations with delegated configurations
-● Legacy code solving
-● Built websites and landing pages
+- Communicating with outsources, supports, consulting affiliates
+- Support and fast solving common operational issues
+- Continuous deployment
+- Software integrations with delegated configurations
+- Legacy code solving
+- Built websites and landing pages
 
 #### 2015 - 2017 Software Engineer
 
 Intetics Inc. (Outsource Software Development) Kharkiv, Ukraine 
-● Web client for media viewing with mobile optimizations
-● Backend service for PDF resources conversion and storage
-● Extended Compiler, Running platform and Build system of Proprietary programming language
-● Implemented algorithm of specifications learning from examples for Programming by example system
+- Web client for media viewing with mobile optimizations
+- Backend service for PDF resources conversion and storage
+- Extended Compiler, Running platform and Build system of Proprietary programming language
+- Implemented algorithm of specifications learning from examples for Programming by example system
 
 #### 2014 - 2015 Freelance Developer
 
 Eikoncraft (Software service company) Dallas, USA
-● Created internal timelog system
+- Created internal timelog system
 
 #### 2008 - 2014 Branch Manager
 
