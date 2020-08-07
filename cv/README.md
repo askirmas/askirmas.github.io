@@ -1,9 +1,9 @@
 # Andrii Kirmas
-## Senior Software Engineer
+## Senior Software [Engineer](https://medium.com/shakuro/programmer-vs-developer-vs-engineer-91ef374e5033 "The engineer has a solid educational grounding and the ability to apply engineering concepts to create digital solutions")
 
-[<img src="https://fonts.gstatic.com/s/i/materialicons/email/v6/24px.svg" /> kirmas@phystech.edu](mailto:kirmas@phystech.edu)	[<img src="https://fonts.gstatic.com/s/i/materialicons/smartphone/v7/24px.svg"/>+972-54-351-0754](tel:+972-54-351-0754)	:israel:Netanya, Israel🇮🇱
+[<img src="https://fonts.gstatic.com/s/i/materialicons/email/v6/24px.svg" /> kirmas@phystech.edu](mailto:kirmas@phystech.edu)	[<img src="https://fonts.gstatic.com/s/i/materialicons/smartphone/v7/24px.svg"/>+972-54-351-0754](tel:+972-54-351-0754)	🇮🇱 Netanya, Israel
 
-[<img src="github.svg" /> github.com/askirmas](https://github.com/askirmas)	[<img src="linkedin.svg" /> linkedin.com/in/kirmas](https://www.linkedin.com/in/kirmas/)
+[<img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Font_Awesome_5_brands_github.svg" style="height:24px;"/> github.com/askirmas](https://github.com/askirmas)	[<img src="https://upload.wikimedia.org/wikipedia/commons/8/80/LinkedIn_Logo_2013.svg" style="height:24px;width:36px;object-fit:cover;object-position: 100% 0;"/>linkedin.com/in/kirmas](https://www.linkedin.com/in/kirmas/)
 
 [[_TOC_]]
 ### Objective
