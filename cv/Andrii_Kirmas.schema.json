@@ -35,11 +35,9 @@
       "type": "object"
     },
     "Objective": {
-      "title": "Objective",
       "const": "Passionate for systematic and iterative procedures. High educability and deep knowledge of computer science makes me efficient in engineering and architecture that provides a logical flow of knowledge and progress."
     },
     "Skills": {
-      "title": "Skills",
       "type": "object",
       "properties": {
         "Paradigms": {
@@ -105,7 +103,6 @@
           "title": "//TODO"
         },
         "Testing": {
-          "title": "Testing",
           "type": "array",
           "items": [
             {"const": "Jest"},
@@ -275,15 +272,12 @@
       }
     },
     "Experience": {
-      "title": "Experience",
       "$ref": "#/definitions/Exps"
     },
     "Education": {
-      "title": "Education",
       "$ref": "#/definitions/Exps"
     },
     "Human Languages": {
-      "title": "Human Languages",
       "allOf": [
         {"additionalProperties": {"$ref": "#/definitions/eLanguageLevel"}},
         {
@@ -386,7 +380,7 @@
     },
     "git": {"const": "git"},
     "JS": {"oneOf": [
-        {"enum": ["JS", "nwjs", "pixi.js", "<canvas>", "jQuery"]},
+        {"enum": ["JS", "nwjs", "pixi.js", "canvas", "jQuery"]},
         {"$ref": "#/definitions/JS-DOM"},
         {"$ref": "#/definitions/React"},
         {"$ref": "#/definitions/Redux"},

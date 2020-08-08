@@ -1,9 +1,12 @@
 const {values: $values} = Object
-type Dict<V = unknown, K extends PropertyKey = string> = {[k in K]: V}
-type FlatObject = Record<string|number, null|undefined|boolean|number|string>
+, {from: $from} = Array
+
+export type Dict<V = unknown, K extends PropertyKey = string> = {[k in K]: V}
+export type FlatObject = Record<string|number, null|undefined|boolean|number|string>
+export type Values<T extends Dict> = T[keyof T][]
 
 export {
-  isFlatObject
+  isFlatObject, unique
 }
 
 function isFlatObject(source: Dict) :source is FlatObject {
@@ -15,6 +18,9 @@ function isFlatObject(source: Dict) :source is FlatObject {
       return false
   }
     
-
   return true
+}
+
+function unique<T extends unknown[]>(source: T) :T[number][] {
+  return $from(new Set(source))
 }

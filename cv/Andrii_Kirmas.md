@@ -22,6 +22,160 @@ Russian: Mother tongue
 
 ### Skills
 
+#### Paradigms
+
+{"XP":true,"TDD":true,"Coverage":100,"Git Trunk":true,"CI/CD":true,"ERM":true,"BEM+AtomicCss":true,"PBP":true,"Functional":true,"Reactive":true,"OOP":true}
+
+#### Contracts
+
+{}
+
+#### Testing
+
+["Jest","Cypress","Puppeteer","chai"]
+
+#### Full //TODO move to front
+
+{"Next.js":3,"PHP":5}
+
+#### Back
+
+{"Node.js":{},"Express":{},"HTTP":{},"WebSocket":{},"RestAPI":{},"CORS":{},"Content Security policy":{},"jwt":{},"Proxy":{},"HyperSchema":{},"SWAG/OpenAPI":{},"HATEOAS":{}}
+
+#### Front
+
+{"Pure CSS technique":{},"Strong HTML5":{},"CSS3":{},"SCSS":{},"React":{},"WebComponent":{},"Redux":{},"ReactiveX (RxJs)":{},"Chrome":{},"Firefox":{}}
+
+#### Storage
+
+{"MySQL":{},"IndexedDB":{},"MongoDB":{},"Dexie.js":{}}
+
+#### JavaScript
+
+{"TypeScript":{},"ESNext":{},"ES6":{},"JSDoc":{}}
+
+#### Utils
+
+["Semantic Versioning","Markdown","mermaidjs","graphviz","Babel","Webpack4","JsonSchema","FetchAPI","Ajax","eslint","stylint","pdf.js","Browser extensions","benchmark.js and own package","bash","git SVC","ssh","OMeta","Open MPI","OpenCV"]
+
+#### Passive
+
+["C","C++","Python","Haxe","Docker","GitLab CI","Jenkins","Apache","nginx","OAuth","MacOs","Ubuntu","nwjs","Pixi.js"]
+
+#### Etc
+
+["Slack","GitHub","GitLab","SourceForge","BitBucket","Jira","Confluence","SourceTree","Tortoise Git","GitKraken","Video and audio processing"]
+
 ### Experience
 
+#### 2019 - 2020 Senior Fullstack Engineer
+
+<b>Cloudwize.io /*Cloud Management*/ @Israel/Netanya</b>
+
+TypeScript, JsonSchema, Jest, Cypress, Puppeteer, JS DOM, React, CSS, SASS, ExpressJs, NodeJs, Redux, MySQL, MongoDB, Webpack, bash, CSS3, git, GitLab CI
+
+- Implemented IDE-like website
+
+- ? Web-app front-end repo
+
+- Created styling system for the company
+
+- Built company’s internal infrastructure
+
+- Updated repositories structure for better usability
+
+#### 2018 - 2019 Lead Software Engineer
+
+<b>Go-Be Marketing Ltd /*Sales Company*/ @Israel/Tel-Aviv</b>
+
+JsonSchema, git, node/http, bash, NodeJs, ExpressJs, MongoDB, Apache, PHP, MySQL, jQuery, WordPress, Next.js, React, CSS3, PureCss
+
+- Communicating with outsources, supports, consulting affiliates
+
+- Support and fast solving common operational issues
+
+- Continuous deployment
+
+- Software integrations with delegated configurations
+
+- Legacy code solving
+
+- Built websites and landing pages
+
+#### 2015 - 2017 Software Engineer
+
+<b>Intetics Inc /*Outsource Software Development*/ @Ukraine/Kharkiv. Area9 @Denmark/Copenhagen</b>
+
+JS DOM, React, RxJs, <canvas>, TypeScript, Haxe, Apache, NodeJs, PHP, MySQL, Python
+
+- Web client for media viewing with mobile optimizations
+
+- Extended Compiler, Type system, Running platform and Build system of Proprietary programming language
+
+- Backend service for PDF resources conversion and storage
+
+- Implemented algorithm of specifications learning from examples for Programming by example system
+
+#### 2014 - 2015 Freelance Developer
+
+<b>Eikoncraft /*Software service company*/ @USA/Dallas</b>
+
+JS, Reactive
+
+- Created internal timelog system
+
+#### 2008 - 2014 Co-Founder, Branch Manager
+
+<b>New Educational Initiatives Llc ​/*eLearning company*/ @Russia/Moscow</b>
+
+C++, PHP, MySQL, JS
+
+- Managing
+
+- Video and audio processing
+
+- Researches
+
+- Software
+
 ### Education
+
+#### 2012 - 2014 Master of Computer Science
+
+<b>Institute of Cybernetics of National Academy of Science of Ukraine @Ukraine/Kyiv. Moscow Institute  of Physics and Technology @Russia/Moscow</b>
+
+
+
+- Software Engineering
+
+- System Engineering
+
+- Neural networks
+
+#### 2006 - 2012 Bachelor of Applied Mathematics
+
+<b>Moscow Institute  of Physics and Technology @Russia/Moscow</b>
+
+MySQL, C, C++, OpenMPI
+
+- Databases
+
+- Mathematical optimization
+
+- Programming language theory
+
+- Computational complexity
+
+- Data structures
+
+- Algorithms and calculus methods
+
+- Mathematical analysis
+
+- Parallel programming
+
+- Analytic geometry
+
+#### 1996 - 2006 Awardee of international and republic Math olympiads
+
+<b>Kharkiv Physics and Mathematics Lyceum #27 @Ukraine/Kharkiv</b>
