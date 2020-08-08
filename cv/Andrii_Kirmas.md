@@ -74,6 +74,8 @@ Russian: Mother tongue
 
 TypeScript, JsonSchema, Jest, Cypress, Puppeteer, JS DOM, React, CSS, SASS, ExpressJs, NodeJs, Redux, MySQL, MongoDB, Webpack, bash, CSS3, git, GitLab CI
 
+<i>Docker</i>
+
 - Implemented IDE-like website
 
 - ? Web-app front-end repo
@@ -89,6 +91,8 @@ TypeScript, JsonSchema, Jest, Cypress, Puppeteer, JS DOM, React, CSS, SASS, Expr
 <b>Go-Be Marketing Ltd /*Sales Company*/ @Israel/Tel-Aviv</b>
 
 JsonSchema, git, node/http, bash, NodeJs, ExpressJs, MongoDB, Apache, PHP, MySQL, jQuery, WordPress, Next.js, React, CSS3, PureCss
+
+<i>nginx</i>
 
 - Communicating with outsources, supports, consulting affiliates
 
@@ -107,6 +111,8 @@ JsonSchema, git, node/http, bash, NodeJs, ExpressJs, MongoDB, Apache, PHP, MySQL
 <b>Intetics Inc /*Outsource Software Development*/ @Ukraine/Kharkiv, Area9 @Denmark/Copenhagen</b>
 
 JS DOM, React, RxJs, &lt;canvas&gt;, TypeScript, Haxe, Apache, NodeJs, PHP, MySQL, Python
+
+<i>nwjs, pixi.js, jwt</i>
 
 - Web client for media viewing with mobile optimizations
 
@@ -130,6 +136,8 @@ JS, Reactive
 
 C++, PHP, MySQL, JS
 
+<i>OpenCV</i>
+
 - Managing
 
 - Video and audio processing
@@ -143,8 +151,6 @@ C++, PHP, MySQL, JS
 #### 2012 - 2014 Master of Computer Science
 
 <b>Institute of Cybernetics of National Academy of Science of Ukraine @Ukraine/Kyiv. Moscow Institute  of Physics and Technology @Russia/Moscow</b>
-
-
 
 - Software Engineering
 

@@ -196,7 +196,8 @@
         "Video and audio processing",
         {
           "title": "Researches",
-          "items": ["C++"]
+          "items": ["C++"],
+          "additionalItems": ["OpenCV"]
         },
         {
           "title": "Software",

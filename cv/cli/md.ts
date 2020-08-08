@@ -67,6 +67,7 @@ function md() {
 
           const {title, maximum, minimum, items, description} = record
           , itemed = new Set<string>()
+          , added = new Set<string>()
 
           contentBlock.push(
             hMd(4, `${minimum} - ${maximum} ${title}`),
@@ -77,9 +78,22 @@ function md() {
             items.forEach(item => {
               if (typeof item !== 'object')
                 return
-              item.items?.forEach(item => itemed.add(htmlEscape(item)))
+              item.items?.forEach(item => itemed.add(item))
+              //@ts-ignore
+              item.additionalItems?.forEach(item => added.add(item))
             })
-            contentBlock.push([...itemed].join(", "))
+            
+            itemed.size && contentBlock.push(
+              [...itemed]
+              .map(item => htmlEscape(item))
+              .join(", ")
+            )
+
+            added.size && contentBlock.push(`<i>${
+              [...added]
+              .map(item => htmlEscape(item))
+              .join(", ")
+            }</i>`)
   
             items.forEach(item => {
               const title = typeof item === "string" ? item : item.title
