@@ -9,7 +9,7 @@
       "description": "https://medium.com/shakuro/programmer-vs-developer-vs-engineer-91ef374e5033"
     },
     "salary": {
-      "title": "NIS per month",
+      "title": "NIS/month",
       "type": "number",
       "anyOf": [
         {"minimum": 100000, "description": "✍"},
@@ -34,9 +34,11 @@
       "type": "object"
     },
     "Objective": {
+      "title": "Objective",
       "const": "Passionate for systematic and iterative procedures. High educability and deep knowledge of computer science makes me efficient in engineering and architecture that provides a logical flow of knowledge and progress."
     },
     "Skills": {
+      "title": "Skills",
       "type": "object",
       "properties": {
         "Paradigms": {
@@ -102,6 +104,7 @@
           "title": "//TODO"
         },
         "Testing": {
+          "title": "Testing",
           "type": "array",
           "items": [
             {"const": "Jest"},
@@ -270,9 +273,16 @@
         }
       }
     },
-    "Experience": {"$ref": "#/definitions/Exps"},
-    "Education": {"$ref": "#/definitions/Exps"},
+    "Experience": {
+      "title": "Experience",
+      "$ref": "#/definitions/Exps"
+    },
+    "Education": {
+      "title": "Education",
+      "$ref": "#/definitions/Exps"
+    },
     "Human Languages": {
+      "title": "Human Languages",
       "allOf": [
         {"additionalProperties": {"$ref": "#/definitions/eLanguageLevel"}},
         {

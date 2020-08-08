@@ -1,0 +1,28 @@
+{
+  "name": "@kirmas/cv",
+  "version": "1.0.0",
+  "description": "Andrii Kirmas CV",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile/md": "npm run md --silent > ./Andrii_Kirmas.md",
+    "md": "ts-node cli/md.ts"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Andrii Kirmas",
+    "email": "kirmas@phystech.edu",
+    "url": "https://www.linkedin.com/in/kirmas/"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^26.0.9",
+    "jest": "^26.2.2",
+    "nodemon": "^2.0.4",
+    "ts-jest": "^26.1.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  },
+  "engines": {
+    "node": ">=12"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "$schema": "./Andrii_Kirmas.schema.json",
+  "$schema": "https://askirmas.github.io/cv/Andrii_Kirmas.schema.json",
   "title":"Andrii Kirmas",
   "description": "Senior Software Engineer",
   "links": {
@@ -11,6 +11,12 @@
   },
   "salary": 30000,
   "Objective":"Passionate for systematic and iterative procedures. High educability and deep knowledge of computer science makes me efficient in engineering and architecture that provides a logical flow of knowledge and progress.",
+  "Human Languages": {
+    "English": "Fluent",
+    "Hebrew": "Basic",
+    "Ukrainian": "Mother tongue",
+    "Russian": "Mother tongue"
+  },
   "Skills": {
     "Paradigms": {
       "XP": true,
@@ -244,11 +250,5 @@
       "title": "Awardee of international and republic Math olympiads",
       "description": "Kharkiv Physics and Mathematics Lyceum #27 @Ukraine/Kharkiv"
     }
-  },
-  "Human Languages": {
-    "English": "Fluent",
-    "Hebrew": "Basic",
-    "Ukrainian": "Mother tongue",
-    "Russian": "Mother tongue"
   }
 }
