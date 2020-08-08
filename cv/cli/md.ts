@@ -16,8 +16,8 @@ function md() {
   , {$schema, title, description, links, salary, ...content} = data
   , linksBlock: string[] = []
   , meta = [
-    `# ${title}`,
-    `## ${textMd(description, properties.description)}`
+    hMd(1, title),
+    hMd(2, textMd(description, properties.description)),
   ]
   , contentBlock: string[] = []
 
@@ -52,7 +52,7 @@ function md() {
     const value = content[contentTitle]
     // , description = properties[contentTitle]
 
-    contentBlock.push(`### ${contentTitle}`)
+    contentBlock.push(hMd(3, contentTitle))
     
     if (typeof value === "string") {
       contentBlock.push(value)
@@ -93,7 +93,6 @@ function linkHtml({title, description = "", href}: tLink) {
   return `<a href="${href}" title="${description}">${title}</a>`
 }
 
-
 type tText = {
   title: string
   description: string
@@ -109,4 +108,8 @@ function textMd(value: string, text?: tText) {
     description: title,
     href: description
   }))
+}
+
+function hMd(index: number, content: string) {
+  return `${"#".repeat(index)} ${content}`
 }
