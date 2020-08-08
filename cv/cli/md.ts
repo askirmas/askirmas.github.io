@@ -17,7 +17,7 @@ function md() {
   , linksBlock: string[] = []
   , meta = [
     `# ${title}`,
-    `## ${description}`
+    `## ${textMd(description, properties.description)}`
   ]
   , contentBlock: string[] = []
 
@@ -69,6 +69,7 @@ function md() {
     }
   }
 
+  
   return [
     meta,
     linksBlock.join(" "),
@@ -90,4 +91,22 @@ function linkMd({title, description = "", href}: tLink) {
 
 function linkHtml({title, description = "", href}: tLink) {
   return `<a href="${href}" title="${description}">${title}</a>`
+}
+
+
+type tText = {
+  title: string
+  description: string
+  $comment: string
+}
+
+function textMd(value: string, text?: tText) {
+  if (!text)
+    return value
+  const {title, description, $comment} = text
+  return value.replace($comment, linkMd({
+    title: $comment,
+    description: title,
+    href: description
+  }))
 }

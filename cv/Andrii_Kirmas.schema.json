@@ -6,7 +6,8 @@
     "description": {
       "const": "Senior Software Engineer",
       "title": "The engineer has a solid educational grounding and the ability to apply engineering concepts to create digital solutions",
-      "description": "https://medium.com/shakuro/programmer-vs-developer-vs-engineer-91ef374e5033"
+      "description": "https://medium.com/shakuro/programmer-vs-developer-vs-engineer-91ef374e5033",
+      "$comment": "Engineer"
     },
     "salary": {
       "title": "NIS/month",
