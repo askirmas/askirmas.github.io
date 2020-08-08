@@ -21,6 +21,9 @@
       ]
     },
     "links": {
+      "items": {
+        "$ref": "http://json-schema.org/draft-07/links#"
+      },
       "properties": {
         "email": {"const": "kirmas@phystech.edu", "title": "<img src='https://fonts.gstatic.com/s/i/materialicons/email/v6/24px.svg'/>", "description": "mailto:"},
         "phone": {"const": "+972-54-351-0754", "title": "<img src='https://fonts.gstatic.com/s/i/materialicons/smartphone/v7/24px.svg'/>", "description": "tel:"},
@@ -99,7 +102,7 @@
           "title": "//TODO"
         },
         "Testing": {
-          "type": "object",
+          "type": "array",
           "items": [
             {"const": "Jest"},
             {
@@ -252,6 +255,7 @@
         "Etc": {
           "type": "array",
           "items": [
+            {"const": "Slack"},
             {"const": "GitHub"},
             {"const": "GitLab"},
             {"const": "SourceForge"},
@@ -266,11 +270,11 @@
         }
       }
     },
-    "Experience": {},
-    "Education": {},
+    "Experience": {"$ref": "#/definitions/Exps"},
+    "Education": {"$ref": "#/definitions/Exps"},
     "Human Languages": {
       "allOf": [
-        {"additionalProperties": {"enum": ["Basic", "Fluent", "Mother tongue"]}},
+        {"additionalProperties": {"$ref": "#/definitions/eLanguageLevel"}},
         {
           "minProperties": 4,
           "properties": {
@@ -279,7 +283,7 @@
             "Ukrainian": {"const": "Mother tongue"},
             "Russian": {"const": "Mother tongue"}
           }
-        }  
+        }
       ]
     },
     "$schema": {
@@ -290,5 +294,123 @@
   "description": "Senior Software Engineer",
   "required": [
     "title", "description", "salary", "links", "Objective", "Skills", "Experience", "Education", "Human Languages"
-  ]
+  ],
+  "definitions": {
+    "Exps": {
+      "type": ["array", "object"],
+      "propertyNames": {"pattern": "^20[0-2][\\d]$"},
+      "additionalProperties": {"oneOf": [
+        {"const": false},
+        {"$ref": "#/definitions/ExpRecord"}
+      ]},
+      "items": {"oneOf": [
+        {"const": false},
+        {"$ref": "#/definitions/ExpRecord"}
+      ]}
+    },
+    "ExpRecord": {
+      "type": "object",
+      "properties": {
+        "minimum": {"type": "number"},
+        "maximum": {"type": "number"},
+        "title": {"type": "string"},
+        "description": {"type": "string"},
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": ["string", "object"],
+            "required": ["title", "items"],
+            "properties": {
+              "title": {"type": "string"},
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "items": {"$ref": "#/definitions/Technologies"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "Technologies": {
+      "oneOf": [
+        {"$ref": "#/definitions/Storage"},
+        {"$ref": "#/definitions/PL"},
+        {"$ref": "#/definitions/Interfaces-Contracts"},
+        {"$ref": "#/definitions/Server"},
+        {"$ref": "#/definitions/git"},
+        {"$ref": "#/definitions/Testing"}
+      ]
+    },
+    "Storage": {
+      "oneOf": [
+        {"$ref": "#/definitions/MySQL"},
+        {"$ref": "#/definitions/MongoDB"},
+        {"$ref": "#/definitions/IndexedDB"}
+      ]
+    },
+    "MySQL": {
+      "const": "MySQL",
+      "title": "ACID, Transactions, Routine, Window functions, Join, Normalization, Index"
+    },
+    "MongoDB": {"const": "MongoDB"},
+    "IndexedDB": {"const": "IndexedDB"},
+    "PL": {"oneOf": [
+      {"$ref": "#/definitions/C"},
+      {"$ref": "#/definitions/Cpp"},
+      {"$ref": "#/definitions/bash"},
+      {"$ref": "#/definitions/JS"},
+      {"$ref": "#/definitions/PHP"},
+      {"$ref": "#/definitions/CSS"},
+      {"enum": ["Python", "Haxe"]}
+    ]},
+    "C": {"const": "C"},
+    "Cpp": {
+      "enum": ["C++", "OpenCV", "OpenMPI"]
+    },
+    "bash": {
+      "const": "bash",
+      "title": "jq, grab, sed, preg, trap, function, array, find, curl, kill"
+    },
+    "git": {"const": "git"},
+    "JS": {"oneOf": [
+        {"enum": ["JS", "nwjs", "pixi.js", "<canvas>", "jQuery"]},
+        {"$ref": "#/definitions/JS-DOM"},
+        {"$ref": "#/definitions/React"},
+        {"$ref": "#/definitions/Redux"},
+        {"$ref": "#/definitions/RxJs"},
+        {"$ref": "#/definitions/NodeJs"},
+        {"$ref": "#/definitions/ExpressJs"}
+    ]},
+    "JS-DOM": {"const": "JS DOM"},
+    "React": {"enum": ["React", "Next.js"]},
+    "Redux": {"const": "Redux"},
+    "RxJs": {"const": "RxJs"},
+    "NodeJs": {"const": "NodeJs"},
+    "ExpressJs": {"const": "ExpressJs"},
+    "PHP": {
+      "enum": ["PHP", "WordPress"]
+    },
+    "CSS": {
+      "enum": ["CSS", "CSS3", "PureCss", "SASS", "MaterialUI"]
+    },
+    "Interfaces-Contracts": {
+      "enum": ["TypeScript", "JsonSchema"]
+    },
+    "Server": {
+      "enum": ["Apache", "nginx", "node/http"]
+    },
+    "Testing": {"oneOf": [
+      {"$ref": "#/definitions/Jest"},
+      {"$ref": "#/definitions/Cypress"},
+      {"$ref": "#/definitions/Puppeteer"}
+    ]},
+    "Jest": {"const": "Jest"},
+    "Cypress": {"const": "Cypress"},
+    "Puppeteer": {"const": "Puppeteer"},
+    "eLanguageLevel": {
+      "enum": ["Basic", "Fluent", "Mother tongue"]
+    }
+  }
 }

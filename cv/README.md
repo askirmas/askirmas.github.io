@@ -12,9 +12,9 @@ Passionate for systematic and iterative procedures. High educability and deep kn
 
 ### Skills
 
-#### Paradigms [*](https://medium.com/javascript-scene/the-forgotten-history-of-oop-88d71b9b2d9f "Programming using these kinds of objects does not make your code 'object-oriented' any more than programming with functions makes your code 'functional'")
+#### [Paradigms](https://medium.com/javascript-scene/the-forgotten-history-of-oop-88d71b9b2d9f "Programming using these kinds of objects does not make your code 'object-oriented' any more than programming with functions makes your code 'functional'")
 
- [XP](http://wiki.c2.com/?ExtremeProgramming "'Extreme' means these practices get 'turned up' to a much higher 'volume' than on traditional projects"), [TDD](https://medium.com/javascript-scene/tdd-changed-my-life-5af0ce099f80 "It's 7:15 am and customer support is swamped"), [Coverage 100%](https://medium.com/javascript-scene/testing-software-what-is-tdd-459b2145405c "Use the right kind of test for the job at hand"), [Git Trunk](https://cloud.google.com/solutions/devops/devops-tech-trunk-based-development "Trunk-based development is a required practice for continuous integration"), CI/CD, [ERM](# "ER model can be used in the specification of domain-specific ontologies"), BEM+AtomicCss, [PBP](https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9 "Unfortunately, most JavaScript developers don't understand JavaScript's object system, or how to put it to best use"), [Functional](https://en.wikipedia.org/wiki/Turing_completeness#Non-Turing-complete_languages "Untyped lambda calculus is Turing-complete, simply typed lambda calculus is not."), [Reactive](https://www.reactivemanifesto.org/ "We want systems that are Responsive, Resilient, Elastic and Message Driven"), [OOP](https://medium.com/better-programming/object-oriented-programming-the-trillion-dollar-disaster-92a4b666c7c7 "Object oriented programs are offered as alternatives to correct ones. Edsger W. Dijkstra")
+ [XP](http://wiki.c2.com/?ExtremeProgramming "'Extreme' means these practices get 'turned up' to a much higher 'volume' than on traditional projects"), [TDD](https://medium.com/javascript-scene/tdd-changed-my-life-5af0ce099f80 "It's 7:15 am and customer support is swamped"), [Coverage 100%](https://medium.com/javascript-scene/testing-software-what-is-tdd-459b2145405c "Use the right kind of test for the job at hand"), [Git Trunk](https://cloud.google.com/solutions/devops/devops-tech-trunk-based-development "Trunk-based development is a required practice for continuous integration"), CI/CD, <u title="ER model can be used in the specification of domain-specific ontologies">ERM</u>, BEM+AtomicCss, [PBP](https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9 "Unfortunately, most JavaScript developers don't understand JavaScript's object system, or how to put it to best use"), [Functional](https://en.wikipedia.org/wiki/Turing_completeness#Non-Turing-complete_languages "Untyped lambda calculus is Turing-complete, simply typed lambda calculus is not."), [Reactive](https://www.reactivemanifesto.org/ "We want systems that are Responsive, Resilient, Elastic and Message Driven"), [OOP](https://medium.com/better-programming/object-oriented-programming-the-trillion-dollar-disaster-92a4b666c7c7 "Object oriented programs are offered as alternatives to correct ones. Edsger W. Dijkstra")
 
 #### Test
 
@@ -30,7 +30,7 @@ Node.js, Express, HTTP, WebSocket, RestAPI, CORS, Content Security policy, jwt, 
 
 #### Front
 
-[Pure CSS technique](https://developers.google.com/web/fundamentals/performance/rendering#the_pixel_pipeline "Performance is the art of avoiding work, and making any work you do as efficient as possible"), [Strong HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5 "New elements, attributes, and behaviors, and a larger set of technologies that allows the building of more diverse and powerful Web sites and applications"), [CSS3](# "grid, flexbox, var"), SCSS, MaterialUI, [React](github.com/askirmas/render-on-demand), WebComponent, [ReactiveX (RxJs)](https://codeguida.com/post/1336), Chrome, Firefox
+[Pure CSS technique](https://developers.google.com/web/fundamentals/performance/rendering#the_pixel_pipeline "Performance is the art of avoiding work, and making any work you do as efficient as possible"), [Strong HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5 "New elements, attributes, and behaviors, and a larger set of technologies that allows the building of more diverse and powerful Web sites and applications"), <u title="grid, flexbox, var">CSS3</u>, SCSS, MaterialUI, [React](github.com/askirmas/render-on-demand), WebComponent, [ReactiveX (RxJs)](https://codeguida.com/post/1336), Chrome, Firefox
 
 #### Storage
 
@@ -44,7 +44,7 @@ MySQL (ACID, Transactions, Routine, Window functions, Join, Normalization, Index
 
 - Semantic Versioning, Markdown (mermaidjs), graphviz
 - Babel, Webpack4, JsonSchema, FetchAPI, Ajax, eslint, stylint, pdf.js, Browser extensions, benchmark.js and own package
-- bash[^bash],  git SVC, ssh
+- <u title="jq, grab, sed, preg, trap, function, array, find, curl, kill">bash[^bash]</u>,  git SVC, ssh
 - OMeta, Open MPI, OpenCV
 
 #### Passive

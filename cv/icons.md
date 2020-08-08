@@ -1,9 +1,6 @@
-- social
-
+-  	social
   - <img src='https://upload.wikimedia.org/wikipedia/commons/9/95/Font_Awesome_5_brands_github.svg' style='height:24px;'/> 
-
   - <img src='https://upload.wikimedia.org/wikipedia/commons/8/80/LinkedIn_Logo_2013.svg' style='height:24px;width:30px;object-fit:cover;object-position: 100% 0;'/>
-
 - formats
   - <img src='https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg' style='height:24px;'/>
   - <img src='https://upload.wikimedia.org/wikipedia/commons/7/7d/Adobe_PDF.svg' style='height:24px;'/>
