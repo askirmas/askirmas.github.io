@@ -1,6 +1,6 @@
 import schema from "../Andrii_Kirmas.schema.json"
 import data from "../Andrii_Kirmas.json"
-import { isFlatObject, unique, Values } from "./utils"
+import { isFlatObject, unique, Values, htmlEscape } from "./utils"
 
 const {values: $values} = Object
 //, {isArray: $isArray} = Array
@@ -77,7 +77,7 @@ function md() {
             items.forEach(item => {
               if (typeof item !== 'object')
                 return
-              item.items?.forEach(item => itemed.add(item))
+              item.items?.forEach(item => itemed.add(htmlEscape(item)))
             })
             contentBlock.push([...itemed].join(", "))
   

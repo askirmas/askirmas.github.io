@@ -380,7 +380,7 @@
     },
     "git": {"const": "git"},
     "JS": {"oneOf": [
-        {"enum": ["JS", "nwjs", "pixi.js", "canvas", "jQuery"]},
+        {"enum": ["JS", "nwjs", "pixi.js", "<canvas>", "jQuery"]},
         {"$ref": "#/definitions/JS-DOM"},
         {"$ref": "#/definitions/React"},
         {"$ref": "#/definitions/Redux"},

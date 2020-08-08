@@ -104,9 +104,9 @@ JsonSchema, git, node/http, bash, NodeJs, ExpressJs, MongoDB, Apache, PHP, MySQL
 
 #### 2015 - 2017 Software Engineer
 
-<b>Intetics Inc /*Outsource Software Development*/ @Ukraine/Kharkiv. Area9 @Denmark/Copenhagen</b>
+<b>Intetics Inc /*Outsource Software Development*/ @Ukraine/Kharkiv, Area9 @Denmark/Copenhagen</b>
 
-JS DOM, React, RxJs, <canvas>, TypeScript, Haxe, Apache, NodeJs, PHP, MySQL, Python
+JS DOM, React, RxJs, &lt;canvas&gt;, TypeScript, Haxe, Apache, NodeJs, PHP, MySQL, Python
 
 - Web client for media viewing with mobile optimizations
 

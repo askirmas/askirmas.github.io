@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile/md": "npm run md --silent > ./Andrii_Kirmas.md",
-    "md": "ts-node cli/md.ts"
+    "md": "ts-node cli/md.ts",
+    "md@dev": "nodemon"
   },
   "keywords": [],
   "author": {
