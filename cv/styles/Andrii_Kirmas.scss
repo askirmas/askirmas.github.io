@@ -1,3 +1,10 @@
+@mixin goal-content($content) {
+  display: list-item;
+  &::before {
+    content: $content;
+  }
+}
+
 .Main__ {
   &title::after {
     content: "Andrii Kirmas";
@@ -63,11 +70,11 @@
         &::after {content: "Cloudwize.io /*Cloud Management*/ @Israel/Netanya";}
       }
       &__Goal--#{$year}- {
-        &0::before {content: "Implemented IDE-like website"}
-        &1::before {content: "Customers portal (full-stack)"}
-        &2::before {content: "Created styling system for the company"}
-        &3::before {content: "Built company’s internal infrastructure"}
-        &4::before {content: "Updated repositories structure for better usability"}
+        &0 { @include goal-content("Implemented IDE-like website"); }
+        &1 { @include goal-content("Customers portal (full-stack)"); }
+        &2 { @include goal-content("Created styling system for the company"); }
+        &3 { @include goal-content("Built company’s internal infrastructure"); }
+        &4 { @include goal-content("Updated repositories structure for better usability"); }
       }
     }
   }
@@ -80,12 +87,12 @@
         &::after{content: "Go-Be Marketing Ltd /*Sales Company*/ @Israel/Tel-Aviv";}
       }
       &__Goal--#{$year}- {
-        &0::before {content: "Communicating with outsources, supports, consulting affiliates";}
-        &1::before {content: "Support and fast solving common operational issues";}
-        &2::before {content: "Continuous deployment";}
-        &3::before {content: "Software integrations with delegated configurations";}
-        &4::before {content: "Legacy code solving";}
-        &5::before {content: "Built websites and landing pages";}
+        &0 { @include goal-content("Communicating with outsources, supports, consulting affiliates"); }
+        &1 { @include goal-content("Support and fast solving common operational issues"); }
+        &2 { @include goal-content("Continuous deployment"); }
+        &3 { @include goal-content("Software integrations with delegated configurations"); }
+        &4 { @include goal-content("Legacy code solving"); }
+        &5 { @include goal-content("Built websites and landing pages"); }
       }
     }
   }
@@ -98,10 +105,10 @@
         &::after{content: "Intetics Inc @Ukraine/Kharkiv, Area9 @Denmark/Copenhagen";}
       }
       &__Goal--#{$year}- {
-        &0::before {content: "Web client for media viewing with mobile optimizations"}
-        &1::before {content: "Extended Compiler, Type system, Running platform and Build system of Proprietary programming language"}
-        &2::before {content: "Backend service for PDF resources conversion and storage"}
-        &3::before {content: "Implemented algorithm of specifications learning from examples for Programming by example system"}
+        &0 { @include goal-content("Web client for media viewing with mobile optimizations"); }
+        &1 { @include goal-content("Extended Compiler, Type system, Running platform and Build system of Proprietary programming language"); }
+        &2 { @include goal-content("Backend service for PDF resources conversion and storage"); }
+        &3 { @include goal-content("Implemented algorithm of specifications learning from examples for Programming by example system"); }
       }
     }
   }
@@ -114,7 +121,7 @@
         &::after{content: "Eikoncraft /*Software service company*/ @USA/Dallas";}
       }
       &__Goal--#{$year}- {
-        &0::before {content: "Created internal timelog system"}
+        &0 { @include goal-content("Created internal timelog system"); }
       }
     }
   }
@@ -127,10 +134,10 @@
         &::after{content: "New Educational Initiatives Llc ​/*eLearning company*/ @Russia/Moscow";}
       }
       &__Goal--#{$year}- {
-        &0::before {content: "Managing"}
-        &1::before {content: "Video and audio processing"}
-        &2::before {content: "Researches"}
-        &3::before {content: "Software"}
+        &0 { @include goal-content("Managing"); }
+        &1 { @include goal-content("Video and audio processing"); }
+        &2 { @include goal-content("Researches"); }
+        &3 { @include goal-content("Software"); }
       }
     }
   }
@@ -146,9 +153,9 @@
         &::after{content: "Institute of Cybernetics @Ukraine/Kyiv. Institute of Physics and Technology @Russia/Moscow";}
       }
       &__Goal--#{$year}- {
-        &0::before {content: "Software Engineering"}
-        &1::before {content: "System Engineering"}
-        &2::before {content: "Neural networks"}
+        &0 { @include goal-content("Software Engineering"); }
+        &1 { @include goal-content("System Engineering"); }
+        &2 { @include goal-content("Neural networks"); }
       }
     }
   }
@@ -161,15 +168,15 @@
         &::after{content: "Institute of Physics and Technology @Russia/Moscow";}
       }
       &__Goal--#{$year}- {
-        &0::before {content: "Databases"}
-        &1::before {content: "Mathematical optimization"}
-        &2::before {content: "Programming language theory"}
-        &3::before {content: "Computational complexity"}
-        &4::before {content: "Data structures"}
-        &5::before {content: "Algorithms and calculus methods"}
-        &6::before {content: "Mathematical analysis"}
-        &7::before {content: "Parallel programming"}
-        &8::before {content: "Analytic geometry"}
+        &0 { @include goal-content("Databases"); }
+        &1 { @include goal-content("Mathematical optimization"); }
+        &2 { @include goal-content("Programming language theory"); }
+        &3 { @include goal-content("Computational complexity"); }
+        &4 { @include goal-content("Data structures"); }
+        &5 { @include goal-content("Algorithms and calculus methods"); }
+        &6 { @include goal-content("Mathematical analysis"); }
+        &7 { @include goal-content("Parallel programming"); }
+        &8 { @include goal-content("Analytic geometry"); }
       }
     }
   }

@@ -129,14 +129,15 @@ a {
 
 .Human_Languages__Property,
 .Goal {
-  display: list-item;
   list-style-position: inside;
   min-width: 100%;
 }
 .Human_Languages__Property {
+  display: list-item;
   list-style-type: circle;  
 }
 .Goal {
+  display: none;
   list-style-type: disc;
 }
 
