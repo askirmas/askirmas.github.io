@@ -28,7 +28,7 @@
 .Education::before {content: "Education";}
 
 .Human_Languages {
-  &::before {content: "Human Languages";}
+  &::before {content: "Languages";}
   &--English::before {content: "English: ";}
   &--Hebrew::before {content: "Hebrew: ";}
   &--Ukrainian::before {content: "Ukrainian: ";}

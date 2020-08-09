@@ -66,13 +66,6 @@ a {
     &title {
       flex: 1;
       min-width: min-content;
-      @include typography.typography("headline2");
-    }
-    &description {
-      @include typography.typography("headline4");
-    }
-    &Property {
-      @include typography.typography("headline5");
     }
   }
 }
@@ -82,12 +75,6 @@ a {
 .Experience { grid-area: Experience;}
 .Education { grid-area: Education;}
 
-.ExpRecords__Property {
-  @include typography.typography("headline6");
-  &::after {
-    @include typography.typography("subtitle1");
-  }
-}
 
 .links {
   text-decoration: inherit;
@@ -128,18 +115,13 @@ a {
     order: -1;
     min-width: 100% ;
     flex-grow: 1;
-    @include typography.typography("body1");
   }
 }
 
-.Human_Languages__Property,
-.Term,
-.Goal {
-  @include typography.typography("body1");
+.ExpRecords__Property {
+  margin-top: 1rem;
 }
-
 .Term {
-  @include typography.typography("subtitle2");
   display: inline-block;
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -156,4 +138,45 @@ a {
 }
 .Goal {
   list-style-type: disc;
+}
+
+/** Typography */
+
+.Main__ { 
+  &title {
+    @include typography.typography("headline2");
+  }
+  &description {
+    @include typography.typography("headline4");
+  }
+  &Property {
+    &::before {
+      @include typography.typography("headline5");
+    }
+    &::after {
+      @include typography.typography("body1");
+    }  
+  }
+}
+
+.ExpRecords__Property {
+  &::before { 
+    @include typography.typography("headline6");
+  }
+  &::after {
+    @include typography.typography("subtitle1");
+    & {
+      // font-weight: bold;  
+    }
+  }
+}
+
+
+.Human_Languages__Property,
+.Term,
+.Goal {
+  @include typography.typography("body1");
+}
+.Term {
+  @include typography.typography("subtitle2");
 }
