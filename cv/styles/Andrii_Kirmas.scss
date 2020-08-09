@@ -1,0 +1,187 @@
+.Main-- {
+  &title::after {
+    content: "Andrii Kirmas";
+  }
+  &description::before {
+    content: "Senior Software ";
+  }
+}
+
+.links-- {
+  &residence {
+    pointer-events: none;
+    color: inherit;
+  }
+  &residence::before {
+    padding-left: 0;
+    content: "🇮🇱";
+  }
+  &residence::after {content: "Israel/Netanya";}
+  &github::after {content: "github.com/askirmas";}
+  &linkedin::after {content: "linkedin.com/in/kirmas";}
+}
+
+.Objectives::after {content: "Passionate for systematic and iterative procedures. High educability and deep knowledge of computer science makes me efficient in engineering and architecture that provides a logical flow of knowledge and progress.";}
+
+.Human_Languages-- {
+  &English::after {content: "Fluent";}
+  &Hebrew::after {content: "Basic";}
+  &Ukrainian::after {content: "Mother tongue";}
+  &Russian::after {content: "Mother tongue";}
+}
+
+.Term-- {
+  &Engineer::after {
+    content: "Engineer";
+  }
+  &Engineer::before {
+    /* content: "The engineer has a solid educational grounding and the ability to apply engineering concepts to create digital solutions"; */
+  }
+
+  &Docker,
+  &nginx,
+  &C,
+  &Cpp,
+  &OpenMPI,
+  &OpenCV,
+  &nwjs,
+  &pixi_js,
+  &jwt,
+  & {
+    font-style: italic;
+  }
+}
+
+.Experience {
+  $root: #{&};
+
+  @at-root y2020 {
+    $year: #{&};
+    @at-root #{$root} {
+      &--#{$year} {
+        &::before {content: "2019 - 2020 Senior Fullstack Engineer";}
+        &::after {content: "Cloudwize.io /*Cloud Management*/ @Israel/Netanya";}
+      }
+      &__Goal--#{$year}- {
+        &0::before {content: "Implemented IDE-like website"}
+        &1::before {content: "Customers portal (full-stack)"}
+        &2::before {content: "Created styling system for the company"}
+        &3::before {content: "Built company’s internal infrastructure"}
+        &4::before {content: "Updated repositories structure for better usability"}
+      }
+    }
+  }
+
+  @at-root y2019 {
+    $year: #{&};
+    @at-root #{$root} {
+      &--#{$year} {
+        &::before{content: "2018 -2019 Lead Software Engineer";}
+        &::after{content: "Go-Be Marketing Ltd /*Sales Company*/ @Israel/Tel-Aviv";}
+      }
+      &__Goal--#{$year}- {
+        &0::before {content: "Communicating with outsources, supports, consulting affiliates";}
+        &1::before {content: "Support and fast solving common operational issues";}
+        &2::before {content: "Continuous deployment";}
+        &3::before {content: "Software integrations with delegated configurations";}
+        &4::before {content: "Legacy code solving";}
+        &5::before {content: "Built websites and landing pages";}
+      }
+    }
+  }
+
+  @at-root y2017 {
+    $year: #{&};
+    @at-root #{$root} {
+      &--#{$year} {
+        &::before{content: "2015 -2017 Software Engineer";}
+        &::after{content: "Intetics Inc /*Outsource Software Development*/ @Ukraine/Kharkiv, Area9 @Denmark/Copenhagen";}
+      }
+      &__Goal--#{$year}- {
+        &0::before {content: "Web client for media viewing with mobile optimizations"}
+        &1::before {content: "Extended Compiler, Type system, Running platform and Build system of Proprietary programming language"}
+        &2::before {content: "Backend service for PDF resources conversion and storage"}
+        &3::before {content: "Implemented algorithm of specifications learning from examples for Programming by example system"}
+      }
+    }
+  }
+
+  @at-root y2015 {
+    $year: #{&};
+    @at-root #{$root} {
+      &--#{$year} {
+        &::before{content: "2014 -2015 Freelance Developer";}
+        &::after{content: "Eikoncraft /*Software service company*/ @USA/Dallas";}
+      }
+      &__Goal--#{$year}- {
+        &0::before {content: "Created internal timelog system"}
+      }
+    }
+  }
+
+  @at-root y2014 {
+    $year: #{&};
+    @at-root #{$root} {
+      &--#{$year} {
+        &::before{content: "2008 -2014 Co-Founder, Branch Manager";}
+        &::after{content: "New Educational Initiatives Llc ​/*eLearning company*/ @Russia/Moscow";}
+      }
+      &__Goal--#{$year}- {
+        &0::before {content: "Managing"}
+        &1::before {content: "Video and audio processing"}
+        &2::before {content: "Researches"}
+        &3::before {content: "Software"}
+      }
+    }
+  }
+}
+
+.Education {
+  $root: #{&};
+  @at-root y2014 {
+    $year: #{&};
+    @at-root #{$root} {
+      &--#{$year} {
+        &::before{content: "2012 -2014 Master of Computer Science";}
+        &::after{content: "Institute of Cybernetics of National Academy of Science of Ukraine @Ukraine/Kyiv. Moscow Institute  of Physics and Technology @Russia/Moscow";}
+      }
+      &__Goal--#{$year}- {
+        &0::before {content: "Software Engineering"}
+        &1::before {content: "System Engineering"}
+        &2::before {content: "Neural networks"}
+      }
+    }
+  }
+
+  @at-root y2012 {
+    $year: #{&};
+    @at-root #{$root} {
+      &--#{$year} {
+        &::before{content: "2006 -2012 Bachelor of Applied Mathematics";}
+        &::after{content: "Moscow Institute  of Physics and Technology @Russia/Moscow";}
+      }
+      &__Goal--#{$year}- {
+        &0::before {content: "Databases"}
+        &1::before {content: "Mathematical optimization"}
+        &2::before {content: "Programming language theory"}
+        &3::before {content: "Computational complexity"}
+        &4::before {content: "Data structures"}
+        &5::before {content: "Algorithms and calculus methods"}
+        &6::before {content: "Mathematical analysis"}
+        &7::before {content: "Parallel programming"}
+        &8::before {content: "Analytic geometry"}
+      }
+    }
+  }
+
+  @at-root y2006 {
+    $year: #{&};
+    @at-root #{$root} {
+      &--#{$year} {
+        &::before{content: "1996 -2006 Awardee of international and republic Math olympiads";}
+        &::after{content: "Kharkiv Physics and Mathematics Lyceum #27 @Ukraine/Kharkiv";}
+      }
+    }
+  }
+}
+

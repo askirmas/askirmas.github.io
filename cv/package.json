@@ -6,7 +6,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile/md": "npm run md --silent > ./Andrii_Kirmas.md",
     "md": "ts-node cli/md.ts",
-    "md@dev": "nodemon"
+    "md@dev": "nodemon",
+    "sass@dev": "npm run sass -- --watch",
+    "compile/sass": "npm run sass",
+    "sass": "sass --no-indented --no-source-map --style=compressed styles:."
+    
   },
   "keywords": [],
   "author": {
@@ -19,6 +23,7 @@
     "@types/jest": "^26.0.9",
     "jest": "^26.2.2",
     "nodemon": "^2.0.4",
+    "sass": "^1.26.10",
     "ts-jest": "^26.1.4",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7"

@@ -1,0 +1,74 @@
+@import url(https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css);
+
+%font-reset {
+  font-size: initial;
+  font-weight: initial;
+  line-height: initial;
+  letter-spacing: initial;
+}
+
+body {
+  padding: 1rem;
+}
+a {
+  display: inline-block;
+}
+
+.links {
+  text-decoration: inherit;
+  &::before {
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-top: calc((24px - 1rem) / 2);
+    padding-bottom: calc((24px - 1rem) / 2);
+    padding-left: 24px;
+    margin-right: 0.25rem;
+  }
+}
+
+
+.Main__Property,
+.ExpRecords__Property {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  &::before {
+    grid-row: 1;
+    order: -2;
+    flex: 1;
+    min-width: 100%;
+  }
+  &::after {
+    display: block;
+    grid-row: 2;
+    order: -1;
+    min-width: 100% ;
+    flex-grow: 1;
+    @extend %font-reset;
+  }
+}
+
+.Human_Languages__Property,
+.Term,
+.Goal {
+  @extend %font-reset;
+}
+
+.Human_Languages__Property {
+  display: block;
+  min-width: 100%;
+}
+
+
+.Term {
+  display: inline-block;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.Goal {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: disc;
+  min-width: 100%;
+}

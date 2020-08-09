@@ -1,0 +1,98 @@
+.links-- {
+  &email::before {
+    content: "";
+    background-image: url(https://fonts.gstatic.com/s/i/materialicons/email/v6/24px.svg);
+  }
+  &phone::before {
+    content: "";
+    background-image: url(https://fonts.gstatic.com/s/i/materialicons/smartphone/v7/24px.svg);
+  }
+  &github::before {
+    content: "";
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/95/Font_Awesome_5_brands_github.svg);
+  }
+  &linkedin::before {
+    content: "";
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/80/LinkedIn_Logo_2013.svg);
+    background-position-x: right;
+    background-size: auto 24px;
+    padding-left: 30px;
+    margin-right: 0;
+  }
+}
+
+.Objectives::before {content: "Objectives";}
+.Experience::before {content: "Experience";}
+.Education::before {content: "Education";}
+
+.Human_Languages {
+  &::before {content: "Human Languages";}
+  &--English::before {content: "English: ";}
+  &--Hebrew::before {content: "Hebrew: ";}
+  &--Ukrainian::before {content: "Ukrainian: ";}
+  &--Russian::before {content: "Russian: ";}
+}
+.Term-- {
+  &TypeScript::before {content: "TypeScript";}
+  &JsonSchema::before {content: "JsonSchema";}
+  &Jest::before {content: "Jest";}
+  &Cypress::before {content: "Cypress";}
+  &Puppeteer::before {content: "Puppeteer";}
+  &JS_DOM::before {content: "JS DOM";}
+  &React::before {content: "React";}
+  &CSS::before {content: "CSS";}
+  &SASS::before {content: "SASS";}
+  &ExpressJs::before {content: "ExpressJs";}
+  &NodeJs::before {content: "NodeJs";}
+  &Redux::before {content: "Redux";}
+  &MySQL::before {content: "MySQL";}
+  &MongoDB::before {content: "MongoDB";}
+  &Webpack::before {content: "Webpack";}
+  &bash::before {content: "bash";}
+  &CSS3::before {content: "CSS3";}
+  &git::before {content: "git";}
+  &GitLab_CI::before {content: "GitLab CI";}
+  &Docker::before {content: "Docker";}
+  &JsonSchema::before {content: "JsonSchema"}
+  &git::before {content: "git"}
+  &node-http::before {content: "node/http"}
+  &bash::before {content: "bash"}
+  &NodeJs::before {content: "NodeJs"}
+  &ExpressJs::before {content: "ExpressJs"}
+  &MongoDB::before {content: "MongoDB"}
+  &Apache::before {content: "Apache"}
+  &PHP::before {content: "PHP"}
+  &MySQL::before {content: "MySQL"}
+  &jQuery::before {content: "jQuery"}
+  &WordPress::before {content: "WordPress"}
+  &Next-js::before {content: "Next.js"}
+  &React::before {content: "React"}
+  &CSS3::before {content: "CSS3"}
+  &PureCss::before {content: "PureCss"}
+  &nginx::before {content: "nginx"}
+  &JS_DOM {content: "JS DOM";}
+  &React {content: "React";}
+  &RxJs {content: "RxJs";}
+  &canvas {content: "canvas";}
+  &TypeScript {content: "TypeScript";}
+  &Haxe {content: "Haxe";}
+  &Apache {content: "Apache";}
+  &NodeJs {content: "NodeJs";}
+  &PHP {content: "PHP";}
+  &MySQL {content: "MySQL";}
+  &Python {content: "Python";}
+  &nwjs {content: "nwjs";}
+  &pixi_js {content: "pixi.js";}
+  &jwt {content: "jwt";}
+  &JS::before {content: "JS";}
+  &Reactive::before {content: "Reactive";}
+  &Cpp::before {content: "C++"}
+  &PHP::before {content: "PHP"}
+  &MySQL::before {content: "MySQL"}
+  &JS::before {content: "JS"}
+  &OpenCV::before {content: "OpenCV"}
+  &MySQL::before {content: "MySQL";}
+  &C::before {content: "C";}
+  &Cpp::before {content: "C++";}
+  &OpenMPI::before {content: "OpenMPI";}
+}
