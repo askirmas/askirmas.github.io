@@ -33,13 +33,6 @@
   &Russian { @include content-value("Mother tongue");}
 }
 
-.Term-- {
-  &Engineer {
-    @include content-key("Engineer");
-    // @include content-value("The engineer has a solid educational grounding and the ability to apply engineering concepts to create digital solutions");
-  }  
-}
-
 .Experience {
   $root: #{&};
 
@@ -87,7 +80,7 @@
     @at-root #{$root} {
       &--#{$year} {
         @include content-apply(
-          "2015 - 2017 Software Engineer",
+          "2015 - 2017 Software Engineer"word wrap characters css,
           "Intetics Inc @Ukraine/Kharkiv, Area9 @Denmark/Copenhagen"
         );
       }
@@ -189,10 +182,32 @@
   }
 }
 
+.Goal {
+  order: 2;
+}
 Term {
   $entity: #{&};
+  @at-root .#{&entity}-- {
+    &Engineer {
+      @include content-key("Engineer");
+      // @include content-value("The engineer has a solid educational grounding and the ability to apply engineering concepts to create digital solutions");
+    }  
+  }
+
   @at-root %#{$entity}-- {
+    padding: {
+      left: 0.25rem;
+      right: 0.25rem;
+    }
+
     @import "content";
+
+    &JS,
+    &CSS {
+      text-decoration: underline;
+      order: -1;
+    }
+
     &Docker,
     &nginx,
     &C,
@@ -203,84 +218,85 @@ Term {
     &pixi_js,
     &jwt {
       font-style: italic;
+      order: 1;
     }
   }
   @at-root .Education__#{$entity}-- {
     &y2012-{
-      &0 { @extend %Term--MySQL;}
-      &1 { @extend %Term--C; }
-      &2 { @extend %Term--Cpp; }
-      &3 { @extend %Term--OpenMPI; }    
+      &0 { @extend %Term--, %Term--MySQL;}
+      &1 { @extend %Term--, %Term--C; }
+      &2 { @extend %Term--, %Term--Cpp; }
+      &3 { @extend %Term--, %Term--OpenMPI; }    
     }
   }
   @at-root .Experience__#{$entity}-- {
     &y2014- { 
-      &0 { @extend %Term--Cpp; }
-      &1 { @extend %Term--PHP; }
-      &2 { @extend %Term--MySQL; }
-      &3 { @extend %Term--JS; }
-      &4 { @extend %Term--OpenCV; }
+      &0 { @extend %Term--, %Term--Cpp; }
+      &1 { @extend %Term--, %Term--PHP; }
+      &2 { @extend %Term--, %Term--MySQL; }
+      &3 { @extend %Term--, %Term--JS; }
+      &4 { @extend %Term--, %Term--OpenCV; }
     }
     &y2015- {
-      &0 { @extend %Term--JS; }
-      &1 { @extend %Term--Reactive; }
+      &0 { @extend %Term--, %Term--JS; }
+      &1 { @extend %Term--, %Term--Reactive; }
     }
     &y2017- {
-      &0 { @extend %Term--JS_DOM; }
-      &1 { @extend %Term--React; }
-      &2 { @extend %Term--RxJs; }
-      &3 { @extend %Term--canvas; }
-      &4 { @extend %Term--TypeScript; }
-      &5 { @extend %Term--Haxe; }
-      &6 { @extend %Term--Apache; }
-      &7 { @extend %Term--NodeJs; }
-      &8 { @extend %Term--PHP; }
-      &9 { @extend %Term--MySQL; }
-      &10 { @extend %Term--Python; }
-      &11 { @extend %Term--nwjs; }
-      &12 { @extend %Term--pixi_js; }
-      &13 { @extend %Term--jwt; }
+      &0 { @extend %Term--, %Term--JS_DOM; }
+      &1 { @extend %Term--, %Term--React; }
+      &2 { @extend %Term--, %Term--RxJs; }
+      &3 { @extend %Term--, %Term--canvas; }
+      &4 { @extend %Term--, %Term--TypeScript; }
+      &5 { @extend %Term--, %Term--Haxe; }
+      &6 { @extend %Term--, %Term--Apache; }
+      &7 { @extend %Term--, %Term--NodeJs; }
+      &8 { @extend %Term--, %Term--PHP; }
+      &9 { @extend %Term--, %Term--MySQL; }
+      &10 { @extend %Term--, %Term--Python; }
+      &11 { @extend %Term--, %Term--nwjs; }
+      &12 { @extend %Term--, %Term--pixi_js; }
+      &13 { @extend %Term--, %Term--jwt; }
     }
     &y2019-{
-      &0 { @extend %Term--JsonSchema; }
-      &1 { @extend %Term--git; }
-      &2 { @extend %Term--node_http; }
-      &3 { @extend %Term--bash; }
-      &4 { @extend %Term--NodeJs; }
-      &5 { @extend %Term--ExpressJs; }
-      &6 { @extend %Term--MongoDB; }
-      &7 { @extend %Term--Apache; }
-      &8 { @extend %Term--PHP; }
-      &9 { @extend %Term--MySQL; }
-      &10 { @extend %Term--jQuery; }
-      &11 { @extend %Term--WordPress; }
-      &12 { @extend %Term--Next_js; }
-      &13 { @extend %Term--React; }
-      &14 { @extend %Term--CSS3; }
-      &15 { @extend %Term--PureCss; }
-      &16 { @extend %Term--nginx; }
+      &0 { @extend %Term--, %Term--JsonSchema; }
+      &1 { @extend %Term--, %Term--git; }
+      &2 { @extend %Term--, %Term--node_http; }
+      &3 { @extend %Term--, %Term--bash; }
+      &4 { @extend %Term--, %Term--NodeJs; }
+      &5 { @extend %Term--, %Term--ExpressJs; }
+      &6 { @extend %Term--, %Term--MongoDB; }
+      &7 { @extend %Term--, %Term--Apache; }
+      &8 { @extend %Term--, %Term--PHP; }
+      &9 { @extend %Term--, %Term--MySQL; }
+      &10 { @extend %Term--, %Term--jQuery; }
+      &11 { @extend %Term--, %Term--WordPress; }
+      &12 { @extend %Term--, %Term--Next_js; }
+      &13 { @extend %Term--, %Term--React; }
+      &14 { @extend %Term--, %Term--CSS3; }
+      &15 { @extend %Term--, %Term--PureCss; }
+      &16 { @extend %Term--, %Term--nginx; }
     }
     &y2020- {
-      &0 { @extend %Term--TypeScript; }
-      &1 { @extend %Term--JsonSchema; }
-      &2 { @extend %Term--Jest; }
-      &3 { @extend %Term--Cypress; }
-      &4 { @extend %Term--Puppeteer; }
-      &5 { @extend %Term--JS_DOM; }
-      &6 { @extend %Term--React; }
-      &7 { @extend %Term--CSS; }
-      &8 { @extend %Term--SASS; }
-      &9 { @extend %Term--ExpressJs; }
-      &10 { @extend %Term--NodeJs; }
-      &11 { @extend %Term--Redux; }
-      &12 { @extend %Term--MySQL; }
-      &13 { @extend %Term--MongoDB; }
-      &14 { @extend %Term--Webpack; }
-      &15 { @extend %Term--bash; }
-      &16 { @extend %Term--CSS3; }
-      &17 { @extend %Term--git; }
-      &18 { @extend %Term--GitLab_CI; }
-      &19 { @extend %Term--Docker; }
+      &0 { @extend %Term--, %Term--TypeScript; }
+      &1 { @extend %Term--, %Term--JsonSchema; }
+      &2 { @extend %Term--, %Term--Jest; }
+      &3 { @extend %Term--, %Term--Cypress; }
+      &4 { @extend %Term--, %Term--Puppeteer; }
+      &5 { @extend %Term--, %Term--JS_DOM; }
+      &6 { @extend %Term--, %Term--React; }
+      &7 { @extend %Term--, %Term--CSS; }
+      &8 { @extend %Term--, %Term--SASS; }
+      &9 { @extend %Term--, %Term--ExpressJs; }
+      &10 { @extend %Term--, %Term--NodeJs; }
+      &11 { @extend %Term--, %Term--Redux; }
+      &12 { @extend %Term--, %Term--MySQL; }
+      &13 { @extend %Term--, %Term--MongoDB; }
+      &14 { @extend %Term--, %Term--Webpack; }
+      &15 { @extend %Term--, %Term--bash; }
+      &16 { @extend %Term--, %Term--CSS3; }
+      &17 { @extend %Term--, %Term--git; }
+      &18 { @extend %Term--, %Term--GitLab_CI; }
+      &19 { @extend %Term--, %Term--Docker; }
     }
   }
 }

@@ -107,15 +107,13 @@ a {
   flex-wrap: wrap;
   flex-direction: row;
   @include content-key {
-    grid-row: 1;
-    order: -2;
+    order: -3;
     flex: 1;
     min-width: 100%;
   }
   @include content-value {
     display: block;
-    grid-row: 2;
-    order: -1;
+    order: -2;
     min-width: 100% ;
     flex-grow: 1;
   }
@@ -126,8 +124,6 @@ a {
 }
 .Term {
   display: inline-block;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
 }
 
 .Human_Languages__Property,
