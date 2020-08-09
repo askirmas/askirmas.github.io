@@ -35,66 +35,45 @@
   &--Russian::before {content: "Russian: ";}
 }
 .Term-- {
-  &TypeScript::before {content: "TypeScript";}
-  &JsonSchema::before {content: "JsonSchema";}
-  &Jest::before {content: "Jest";}
-  &Cypress::before {content: "Cypress";}
-  &Puppeteer::before {content: "Puppeteer";}
-  &JS_DOM::before {content: "JS DOM";}
-  &React::before {content: "React";}
-  &CSS::before {content: "CSS";}
-  &SASS::before {content: "SASS";}
-  &ExpressJs::before {content: "ExpressJs";}
-  &NodeJs::before {content: "NodeJs";}
-  &Redux::before {content: "Redux";}
-  &MySQL::before {content: "MySQL";}
-  &MongoDB::before {content: "MongoDB";}
-  &Webpack::before {content: "Webpack";}
+  &Apache::before {content: "Apache";}
   &bash::before {content: "bash";}
+  &C::before {content: "C";}
+  &canvas::before {content: "<canvas>"; @debug &;}
+  &Cpp::before {content: "C++";}
+  &CSS::before {content: "CSS";}
   &CSS3::before {content: "CSS3";}
+  &Cypress::before {content: "Cypress";}
+  &Docker::before {content: "Docker";}
+  &ExpressJs::before {content: "ExpressJs";}
   &git::before {content: "git";}
   &GitLab_CI::before {content: "GitLab CI";}
-  &Docker::before {content: "Docker";}
-  &JsonSchema::before {content: "JsonSchema"}
-  &git::before {content: "git"}
-  &node-http::before {content: "node/http"}
-  &bash::before {content: "bash"}
-  &NodeJs::before {content: "NodeJs"}
-  &ExpressJs::before {content: "ExpressJs"}
-  &MongoDB::before {content: "MongoDB"}
-  &Apache::before {content: "Apache"}
-  &PHP::before {content: "PHP"}
-  &MySQL::before {content: "MySQL"}
-  &jQuery::before {content: "jQuery"}
-  &WordPress::before {content: "WordPress"}
-  &Next-js::before {content: "Next.js"}
-  &React::before {content: "React"}
-  &CSS3::before {content: "CSS3"}
-  &PureCss::before {content: "PureCss"}
-  &nginx::before {content: "nginx"}
-  &JS_DOM::before {content: "JS DOM";}
-  &React::before {content: "React";}
-  &RxJs::before {content: "RxJs";}
-  &canvas::before {content: "<canvas>"; @debug &;}
-  &TypeScript::before {content: "TypeScript";}
   &Haxe::before {content: "Haxe";}
-  &Apache::before {content: "Apache";}
-  &NodeJs::before {content: "NodeJs";}
-  &PHP::before {content: "PHP";}
-  &MySQL::before {content: "MySQL";}
-  &Python::before {content: "Python";}
-  &nwjs::before {content: "nwjs";}
-  &pixi_js::before {content: "pixi.js";}
-  &jwt::before {content: "jwt";}
+  &Jest::before {content: "Jest";}
+  &jQuery::before {content: "jQuery";}
+  &JS_DOM::before {content: "JS DOM";}
   &JS::before {content: "JS";}
-  &Reactive::before {content: "Reactive";}
-  &Cpp::before {content: "C++"}
-  &PHP::before {content: "PHP"}
-  &MySQL::before {content: "MySQL"}
-  &JS::before {content: "JS"}
-  &OpenCV::before {content: "OpenCV"}
+  &JsonSchema::before {content: "JsonSchema";}
+  &jwt::before {content: "jwt";}
+  &MongoDB::before {content: "MongoDB";}
   &MySQL::before {content: "MySQL";}
-  &C::before {content: "C";}
-  &Cpp::before {content: "C++";}
+  &Next-js::before {content: "Next.js"}
+  &nginx::before {content: "nginx"}
+  &node-http::before {content: "node/http"}
+  &NodeJs::before {content: "NodeJs";}
+  &nwjs::before {content: "nwjs";}
+  &OpenCV::before {content: "OpenCV"}
   &OpenMPI::before {content: "OpenMPI";}
+  &PHP::before {content: "PHP";}
+  &pixi_js::before {content: "pixi.js";}
+  &Puppeteer::before {content: "Puppeteer";}
+  &PureCss::before {content: "PureCss"}
+  &Python::before {content: "Python";}
+  &React::before {content: "React";}
+  &Reactive::before {content: "Reactive";}
+  &Redux::before {content: "Redux";}
+  &RxJs::before {content: "RxJs";}
+  &SASS::before {content: "SASS";}
+  &TypeScript::before {content: "TypeScript";}
+  &Webpack::before {content: "Webpack";}
+  &WordPress::before {content: "WordPress"}
 }
