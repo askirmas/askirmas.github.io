@@ -1,4 +1,6 @@
 @use "@material/typography";
+@use "@material/elevation";
+
 :root {
   @include typography.typography("body1");
   // font-size: 12px;
@@ -11,22 +13,34 @@
 }
 
 body {
-  padding: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 a {
   display: inline-block;
 }
 
-.Main__ {
-  &title {
-    @include typography.typography("headline2");
-  }
-  &description {
-    @include typography.typography("headline4");
-  }
-  &Property {
-    @include typography.typography("headline5");
+.Main {
+  padding: 1rem;
+  &__ { 
+    &header {
+      padding: 1rem;
+      top: 0; 
+      position: sticky;
+      background-color: white;
+      padding-bottom: 1rem;
+      @include elevation.elevation(4);
+    }
+    &title {
+      @include typography.typography("headline2");
+    }
+    &description {
+      @include typography.typography("headline4");
+    }
+    &Property {
+      @include typography.typography("headline5");
+    }
   }
 }
 
