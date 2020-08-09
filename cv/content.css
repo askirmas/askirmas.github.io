@@ -1,0 +1,95 @@
+.links--email::before {
+  content: "";
+  background-image: url(https://fonts.gstatic.com/s/i/materialicons/email/v6/24px.svg);
+}
+.links--phone::before {
+  content: "";
+  background-image: url(https://fonts.gstatic.com/s/i/materialicons/smartphone/v7/24px.svg);
+}
+.links--github::before {
+  content: "";
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/95/Font_Awesome_5_brands_github.svg);
+}
+.links--linkedin::before {
+  content: "";
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/80/LinkedIn_Logo_2013.svg);
+  background-position-x: right;
+  background-size: auto 24px;
+  padding-left: 30px;
+  margin-right: 0;
+}
+
+.Objectives::before {content: "Objectives";}
+.Human_Languages::before {content: "Human Languages";}
+.Experience::before {content: "Experience";}
+.Education::before {content: "Education";}
+.Human_Languages--English::before {content: "English: ";}
+.Human_Languages--Hebrew::before {content: "Hebrew: ";}
+.Human_Languages--Ukrainian::before {content: "Ukrainian: ";}
+.Human_Languages--Russian::before {content: "Russian: ";}
+.Term--TypeScript::before {content: "TypeScript";}
+.Term--JsonSchema::before {content: "JsonSchema";}
+.Term--Jest::before {content: "Jest";}
+.Term--Cypress::before {content: "Cypress";}
+.Term--Puppeteer::before {content: "Puppeteer";}
+.Term--JS_DOM::before {content: "JS DOM";}
+.Term--React::before {content: "React";}
+.Term--CSS::before {content: "CSS";}
+.Term--SASS::before {content: "SASS";}
+.Term--ExpressJs::before {content: "ExpressJs";}
+.Term--NodeJs::before {content: "NodeJs";}
+.Term--Redux::before {content: "Redux";}
+.Term--MySQL::before {content: "MySQL";}
+.Term--MongoDB::before {content: "MongoDB";}
+.Term--Webpack::before {content: "Webpack";}
+.Term--bash::before {content: "bash";}
+.Term--CSS3::before {content: "CSS3";}
+.Term--git::before {content: "git";}
+.Term--GitLab_CI::before {content: "GitLab CI";}
+.Term--Docker::before {content: "Docker";}
+.Term--JsonSchema::before {content: "JsonSchema"}
+.Term--git::before {content: "git"}
+.Term--node-http::before {content: "node/http"}
+.Term--bash::before {content: "bash"}
+.Term--NodeJs::before {content: "NodeJs"}
+.Term--ExpressJs::before {content: "ExpressJs"}
+.Term--MongoDB::before {content: "MongoDB"}
+.Term--Apache::before {content: "Apache"}
+.Term--PHP::before {content: "PHP"}
+.Term--MySQL::before {content: "MySQL"}
+.Term--jQuery::before {content: "jQuery"}
+.Term--WordPress::before {content: "WordPress"}
+.Term--Next-js::before {content: "Next.js"}
+.Term--React::before {content: "React"}
+.Term--CSS3::before {content: "CSS3"}
+.Term--PureCss::before {content: "PureCss"}
+.Term--nginx::before {content: "nginx"}
+
+.Term--JS_DOM {content: "JS DOM";}
+.Term--React {content: "React";}
+.Term--RxJs {content: "RxJs";}
+.Term--canvas {content: "canvas";}
+.Term--TypeScript {content: "TypeScript";}
+.Term--Haxe {content: "Haxe";}
+.Term--Apache {content: "Apache";}
+.Term--NodeJs {content: "NodeJs";}
+.Term--PHP {content: "PHP";}
+.Term--MySQL {content: "MySQL";}
+.Term--Python {content: "Python";}
+.Term--nwjs {content: "nwjs";}
+.Term--pixi_js {content: "pixi.js";}
+.Term--jwt {content: "jwt";}
+
+.Term--JS::before {content: "JS";}
+.Term--Reactive::before {content: "Reactive";}
+
+.Term--Cpp::before {content: "C++"}
+.Term--PHP::before {content: "PHP"}
+.Term--MySQL::before {content: "MySQL"}
+.Term--JS::before {content: "JS"}
+.Term--OpenCV::before {content: "OpenCV"}
+
+.Term--MySQL::before {content: "MySQL";}
+.Term--C::before {content: "C";}
+.Term--Cpp::before {content: "C++";}
+.Term--OpenMPI::before {content: "OpenMPI";}
