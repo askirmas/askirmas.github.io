@@ -2,18 +2,13 @@
 @use "@material/elevation";
 
 $padding: 1rem;
-$icon-size: 24px;
+$icon-size: 1.5rem;
 
 :root {
   @include typography.typography("body1");
-  // font-size: 12px;
+  font-size: 12px;
 }
-%font-reset {
-  font-size: initial;
-  font-weight: initial;
-  line-height: initial;
-  letter-spacing: initial;
-}
+
 
 body {
   margin: 0;
@@ -26,6 +21,24 @@ a {
 
 .Main {
   padding: 2 * $padding;
+  overflow: hidden;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: auto minmax(1fr, 40%);
+  grid-template-rows:
+    max-content
+    min-content
+    1fr
+    min-content
+  ;
+  grid-template-areas:
+    'Objectives Objectives'
+    'Experience Education'
+    'Experience .'
+    'Experience Human_Languages'
+  ;
+  gap: 2rem;
+
   &__ { 
     &header {
       white-space: nowrap;
@@ -64,6 +77,11 @@ a {
   }
 }
 
+.Objectives { grid-area: Objectives;}
+.Human_Languages { grid-area: Human_Languages;}
+.Experience { grid-area: Experience;}
+.Education { grid-area: Education;}
+
 .ExpRecords__Property {
   @include typography.typography("headline6");
   &::after {
@@ -81,6 +99,7 @@ a {
     background: {
       position: left center;
       repeat: no-repeat;
+      size: contain;
     }
     padding: {
       top: calc((#{$icon-size} - 1em) / 2);
@@ -109,21 +128,15 @@ a {
     order: -1;
     min-width: 100% ;
     flex-grow: 1;
-    @extend %font-reset;
+    @include typography.typography("body1");
   }
 }
 
 .Human_Languages__Property,
 .Term,
 .Goal {
-  @extend %font-reset;
+  @include typography.typography("body1");
 }
-
-.Human_Languages__Property {
-  display: block;
-  min-width: 100%;
-}
-
 
 .Term {
   @include typography.typography("subtitle2");
@@ -132,9 +145,15 @@ a {
   padding-right: 0.25rem;
 }
 
+.Human_Languages__Property,
 .Goal {
   display: list-item;
   list-style-position: inside;
-  list-style-type: disc;
   min-width: 100%;
+}
+.Human_Languages__Property {
+  list-style-type: circle;  
+}
+.Goal {
+  list-style-type: disc;
 }
