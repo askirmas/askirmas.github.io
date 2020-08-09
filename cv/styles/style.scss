@@ -1,6 +1,9 @@
 @use "@material/typography";
 @use "@material/elevation";
 
+$padding: 1rem;
+$icon-size: 24px;
+
 :root {
   @include typography.typography("body1");
   // font-size: 12px;
@@ -22,17 +25,34 @@ a {
 }
 
 .Main {
-  padding: 1rem;
+  padding: 2 * $padding;
   &__ { 
     &header {
-      padding: 1rem;
-      top: 0; 
+      white-space: nowrap;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+
+      padding: $padding;
+      padding-bottom: 0;
+      
       position: sticky;
+      top: 0; 
+
       background-color: white;
-      padding-bottom: 1rem;
       @include elevation.elevation(4);
     }
+    
+    &title, &description, &links {
+      padding: $padding;
+    }
+    &links {
+      white-space: initial;
+      width: 100%;
+    }
     &title {
+      flex: 1;
+      min-width: min-content;
       @include typography.typography("headline2");
     }
     &description {
@@ -53,12 +73,20 @@ a {
 
 .links {
   text-decoration: inherit;
+  margin: {
+    top: 0.2rem;
+    bottom: 0.2rem;
+  }
   &::before {
-    background-position: left center;
-    background-repeat: no-repeat;
-    padding-top: calc((24px - 1rem) / 2);
-    padding-bottom: calc((24px - 1rem) / 2);
-    padding-left: 24px;
+    background: {
+      position: left center;
+      repeat: no-repeat;
+    }
+    padding: {
+      top: calc((#{$icon-size} - 1em) / 2);
+      bottom: calc((#{$icon-size} - 1em) / 2);
+      left: $icon-size;
+    }
     margin-right: 0.25rem;
   }
 }
