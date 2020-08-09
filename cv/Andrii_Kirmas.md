@@ -10,6 +10,12 @@ Expected salary: 30000 NIS/month
 
 Passionate for systematic and iterative procedures. High educability and deep knowledge of computer science makes me efficient in engineering and architecture that provides a logical flow of knowledge and progress.
 
+### Cross Skills
+
+### Soft Skills
+
+### Hard Skills
+
 ### Human Languages
 
 English: Fluent
@@ -19,52 +25,6 @@ Hebrew: Basic
 Ukrainian: Mother tongue
 
 Russian: Mother tongue
-
-### Skills
-
-#### Paradigms
-
-{"XP":true,"TDD":true,"Coverage":100,"Git Trunk":true,"CI/CD":true,"ERM":true,"BEM+AtomicCss":true,"PBP":true,"Functional":true,"Reactive":true,"OOP":true}
-
-#### Contracts
-
-{}
-
-#### Testing
-
-["Jest","Cypress","Puppeteer","chai"]
-
-#### Full //TODO move to front
-
-{"Next.js":3,"PHP":5}
-
-#### Back
-
-{"Node.js":{},"Express":{},"HTTP":{},"WebSocket":{},"RestAPI":{},"CORS":{},"Content Security policy":{},"jwt":{},"Proxy":{},"HyperSchema":{},"SWAG/OpenAPI":{},"HATEOAS":{}}
-
-#### Front
-
-{"Pure CSS technique":{},"Strong HTML5":{},"CSS3":{},"SCSS":{},"React":{},"WebComponent":{},"Redux":{},"ReactiveX (RxJs)":{},"Chrome":{},"Firefox":{}}
-
-#### Storage
-
-{"MySQL":{},"IndexedDB":{},"MongoDB":{},"Dexie.js":{}}
-
-#### JavaScript
-
-{"TypeScript":{},"ESNext":{},"ES6":{},"JSDoc":{}}
-
-#### Utils
-
-["Semantic Versioning","Markdown","mermaidjs","graphviz","Babel","Webpack4","JsonSchema","FetchAPI","Ajax","eslint","stylint","pdf.js","Browser extensions","benchmark.js and own package","bash","git SVC","ssh","OMeta","Open MPI","OpenCV"]
-
-#### Passive
-
-["C","C++","Python","Haxe","Docker","GitLab CI","Jenkins","Apache","nginx","OAuth","MacOs","Ubuntu","nwjs","Pixi.js"]
-
-#### Etc
-
-["Slack","GitHub","GitLab","SourceForge","BitBucket","Jira","Confluence","SourceTree","Tortoise Git","GitKraken","Video and audio processing"]
 
 ### Experience
 

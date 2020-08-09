@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "title": "Onto",
+  "properties": {
+    "$schema": true,
+    "$id": true,
+    "oneOf": {
+      "items": {
+        "$ref": "#/definitions/InternalRef"
+      }
+    },
+    "definitions": {
+      "additionalProperties": {
+        "oneOf": [
+          {"$ref": "#/definitions/InternalRef"},
+          {"$ref": "#/definitions/Enum"},
+          {"$ref": "#/definitions/Domain"},
+          {"$ref": "#/definitions/Term"}
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "InternalRef": {
+      "maxProperties": 1,
+      "required": ["$ref"],
+      "properties": {
+        "$ref": {
+          "pattern": "^#/definitions/"
+        }
+      }
+    },
+    "Enum": {
+      "maxProperties": 1,
+      "required": ["enum"]
+    },
+    "Domain": {
+      "maxProperties": 1,
+      "required": ["oneOf"],
+      "properties": {
+        "oneOf": {
+          "items": [{"$ref": "#/definitions/Enum"}],
+          "additionalItems": {"$ref": "#/definitions/InternalRef"}    
+        }
+      }
+    },
+    "Term": {
+      "oneOf": [
+        {"required": ["const"]},
+        {"required": ["enum"]}
+      ],
+      "anyOf": [
+        {"required": ["title"]},
+        {"required": ["description"]}
+      ],
+      "propertyNames": {"enum": ["const", "enum", "description", "title", "$comment"]},
+      "properties": {
+        "description": {
+          "format": "uri"
+        }
+      }
+    }
+  }
+}

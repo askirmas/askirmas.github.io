@@ -298,7 +298,7 @@
   "title": "Andrii Kirmas",
   "description": "Senior Software Engineer",
   "required": [
-    "title", "description", "salary", "links", "Objective", "Skills", "Experience", "Education", "Human Languages"
+    "title", "description", "salary", "links", "Objective", "Cross Skills", "Soft Skills", "Hard Skills", "Experience", "Education", "Human Languages"
   ],
   "definitions": {
     "Exps": {
@@ -315,6 +315,7 @@
     },
     "ExpRecord": {
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "minimum": {"type": "number"},
         "maximum": {"type": "number"},
@@ -326,94 +327,37 @@
           "items": {
             "type": ["string", "object"],
             "required": ["title", "items"],
+            "additionalProperties": false,
             "properties": {
               "title": {"type": "string"},
               "items": {
                 "type": "array",
                 "minItems": 1,
-                "items": {"$ref": "#/definitions/Technologies"}
+                "items": {"$ref": "#/definitions/Ontology/definitions/Skills"}
               }
             }
           }
         }
       }
     },
-    "Technologies": {
+    "Skills": {
+      "definitions": {
+        "Cross": {
+          "$ref": "./cross.ontology.schema.json"
+        },
+        "Soft": {
+          "$ref": "./soft.ontology.schema.json"
+        },
+        "Hard": {
+          "$ref": "./hard.ontology.schema.json"
+        }
+      },
       "oneOf": [
-        {"$ref": "#/definitions/Storage"},
-        {"$ref": "#/definitions/PL"},
-        {"$ref": "#/definitions/Interfaces-Contracts"},
-        {"$ref": "#/definitions/Server"},
-        {"$ref": "#/definitions/git"},
-        {"$ref": "#/definitions/Testing"}
+        {"$ref": "#/definitions/Skills/definitions/Cross"},
+        {"$ref": "#/definitions/Skills/definitions/Soft"},
+        {"$ref": "#/definitions/Skills/definitions/Hard"}
       ]
     },
-    "Storage": {
-      "oneOf": [
-        {"$ref": "#/definitions/MySQL"},
-        {"$ref": "#/definitions/MongoDB"},
-        {"$ref": "#/definitions/IndexedDB"}
-      ]
-    },
-    "MySQL": {
-      "const": "MySQL",
-      "title": "ACID, Transactions, Routine, Window functions, Join, Normalization, Index"
-    },
-    "MongoDB": {"const": "MongoDB"},
-    "IndexedDB": {"const": "IndexedDB"},
-    "PL": {"oneOf": [
-      {"$ref": "#/definitions/C"},
-      {"$ref": "#/definitions/Cpp"},
-      {"$ref": "#/definitions/bash"},
-      {"$ref": "#/definitions/JS"},
-      {"$ref": "#/definitions/PHP"},
-      {"$ref": "#/definitions/CSS"},
-      {"enum": ["Python", "Haxe"]}
-    ]},
-    "C": {"const": "C"},
-    "Cpp": {
-      "enum": ["C++", "OpenCV", "OpenMPI"]
-    },
-    "bash": {
-      "const": "bash",
-      "title": "jq, grab, sed, preg, trap, function, array, find, curl, kill"
-    },
-    "git": {"const": "git"},
-    "JS": {"oneOf": [
-        {"enum": ["JS", "nwjs", "pixi.js", "<canvas>", "jQuery"]},
-        {"$ref": "#/definitions/JS-DOM"},
-        {"$ref": "#/definitions/React"},
-        {"$ref": "#/definitions/Redux"},
-        {"$ref": "#/definitions/RxJs"},
-        {"$ref": "#/definitions/NodeJs"},
-        {"$ref": "#/definitions/ExpressJs"}
-    ]},
-    "JS-DOM": {"const": "JS DOM"},
-    "React": {"enum": ["React", "Next.js"]},
-    "Redux": {"const": "Redux"},
-    "RxJs": {"const": "RxJs"},
-    "NodeJs": {"const": "NodeJs"},
-    "ExpressJs": {"const": "ExpressJs"},
-    "PHP": {
-      "enum": ["PHP", "WordPress"]
-    },
-    "CSS": {
-      "enum": ["CSS", "CSS3", "PureCss", "SASS", "MaterialUI"]
-    },
-    "Interfaces-Contracts": {
-      "enum": ["TypeScript", "JsonSchema"]
-    },
-    "Server": {
-      "enum": ["Apache", "nginx", "node/http"]
-    },
-    "Testing": {"oneOf": [
-      {"$ref": "#/definitions/Jest"},
-      {"$ref": "#/definitions/Cypress"},
-      {"$ref": "#/definitions/Puppeteer"}
-    ]},
-    "Jest": {"const": "Jest"},
-    "Cypress": {"const": "Cypress"},
-    "Puppeteer": {"const": "Puppeteer"},
     "eLanguageLevel": {
       "enum": ["Basic", "Fluent", "Mother tongue"]
     }

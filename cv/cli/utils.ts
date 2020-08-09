@@ -14,8 +14,14 @@ export type FlatObject = Record<string|number, null|undefined|boolean|number|str
 export type Values<T extends Dict> = T[keyof T][]
 
 export {
-  isFlatObject, unique, htmlEscape
+  isFlatObject, unique, htmlEscape//, isEmptyObject
 }
+
+// function isEmptyObject(source: Dict) :source is Record<never, any> {
+//   for (const _ in source)
+//     return false
+//   return true
+// }
 
 function isFlatObject(source: Dict) :source is FlatObject {
   const values = $values(source)

@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://askirmas.github.io/cv/hard.schema.json",
+  "oneOf": [
+    {"$ref": "#/definitions/PL"},
+    {"$ref": "#/definitions/Testing"},
+    {"$ref": "#/definitions/Storage"},
+    {"$ref": "#/definitions/Server"},
+    {"$ref": "#/definitions/git"}
+  ],
+  "definitions": {
+    "Storage": {
+      "oneOf": [
+        {"enum": ["MongoDB"]},
+        {"$ref": "#/definitions/MySQL"},
+        {"$ref": "#/definitions/MongoDB"},
+        {"$ref": "#/definitions/IndexedDB"}
+      ]
+    },
+    "MySQL": {
+      "const": "MySQL",
+      "title": "ACID, Transactions, Routine, Window functions, Join, Normalization, Index"
+    },
+    "IndexedDB": {"enum": ["IndexedDB", "Dexie.js"]},
+    "PL": {"oneOf": [
+      {"enum": ["Python", "Haxe", "C"]},
+      {"$ref": "#/definitions/Cpp"},
+      {"$ref": "#/definitions/bash"},
+      {"$ref": "#/definitions/JS"},
+      {"$ref": "#/definitions/PHP"},
+      {"$ref": "#/definitions/CSS"}
+    ]},
+    "Cpp": {
+      "enum": ["C++", "OpenCV", "OpenMPI"]
+    },
+    "bash": {
+      "const": "bash",
+      "title": "jq, grab, sed, preg, trap, function, array, find, curl, kill"
+    },
+    "git": {
+      "const": "git",
+      "description": "https://www.npmjs.com/package/git-hooks-wrapper"
+    },
+    "JS": {"oneOf": [
+      {"enum": ["JS", "nwjs", "pixi.js", "<canvas>", "jQuery", "Webpack", "Babel", "NodeJs", "ExpressJs"]},
+      {"$ref": "#/definitions/ES6"},
+      {"$ref": "#/definitions/ESNext"},
+      {"$ref": "#/definitions/JS-DOM"},
+      {"$ref": "#/definitions/React"},
+      {"$ref": "#/definitions/Redux"},
+      {"$ref": "#/definitions/RxJs"}
+    ]},
+    "ES6": {
+      "const": "ES6",
+      "title": "Destructing, Nullish coalescing operator, Optional chaining operator, Array.prototype.flat, Rest parameters, RegExp named capture groups, async/await"
+    },
+    "ESNext": {
+      "const": "ESNext",
+      "title": "Pipeline operator, Observable, Class and Property Decorators"
+    },
+    "JS-DOM": {
+      "const": "JS DOM",
+      "title": "Intersection Observer, document.adoptedStyleSheets"
+    },
+    "React": {
+      "const": "React",
+      "title": "PureComponent, memo, ..."
+    },
+    "Next.js": {
+      "const": "Next.js",
+      "title": "Create React App is a great fit for Learning React, Starting new SPA, Creating examples",
+      "description": "https://github.com/facebook/create-react-app#popular-alternatives"
+    },
+    "Redux": {
+      "const": "Redux",
+      "description": "https://redux.js.org/faq/general#when-should-i-use-redux",
+      "title": "Don't use Redux until you have problems with vanilla React"
+    },
+    "RxJs": {
+      "const": "RxJs",
+      "description": "https://codeguida.com/post/1336"
+    },
+    "PHP": {
+      "enum": ["PHP", "WordPress"],
+      "description": "https://eev.ee/blog/2012/04/09/php-a-fractal-of-bad-design/",
+      "title": "I'm cranky. I complain about a lot of things. There's a lot in the world of technology I don't like, and that's really to be expected—programming is a hilariously young discipline, and none of us have the slightest clue what we're doing"
+    },
+    "CSS": {
+      "oneOf": [
+        {"enum": ["CSS", "SASS", "MaterialUI"]},
+        {"$ref": "#/definitions/CSS3"},
+        {"$ref": "#/definitions/PureCss"}
+      ]
+    },
+    "CSS3": {
+      "const": "CSS3",
+      "title": "grid, flexbox, var, clip-path, transform, will-change, counter"
+    },
+    "PureCss": {
+      "const": "Pure CSS technique",
+      "title": "Performance is the art of avoiding work, and making any work you do as efficient as possible",
+      "description": "https://developers.google.com/web/fundamentals/performance/rendering#the_pixel_pipeline"
+    },
+    "Server": {
+      "enum": ["Apache", "nginx", "node/http"]
+    },
+    "Testing": {"oneOf": [
+      {"enum": ["Puppeteer"]},
+      {"$ref": "#/definitions/Jest"},
+      {"$ref": "#/definitions/Cypress"}
+    ]},
+    "Jest": {
+      "const": "Jest",
+      "description": "https://github.com/askirmas/askirmas.github.io/blob/master/jest.schema.json"
+    },
+    "Cypress": {
+      "const": "Cypress",
+      "title": "Cypress is executed in the same run loop as your application",
+      "description": "https://docs.cypress.io/guides/overview/key-differences.html#Architecture"
+    },
+    "HTML5": {
+      "const": "HTML5",
+      "description": "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5",
+      "title": "New elements, attributes, and behaviors, and a larger set of technologies that allows the building of more diverse and powerful Web sites and applications"
+    },
+    "ESLint": {
+      "const": "ESLint",
+      "description": "https://github.com/askirmas/template/blob/master/.eslintrc.json"
+    },
+    "StyleLint": {
+      "const": "StyleLint",
+      "description": "https://github.com/askirmas/template/blob/master/.stylelintrc.json"
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://askirmas.github.io/cv/Andrii_Kirmas.schema.json",
+  "$schema": "./Andrii_Kirmas.schema.json",
   "title":"Andrii Kirmas",
   "description": "Senior Software Engineer",
   "links": {
@@ -11,13 +11,9 @@
   },
   "salary": 30000,
   "Objective":"Passionate for systematic and iterative procedures. High educability and deep knowledge of computer science makes me efficient in engineering and architecture that provides a logical flow of knowledge and progress.",
-  "Human Languages": {
-    "English": "Fluent",
-    "Hebrew": "Basic",
-    "Ukrainian": "Mother tongue",
-    "Russian": "Mother tongue"
-  },
-  "Skills": {
+  "Cross Skills": {},
+  "Soft Skills": {},
+  "Hard Skills": {
     "Paradigms": {
       "XP": true,
       "TDD": true,
@@ -84,6 +80,12 @@
     "Etc": [
       "Slack", "GitHub", "GitLab", "SourceForge", "BitBucket", "Jira", "Confluence", "SourceTree", "Tortoise Git", "GitKraken", "Video and audio processing"
     ]
+  },
+  "Human Languages": {
+    "English": "Fluent",
+    "Hebrew": "Basic",
+    "Ukrainian": "Mother tongue",
+    "Russian": "Mother tongue"
   },
   "Experience": {
     "2020": {

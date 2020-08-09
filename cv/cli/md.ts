@@ -1,6 +1,6 @@
 import schema from "../Andrii_Kirmas.schema.json"
 import data from "../Andrii_Kirmas.json"
-import { isFlatObject, unique, Values, htmlEscape } from "./utils"
+import { isFlatObject, unique, Values, htmlEscape, Dict } from "./utils"
 
 const {values: $values} = Object
 //, {isArray: $isArray} = Array
@@ -118,20 +118,22 @@ function md() {
         }
     
         if (isFlatObject(value)) {
-          let key: keyof typeof value
+          let key: keyof (typeof value & Dict)
           for (key in value)
-            contentBlock.push(`${key}: ${value[key]}`)
+            contentBlock.push(`${key}: ${
+              //@ts-ignore
+              value[key]
+            }`)
           
           continue
         }
     
-        for (const key in value) {
-          contentBlock.push(
-            hMd(4, key),
-            //@ts-ignore
-            JSON.stringify(value[key])
-          )
-        }  
+        // for (const key in value)
+        //   contentBlock.push(
+        //     hMd(4, key),
+        //     //@ts-ignore
+        //     JSON.stringify(value[key])
+        //   )
     }
   }
 
