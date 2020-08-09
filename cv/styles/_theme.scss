@@ -1,6 +1,5 @@
 @use "@material/typography";
 @use "@material/elevation";
-@import "utils";
 
 $padding: 1rem;
 $icon-size: 1.5rem;
@@ -9,7 +8,6 @@ $icon-size: 1.5rem;
   @include typography.typography("body1");
   font-size: 12px;
 }
-
 
 body {
   margin: 0;
