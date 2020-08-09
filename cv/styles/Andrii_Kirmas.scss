@@ -1,6 +1,4 @@
-@import "utils"
-, "content"
-;
+@import "utils";
 
 .Main__ {
   &title {
@@ -39,20 +37,7 @@
   &Engineer {
     @include content-key("Engineer");
     // @include content-value("The engineer has a solid educational grounding and the ability to apply engineering concepts to create digital solutions");
-  }
-  
-  &Docker,
-  &nginx,
-  &C,
-  &Cpp,
-  &OpenMPI,
-  &OpenCV,
-  &nwjs,
-  &pixi_js,
-  &jwt,
-  & {
-    font-style: italic;
-  }
+  }  
 }
 
 .Experience {
@@ -204,67 +189,99 @@
   }
 }
 
-
-.Term--y2012-0 { @include term--MySQL; }
-.Term--y2012-1 { @include term--C; }
-.Term--y2012-2 { @include term--Cpp; }
-.Term--y2012-3 { @include term--OpenMPI; }
-.Term--y2014-0 { @include term--Cpp; }
-.Term--y2014-1 { @include term--PHP; }
-.Term--y2014-2 { @include term--MySQL; }
-.Term--y2014-3 { @include term--JS; }
-.Term--y2014-4 { @include term--OpenCV; }
-.Term--y2015-0 { @include term--JS; }
-.Term--y2015-1 { @include term--Reactive; }
-.Term--y2017-0 { @include term--JS_DOM; }
-.Term--y2017-1 { @include term--React; }
-.Term--y2017-2 { @include term--RxJs; }
-.Term--y2017-3 { @include term--canvas; }
-.Term--y2017-4 { @include term--TypeScript; }
-.Term--y2017-5 { @include term--Haxe; }
-.Term--y2017-6 { @include term--Apache; }
-.Term--y2017-7 { @include term--NodeJs; }
-.Term--y2017-8 { @include term--PHP; }
-.Term--y2017-9 { @include term--MySQL; }
-.Term--y2017-10 { @include term--Python; }
-.Term--y2017-11 { @include term--nwjs; }
-.Term--y2017-12 { @include term--pixi_js; }
-.Term--y2017-13 { @include term--jwt; }
-.Term--y2019-0 { @include term--JsonSchema; }
-.Term--y2019-1 { @include term--git; }
-.Term--y2019-2 { @include term--node_http; }
-.Term--y2019-3 { @include term--bash; }
-.Term--y2019-4 { @include term--NodeJs; }
-.Term--y2019-5 { @include term--ExpressJs; }
-.Term--y2019-6 { @include term--MongoDB; }
-.Term--y2019-7 { @include term--Apache; }
-.Term--y2019-8 { @include term--PHP; }
-.Term--y2019-9 { @include term--MySQL; }
-.Term--y2019-10 { @include term--jQuery; }
-.Term--y2019-11 { @include term--WordPress; }
-.Term--y2019-12 { @include term--Next_js; }
-.Term--y2019-13 { @include term--React; }
-.Term--y2019-14 { @include term--CSS3; }
-.Term--y2019-15 { @include term--PureCss; }
-.Term--y2019-16 { @include term--nginx; }
-.Term--y2020-0 { @include term--TypeScript; }
-.Term--y2020-1 { @include term--JsonSchema; }
-.Term--y2020-2 { @include term--Jest; }
-.Term--y2020-3 { @include term--Cypress; }
-.Term--y2020-4 { @include term--Puppeteer; }
-.Term--y2020-5 { @include term--JS_DOM; }
-.Term--y2020-6 { @include term--React; }
-.Term--y2020-7 { @include term--CSS; }
-.Term--y2020-8 { @include term--SASS; }
-.Term--y2020-9 { @include term--ExpressJs; }
-.Term--y2020-10 { @include term--NodeJs; }
-.Term--y2020-11 { @include term--Redux; }
-.Term--y2020-12 { @include term--MySQL; }
-.Term--y2020-13 { @include term--MongoDB; }
-.Term--y2020-14 { @include term--Webpack; }
-.Term--y2020-15 { @include term--bash; }
-.Term--y2020-16 { @include term--CSS3; }
-.Term--y2020-17 { @include term--git; }
-.Term--y2020-18 { @include term--GitLab_CI; }
-.Term--y2020-19 { @include term--Docker; }
+Term {
+  $entity: #{&};
+  @at-root %#{$entity}-- {
+    @import "content";
+    &Docker,
+    &nginx,
+    &C,
+    &Cpp,
+    &OpenMPI,
+    &OpenCV,
+    &nwjs,
+    &pixi_js,
+    &jwt {
+      font-style: italic;
+    }
+  }
+  @at-root .Education__#{$entity}-- {
+    &y2012-{
+      &0 { @extend %Term--MySQL;}
+      &1 { @extend %Term--C; }
+      &2 { @extend %Term--Cpp; }
+      &3 { @extend %Term--OpenMPI; }    
+    }
+  }
+  @at-root .Experience__#{$entity}-- {
+    &y2014- { 
+      &0 { @extend %Term--Cpp; }
+      &1 { @extend %Term--PHP; }
+      &2 { @extend %Term--MySQL; }
+      &3 { @extend %Term--JS; }
+      &4 { @extend %Term--OpenCV; }
+    }
+    &y2015- {
+      &0 { @extend %Term--JS; }
+      &1 { @extend %Term--Reactive; }
+    }
+    &y2017- {
+      &0 { @extend %Term--JS_DOM; }
+      &1 { @extend %Term--React; }
+      &2 { @extend %Term--RxJs; }
+      &3 { @extend %Term--canvas; }
+      &4 { @extend %Term--TypeScript; }
+      &5 { @extend %Term--Haxe; }
+      &6 { @extend %Term--Apache; }
+      &7 { @extend %Term--NodeJs; }
+      &8 { @extend %Term--PHP; }
+      &9 { @extend %Term--MySQL; }
+      &10 { @extend %Term--Python; }
+      &11 { @extend %Term--nwjs; }
+      &12 { @extend %Term--pixi_js; }
+      &13 { @extend %Term--jwt; }
+    }
+    &y2019-{
+      &0 { @extend %Term--JsonSchema; }
+      &1 { @extend %Term--git; }
+      &2 { @extend %Term--node_http; }
+      &3 { @extend %Term--bash; }
+      &4 { @extend %Term--NodeJs; }
+      &5 { @extend %Term--ExpressJs; }
+      &6 { @extend %Term--MongoDB; }
+      &7 { @extend %Term--Apache; }
+      &8 { @extend %Term--PHP; }
+      &9 { @extend %Term--MySQL; }
+      &10 { @extend %Term--jQuery; }
+      &11 { @extend %Term--WordPress; }
+      &12 { @extend %Term--Next_js; }
+      &13 { @extend %Term--React; }
+      &14 { @extend %Term--CSS3; }
+      &15 { @extend %Term--PureCss; }
+      &16 { @extend %Term--nginx; }
+    }
+    &y2020- {
+      &0 { @extend %Term--TypeScript; }
+      &1 { @extend %Term--JsonSchema; }
+      &2 { @extend %Term--Jest; }
+      &3 { @extend %Term--Cypress; }
+      &4 { @extend %Term--Puppeteer; }
+      &5 { @extend %Term--JS_DOM; }
+      &6 { @extend %Term--React; }
+      &7 { @extend %Term--CSS; }
+      &8 { @extend %Term--SASS; }
+      &9 { @extend %Term--ExpressJs; }
+      &10 { @extend %Term--NodeJs; }
+      &11 { @extend %Term--Redux; }
+      &12 { @extend %Term--MySQL; }
+      &13 { @extend %Term--MongoDB; }
+      &14 { @extend %Term--Webpack; }
+      &15 { @extend %Term--bash; }
+      &16 { @extend %Term--CSS3; }
+      &17 { @extend %Term--git; }
+      &18 { @extend %Term--GitLab_CI; }
+      &19 { @extend %Term--Docker; }
+    }
+  }
+}
 
