@@ -1,5 +1,8 @@
-@import url(https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css);
-
+@use "@material/typography";
+:root {
+  @include typography.typography("body1");
+  // font-size: 12px;
+}
 %font-reset {
   font-size: initial;
   font-weight: initial;
@@ -10,8 +13,28 @@
 body {
   padding: 1rem;
 }
+
 a {
   display: inline-block;
+}
+
+.Main__ {
+  &title {
+    @include typography.typography("headline2");
+  }
+  &description {
+    @include typography.typography("headline4");
+  }
+  &Property {
+    @include typography.typography("headline5");
+  }
+}
+
+.ExpRecords__Property {
+  @include typography.typography("headline6");
+  &::after {
+    @include typography.typography("subtitle1");
+  }
 }
 
 .links {
@@ -61,6 +84,7 @@ a {
 
 
 .Term {
+  @include typography.typography("subtitle2");
   display: inline-block;
   padding-left: 0.25rem;
   padding-right: 0.25rem;

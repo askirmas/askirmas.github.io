@@ -9,8 +9,7 @@
     "md@dev": "nodemon",
     "sass@dev": "npm run sass -- --watch",
     "compile/sass": "npm run sass",
-    "sass": "sass --no-indented --no-source-map --style=compressed styles:."
-    
+    "sass": "sass --no-indented --no-source-map --style=compressed --load-path=node_modules styles:."
   },
   "keywords": [],
   "author": {
@@ -22,6 +21,7 @@
   "devDependencies": {
     "@types/jest": "^26.0.9",
     "jest": "^26.2.2",
+    "material-components-web": "^7.0.0",
     "nodemon": "^2.0.4",
     "sass": "^1.26.10",
     "ts-jest": "^26.1.4",
