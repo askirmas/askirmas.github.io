@@ -76,7 +76,7 @@
     $year: #{&};
     @at-root #{$root} {
       &--#{$year} {
-        &::before{content: "2018 -2019 Lead Software Engineer";}
+        &::before{content: "2018 - 2019 Lead Software Engineer";}
         &::after{content: "Go-Be Marketing Ltd /*Sales Company*/ @Israel/Tel-Aviv";}
       }
       &__Goal--#{$year}- {
@@ -94,8 +94,8 @@
     $year: #{&};
     @at-root #{$root} {
       &--#{$year} {
-        &::before{content: "2015 -2017 Software Engineer";}
-        &::after{content: "Intetics Inc /*Outsource Software Development*/ @Ukraine/Kharkiv, Area9 @Denmark/Copenhagen";}
+        &::before{content: "2015 - 2017 Software Engineer";}
+        &::after{content: "Intetics Inc @Ukraine/Kharkiv, Area9 @Denmark/Copenhagen";}
       }
       &__Goal--#{$year}- {
         &0::before {content: "Web client for media viewing with mobile optimizations"}
@@ -110,7 +110,7 @@
     $year: #{&};
     @at-root #{$root} {
       &--#{$year} {
-        &::before{content: "2014 -2015 Freelance Developer";}
+        &::before{content: "2014 - 2015 Freelance Developer";}
         &::after{content: "Eikoncraft /*Software service company*/ @USA/Dallas";}
       }
       &__Goal--#{$year}- {
@@ -123,7 +123,7 @@
     $year: #{&};
     @at-root #{$root} {
       &--#{$year} {
-        &::before{content: "2008 -2014 Co-Founder, Branch Manager";}
+        &::before{content: "2008 - 2014 Co-Founder, Branch Manager";}
         &::after{content: "New Educational Initiatives Llc ​/*eLearning company*/ @Russia/Moscow";}
       }
       &__Goal--#{$year}- {
@@ -142,8 +142,8 @@
     $year: #{&};
     @at-root #{$root} {
       &--#{$year} {
-        &::before{content: "2012 -2014 Master of Computer Science";}
-        &::after{content: "Institute of Cybernetics of National Academy of Science of Ukraine @Ukraine/Kyiv. Moscow Institute  of Physics and Technology @Russia/Moscow";}
+        &::before{content: "2012 - 2014 Master of Computer Science";}
+        &::after{content: "Institute of Cybernetics @Ukraine/Kyiv. Institute of Physics and Technology @Russia/Moscow";}
       }
       &__Goal--#{$year}- {
         &0::before {content: "Software Engineering"}
@@ -157,8 +157,8 @@
     $year: #{&};
     @at-root #{$root} {
       &--#{$year} {
-        &::before{content: "2006 -2012 Bachelor of Applied Mathematics";}
-        &::after{content: "Moscow Institute  of Physics and Technology @Russia/Moscow";}
+        &::before{content: "2006 - 2012 Bachelor of Applied Mathematics";}
+        &::after{content: "Institute of Physics and Technology @Russia/Moscow";}
       }
       &__Goal--#{$year}- {
         &0::before {content: "Databases"}
@@ -178,8 +178,8 @@
     $year: #{&};
     @at-root #{$root} {
       &--#{$year} {
-        &::before{content: "1996 -2006 Awardee of international and republic Math olympiads";}
-        &::after{content: "Kharkiv Physics and Mathematics Lyceum #27 @Ukraine/Kharkiv";}
+        &::before{content: "1996 - 2006 Awardee of international and republic Math olympiads";}
+        &::after{content: "Physics and Mathematics Lyceum #27 @Ukraine/Kharkiv";}
       }
     }
   }

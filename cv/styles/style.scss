@@ -38,7 +38,7 @@
   &Apache::before {content: "Apache";}
   &bash::before {content: "bash";}
   &C::before {content: "C";}
-  &canvas::before {content: "<canvas>"; @debug &;}
+  &canvas::before {content: "<canvas>"}
   &Cpp::before {content: "C++";}
   &CSS::before {content: "CSS";}
   &CSS3::before {content: "CSS3";}
