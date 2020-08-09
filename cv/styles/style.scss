@@ -72,20 +72,20 @@
   &CSS3::before {content: "CSS3"}
   &PureCss::before {content: "PureCss"}
   &nginx::before {content: "nginx"}
-  &JS_DOM {content: "JS DOM";}
-  &React {content: "React";}
-  &RxJs {content: "RxJs";}
-  &canvas {content: "canvas";}
-  &TypeScript {content: "TypeScript";}
-  &Haxe {content: "Haxe";}
-  &Apache {content: "Apache";}
-  &NodeJs {content: "NodeJs";}
-  &PHP {content: "PHP";}
-  &MySQL {content: "MySQL";}
-  &Python {content: "Python";}
-  &nwjs {content: "nwjs";}
-  &pixi_js {content: "pixi.js";}
-  &jwt {content: "jwt";}
+  &JS_DOM::before {content: "JS DOM";}
+  &React::before {content: "React";}
+  &RxJs::before {content: "RxJs";}
+  &canvas::before {content: "<canvas>"; @debug &;}
+  &TypeScript::before {content: "TypeScript";}
+  &Haxe::before {content: "Haxe";}
+  &Apache::before {content: "Apache";}
+  &NodeJs::before {content: "NodeJs";}
+  &PHP::before {content: "PHP";}
+  &MySQL::before {content: "MySQL";}
+  &Python::before {content: "Python";}
+  &nwjs::before {content: "nwjs";}
+  &pixi_js::before {content: "pixi.js";}
+  &jwt::before {content: "jwt";}
   &JS::before {content: "JS";}
   &Reactive::before {content: "Reactive";}
   &Cpp::before {content: "C++"}
