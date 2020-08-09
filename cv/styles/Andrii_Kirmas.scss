@@ -1,16 +1,11 @@
-@mixin goal-content($content) {
-  display: list-item;
-  &::before {
-    content: $content;
-  }
-}
+@import "utils";
 
 .Main__ {
-  &title::after {
-    content: "Andrii Kirmas";
+  &title {
+    @include content-value("Andrii Kirmas");
   }
-  &description::before {
-    content: "Senior Software ";
+  &description{
+    @include content-key("Senior Software ");
   }
 }
 
@@ -19,32 +14,31 @@
     pointer-events: none;
     color: inherit;
   }
-  &residence::before {
-    padding-left: 0;
-    content: "🇮🇱";
+  &residence {
+    @include content-key("🇮🇱") {
+      padding-left: 0;
+    }
   }
-  &residence::after {content: "Israel/Netanya";}
-  &github::after {content: "github.com/askirmas";}
-  &linkedin::after {content: "linkedin.com/in/kirmas";}
+  &residence { @include content-value("Israel/Netanya");}
+  &github { @include content-value("github.com/askirmas");}
+  &linkedin { @include content-value("linkedin.com/in/kirmas");}
 }
 
-.Objectives::after {content: "Passionate for systematic and iterative procedures. High educability and deep knowledge of computer science makes me efficient in engineering and architecture that provides a logical flow of knowledge and progress.";}
+.Objectives { @include content-value("Passionate for systematic and iterative procedures. High educability and deep knowledge of computer science makes me efficient in engineering and architecture that provides a logical flow of knowledge and progress.");}
 
 .Human_Languages-- {
-  &English::after {content: "Fluent";}
-  &Hebrew::after {content: "Basic";}
-  &Ukrainian::after {content: "Mother tongue";}
-  &Russian::after {content: "Mother tongue";}
+  &English { @include content-value("Fluent");}
+  &Hebrew { @include content-value("Basic");}
+  &Ukrainian { @include content-value("Mother tongue");}
+  &Russian { @include content-value("Mother tongue");}
 }
 
 .Term-- {
-  &Engineer::after {
-    content: "Engineer";
+  &Engineer {
+    @include content-key("Engineer");
+    // @include content-value("The engineer has a solid educational grounding and the ability to apply engineering concepts to create digital solutions");
   }
-  &Engineer::before {
-    /* content: "The engineer has a solid educational grounding and the ability to apply engineering concepts to create digital solutions"; */
-  }
-
+  
   &Docker,
   &nginx,
   &C,
@@ -66,8 +60,10 @@
     $year: #{&};
     @at-root #{$root} {
       &--#{$year} {
-        &::before {content: "2019 - 2020 Senior Fullstack Engineer";}
-        &::after {content: "Cloudwize.io /*Cloud Management*/ @Israel/Netanya";}
+        @include content-apply(
+          "2019 - 2020 Senior Fullstack Engineer",
+          "Cloudwize.io /*Cloud Management*/ @Israel/Netanya"
+        );
       }
       &__Goal--#{$year}- {
         &0 { @include goal-content("Implemented IDE-like website"); }
@@ -83,8 +79,10 @@
     $year: #{&};
     @at-root #{$root} {
       &--#{$year} {
-        &::before{content: "2018 - 2019 Lead Software Engineer";}
-        &::after{content: "Go-Be Marketing Ltd /*Sales Company*/ @Israel/Tel-Aviv";}
+        @include content-apply(
+          "2018 - 2019 Lead Software Engineer",
+          "Go-Be Marketing Ltd /*Sales Company*/ @Israel/Tel-Aviv"
+        );
       }
       &__Goal--#{$year}- {
         &0 { @include goal-content("Communicating with outsources, supports, consulting affiliates"); }
@@ -101,8 +99,10 @@
     $year: #{&};
     @at-root #{$root} {
       &--#{$year} {
-        &::before{content: "2015 - 2017 Software Engineer";}
-        &::after{content: "Intetics Inc @Ukraine/Kharkiv, Area9 @Denmark/Copenhagen";}
+        @include content-apply(
+          "2015 - 2017 Software Engineer",
+          "Intetics Inc @Ukraine/Kharkiv, Area9 @Denmark/Copenhagen"
+        );
       }
       &__Goal--#{$year}- {
         &0 { @include goal-content("Web client for media viewing with mobile optimizations"); }
@@ -117,8 +117,10 @@
     $year: #{&};
     @at-root #{$root} {
       &--#{$year} {
-        &::before{content: "2014 - 2015 Freelance Developer";}
-        &::after{content: "Eikoncraft /*Software service company*/ @USA/Dallas";}
+        @include content-apply(
+          "2014 - 2015 Freelance Developer",
+          "Eikoncraft /*Software service company*/ @USA/Dallas"
+        );
       }
       &__Goal--#{$year}- {
         &0 { @include goal-content("Created internal timelog system"); }
@@ -130,8 +132,10 @@
     $year: #{&};
     @at-root #{$root} {
       &--#{$year} {
-        &::before{content: "2008 - 2014 Co-Founder, Branch Manager";}
-        &::after{content: "New Educational Initiatives Llc ​/*eLearning company*/ @Russia/Moscow";}
+        @include content-apply(
+          "2008 - 2014 Co-Founder, Branch Manager",
+          "New Educational Initiatives Llc ​/*eLearning company*/ @Russia/Moscow"
+        );
       }
       &__Goal--#{$year}- {
         &0 { @include goal-content("Managing"); }
@@ -149,8 +153,10 @@
     $year: #{&};
     @at-root #{$root} {
       &--#{$year} {
-        &::before{content: "2012 - 2014 Master of Computer Science";}
-        &::after{content: "Institute of Cybernetics @Ukraine/Kyiv. Institute of Physics and Technology @Russia/Moscow";}
+        @include content-apply(
+          "2012 - 2014 Master of Computer Science",
+          "Institute of Cybernetics @Ukraine/Kyiv. Institute of Physics and Technology @Russia/Moscow"
+        );
       }
       &__Goal--#{$year}- {
         &0 { @include goal-content("Software Engineering"); }
@@ -164,8 +170,10 @@
     $year: #{&};
     @at-root #{$root} {
       &--#{$year} {
-        &::before{content: "2006 - 2012 Bachelor of Applied Mathematics";}
-        &::after{content: "Institute of Physics and Technology @Russia/Moscow";}
+        @include content-apply(
+          "2006 - 2012 Bachelor of Applied Mathematics",
+          "Institute of Physics and Technology @Russia/Moscow"
+        );
       }
       &__Goal--#{$year}- {
         &0 { @include goal-content("Databases"); }
@@ -185,8 +193,10 @@
     $year: #{&};
     @at-root #{$root} {
       &--#{$year} {
-        &::before{content: "1996 - 2006 Awardee of international and republic Math olympiads";}
-        &::after{content: "Physics and Mathematics Lyceum #27 @Ukraine/Kharkiv";}
+        @include content-apply(
+          "1996 - 2006 Awardee of international and republic Math olympiads",
+          "Physics and Mathematics Lyceum #27 @Ukraine/Kharkiv"
+        );
       }
     }
   }

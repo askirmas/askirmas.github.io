@@ -1,5 +1,6 @@
 @use "@material/typography";
 @use "@material/elevation";
+@import "utils";
 
 $padding: 1rem;
 $icon-size: 1.5rem;
@@ -82,18 +83,20 @@ a {
     top: 0.2rem;
     bottom: 0.2rem;
   }
-  &::before {
-    background: {
-      position: left center;
-      repeat: no-repeat;
-      size: contain;
+  & {
+    @include content-key {
+      background: {
+        position: left center;
+        repeat: no-repeat;
+        size: contain;
+      }
+      padding: {
+        top: calc((#{$icon-size} - 1em) / 2);
+        bottom: calc((#{$icon-size} - 1em) / 2);
+        left: $icon-size;
+      }
+      margin-right: 0.25rem;
     }
-    padding: {
-      top: calc((#{$icon-size} - 1em) / 2);
-      bottom: calc((#{$icon-size} - 1em) / 2);
-      left: $icon-size;
-    }
-    margin-right: 0.25rem;
   }
 }
 
@@ -103,13 +106,13 @@ a {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  &::before {
+  @include content-key {
     grid-row: 1;
     order: -2;
     flex: 1;
     min-width: 100%;
   }
-  &::after {
+  @include content-value {
     display: block;
     grid-row: 2;
     order: -1;
@@ -151,24 +154,21 @@ a {
     @include typography.typography("headline4");
   }
   &Property {
-    &::before {
+    @include content-key {
       @include typography.typography("headline5");
     }
-    &::after {
+    @include content-value {
       @include typography.typography("body1");
     }  
   }
 }
 
 .ExpRecords__Property {
-  &::before { 
+  @include content-key { 
     @include typography.typography("headline6");
   }
-  &::after {
+  @include content-value {
     @include typography.typography("subtitle1");
-    & {
-      // font-weight: bold;  
-    }
   }
 }
 

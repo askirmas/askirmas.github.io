@@ -1,79 +1,85 @@
-@import "theme";
+@import "theme"
+, "utils"
+;
 
 .links-- {
-  &email::before {
-    content: "";
-    background-image: url(https://fonts.gstatic.com/s/i/materialicons/email/v6/24px.svg);
+  &email {
+    @include content-key("") {
+      background-image: url(https://fonts.gstatic.com/s/i/materialicons/email/v6/24px.svg);
+    }
   }
-  &phone::before {
-    content: "";
-    background-image: url(https://fonts.gstatic.com/s/i/materialicons/smartphone/v7/24px.svg);
+  &phone {
+    @include content-key("") {
+      background-image: url(https://fonts.gstatic.com/s/i/materialicons/smartphone/v7/24px.svg);
+    }
   }
-  &github::before {
-    content: "";
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/95/Font_Awesome_5_brands_github.svg);
+  &github {
+    @include content-key("") {
+      background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/95/Font_Awesome_5_brands_github.svg);
+    }
   }
-  &linkedin::before {
-    content: "";
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/80/LinkedIn_Logo_2013.svg);
-    background-position-x: right;
-    background-size: auto #{$icon-size};
-    padding-left: 1.25 * $icon-size;
-    margin-right: 0;
+  &linkedin {
+    @include content-key("") {
+      background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/80/LinkedIn_Logo_2013.svg);
+      background-position-x: right;
+      background-size: auto #{$icon-size};
+      padding-left: 1.25 * $icon-size;
+      margin-right: 0;
+    }
   }
 }
 
-.Objectives::before {content: "Objectives";}
-.Experience::before {content: "Experience";}
-.Education::before {content: "Education";}
+.Objectives { @include content-key("Objectives");}
+.Experience { @include content-key("Experience");}
+.Education { @include content-key("Education");}
 
 .Human_Languages {
-  &::before {content: "Languages";}
-  &--English::before {content: "English: ";}
-  &--Hebrew::before {content: "Hebrew: ";}
-  &--Ukrainian::before {content: "Ukrainian: ";}
-  &--Russian::before {content: "Russian: ";}
+  & { @include content-key("Languages");}
+  &--English { @include content-key("English: ");}
+  &--Hebrew { @include content-key("Hebrew: ");}
+  &--Ukrainian { @include content-key("Ukrainian: ");}
+  &--Russian { @include content-key("Russian: ");}
 }
 .Term-- {
-  &Apache::before {content: "Apache";}
-  &bash::before {content: "bash";}
-  &C::before {content: "C";}
-  &canvas::before {content: "<canvas>"}
-  &Cpp::before {content: "C++";}
-  &CSS::before {content: "CSS";}
-  &CSS3::before {content: "CSS3";}
-  &Cypress::before {content: "Cypress";}
-  &Docker::before {content: "Docker";}
-  &ExpressJs::before {content: "ExpressJs";}
-  &git::before {content: "git";}
-  &GitLab_CI::before {content: "GitLab CI";}
-  &Haxe::before {content: "Haxe";}
-  &Jest::before {content: "Jest";}
-  &jQuery::before {content: "jQuery";}
-  &JS_DOM::before {content: "JS DOM";}
-  &JS::before {content: "JS";}
-  &JsonSchema::before {content: "JsonSchema";}
-  &jwt::before {content: "jwt";}
-  &MongoDB::before {content: "MongoDB";}
-  &MySQL::before {content: "MySQL";}
-  &Next-js::before {content: "Next.js"}
-  &nginx::before {content: "nginx"}
-  &node-http::before {content: "node/http"}
-  &NodeJs::before {content: "NodeJs";}
-  &nwjs::before {content: "nwjs";}
-  &OpenCV::before {content: "OpenCV"}
-  &OpenMPI::before {content: "OpenMPI";}
-  &PHP::before {content: "PHP";}
-  &pixi_js::before {content: "pixi.js";}
-  &Puppeteer::before {content: "Puppeteer";}
-  &PureCss::before {content: "PureCss"}
-  &Python::before {content: "Python";}
-  &React::before {content: "React";}
-  &Reactive::before {content: "Reactive";}
-  &Redux::before {content: "Redux";}
-  &RxJs::before {content: "RxJs";}
-  &SASS::before {content: "SASS";}
-  &TypeScript::before {content: "TypeScript";}
-  &Webpack::before {content: "Webpack";}
-  &WordPress::before {content: "WordPress"}
+  &Apache { @include content-key("Apache");}
+  &bash { @include content-key("bash");}
+  &C { @include content-key("C");}
+  &canvas { @include content-key("<canvas>")}
+  &Cpp { @include content-key("C++");}
+  &CSS { @include content-key("CSS");}
+  &CSS3 { @include content-key("CSS3");}
+  &Cypress { @include content-key("Cypress");}
+  &Docker { @include content-key("Docker");}
+  &ExpressJs { @include content-key("ExpressJs");}
+  &git { @include content-key("git");}
+  &GitLab_CI { @include content-key("GitLab CI");}
+  &Haxe { @include content-key("Haxe");}
+  &Jest { @include content-key("Jest");}
+  &jQuery { @include content-key("jQuery");}
+  &JS_DOM { @include content-key("JS DOM");}
+  &JS { @include content-key("JS");}
+  &JsonSchema { @include content-key("JsonSchema");}
+  &jwt { @include content-key("jwt");}
+  &MongoDB { @include content-key("MongoDB");}
+  &MySQL { @include content-key("MySQL");}
+  &Next-js { @include content-key("Next.js")}
+  &nginx { @include content-key("nginx")}
+  &node-http { @include content-key("node/http")}
+  &NodeJs { @include content-key("NodeJs");}
+  &nwjs { @include content-key("nwjs");}
+  &OpenCV { @include content-key("OpenCV")}
+  &OpenMPI { @include content-key("OpenMPI");}
+  &PHP { @include content-key("PHP");}
+  &pixi_js { @include content-key("pixi.js");}
+  &Puppeteer { @include content-key("Puppeteer");}
+  &PureCss { @include content-key("PureCss")}
+  &Python { @include content-key("Python");}
+  &React { @include content-key("React");}
+  &Reactive { @include content-key("Reactive");}
+  &Redux { @include content-key("Redux");}
+  &RxJs { @include content-key("RxJs");}
+  &SASS { @include content-key("SASS");}
+  &TypeScript { @include content-key("TypeScript");}
+  &Webpack { @include content-key("Webpack");}
+  &WordPress { @include content-key("WordPress")}
 }
