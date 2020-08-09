@@ -1,4 +1,6 @@
-@import "utils";
+@import "utils"
+, "content"
+;
 
 .Main__ {
   &title {
@@ -201,4 +203,68 @@
     }
   }
 }
+
+
+.Term--y2012-0 { @include term--MySQL; }
+.Term--y2012-1 { @include term--C; }
+.Term--y2012-2 { @include term--Cpp; }
+.Term--y2012-3 { @include term--OpenMPI; }
+.Term--y2014-0 { @include term--Cpp; }
+.Term--y2014-1 { @include term--PHP; }
+.Term--y2014-2 { @include term--MySQL; }
+.Term--y2014-3 { @include term--JS; }
+.Term--y2014-4 { @include term--OpenCV; }
+.Term--y2015-0 { @include term--JS; }
+.Term--y2015-1 { @include term--Reactive; }
+.Term--y2017-0 { @include term--JS_DOM; }
+.Term--y2017-1 { @include term--React; }
+.Term--y2017-2 { @include term--RxJs; }
+.Term--y2017-3 { @include term--canvas; }
+.Term--y2017-4 { @include term--TypeScript; }
+.Term--y2017-5 { @include term--Haxe; }
+.Term--y2017-6 { @include term--Apache; }
+.Term--y2017-7 { @include term--NodeJs; }
+.Term--y2017-8 { @include term--PHP; }
+.Term--y2017-9 { @include term--MySQL; }
+.Term--y2017-10 { @include term--Python; }
+.Term--y2017-11 { @include term--nwjs; }
+.Term--y2017-12 { @include term--pixi_js; }
+.Term--y2017-13 { @include term--jwt; }
+.Term--y2019-0 { @include term--JsonSchema; }
+.Term--y2019-1 { @include term--git; }
+.Term--y2019-2 { @include term--node_http; }
+.Term--y2019-3 { @include term--bash; }
+.Term--y2019-4 { @include term--NodeJs; }
+.Term--y2019-5 { @include term--ExpressJs; }
+.Term--y2019-6 { @include term--MongoDB; }
+.Term--y2019-7 { @include term--Apache; }
+.Term--y2019-8 { @include term--PHP; }
+.Term--y2019-9 { @include term--MySQL; }
+.Term--y2019-10 { @include term--jQuery; }
+.Term--y2019-11 { @include term--WordPress; }
+.Term--y2019-12 { @include term--Next_js; }
+.Term--y2019-13 { @include term--React; }
+.Term--y2019-14 { @include term--CSS3; }
+.Term--y2019-15 { @include term--PureCss; }
+.Term--y2019-16 { @include term--nginx; }
+.Term--y2020-0 { @include term--TypeScript; }
+.Term--y2020-1 { @include term--JsonSchema; }
+.Term--y2020-2 { @include term--Jest; }
+.Term--y2020-3 { @include term--Cypress; }
+.Term--y2020-4 { @include term--Puppeteer; }
+.Term--y2020-5 { @include term--JS_DOM; }
+.Term--y2020-6 { @include term--React; }
+.Term--y2020-7 { @include term--CSS; }
+.Term--y2020-8 { @include term--SASS; }
+.Term--y2020-9 { @include term--ExpressJs; }
+.Term--y2020-10 { @include term--NodeJs; }
+.Term--y2020-11 { @include term--Redux; }
+.Term--y2020-12 { @include term--MySQL; }
+.Term--y2020-13 { @include term--MongoDB; }
+.Term--y2020-14 { @include term--Webpack; }
+.Term--y2020-15 { @include term--bash; }
+.Term--y2020-16 { @include term--CSS3; }
+.Term--y2020-17 { @include term--git; }
+.Term--y2020-18 { @include term--GitLab_CI; }
+.Term--y2020-19 { @include term--Docker; }
 
