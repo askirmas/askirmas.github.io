@@ -1,5 +1,0 @@
-{
-  "watch": ["cli"],
-  "ext": "ts",
-  "exec": "ts-node ./cli/md.ts"
-}
