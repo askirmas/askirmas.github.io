@@ -1,6 +1,8 @@
 @import "utils"
 , "ontology";
 
+$font-bold: 600;
+
 %Term__padding {
   padding: {
     left: 0.25rem;
@@ -154,10 +156,10 @@
         &0 { @include goal-content("Information fluctuation complexity"); }
         &1 { @include goal-content("Neural networks"); }
         &2 { @include goal-content("Software Engineering") {
-          font-weight: bold;
+          font-weight: #{$font-bold};
         } }
         &3 { @include goal-content("System Engineering") {
-          font-weight: bold;  
+          font-weight: #{$font-bold};  
         } }
       }
     }
@@ -179,7 +181,7 @@
         &3 { @include goal-content("Mathematical optimization"); }
         &4 { @include goal-content("Parallel programming"); }
         &5 { @include goal-content("Programming language theory") {
-          font-weight: bold;
+          font-weight: #{$font-bold};
         } }
       }
     }
@@ -196,13 +198,13 @@
       }
       &__Goal--#{$year}- {
         &0 { @include goal-content("Boolean algebra") {
-          font-weight: bold;
+          font-weight: #{$font-bold};
         } }
-        &1 { @include goal-content("Discrete math") {
-          font-weight: bold;
+        &1 { @include goal-content("Discrete mathematics") {
+          font-weight: #{$font-bold};
         } }
         &2 { @include goal-content("Geometry");
-          font-weight: bold;
+          font-weight: #{$font-bold};
         }
         &3 { @include goal-content("Probability theory"); }
       }
