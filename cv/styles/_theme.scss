@@ -27,11 +27,13 @@ a {
   grid-template-rows:
     max-content
     min-content
+    min-content
     1fr
     min-content
   ;
   grid-template-areas:
     'Objectives Objectives'
+    'Experience Hard_Skills'
     'Experience Education'
     'Experience .'
     'Experience Human_Languages'
@@ -73,7 +75,7 @@ a {
 .Human_Languages { grid-area: Human_Languages;}
 .Experience { grid-area: Experience;}
 .Education { grid-area: Education;}
-
+.Hard_Skills { grid-area: Hard_Skills;}
 
 .links {
   text-decoration: inherit;

@@ -1,6 +1,13 @@
 @import "utils"
 , "ontology";
 
+%Term__padding {
+  padding: {
+    left: 0.25rem;
+    right: 0.25rem;
+  }
+}
+
 .Main__ {
   &title {
     @include content-value("Andrii Kirmas");
@@ -32,6 +39,11 @@
   &Hebrew { @include content-value("Basic");}
   &Ukrainian { @include content-value("Mother tongue");}
   &Russian { @include content-value("Mother tongue");}
+}
+
+.Hard_Skills__Term {
+  display: none;
+  @extend %Term__padding;
 }
 
 .Experience {
@@ -197,12 +209,8 @@ Term {
   }
 
   @at-root %#{$entity}-- {
-    padding: {
-      left: 0.25rem;
-      right: 0.25rem;
-    }
-
-    @import "content";
+    @import "content";  
+    @extend %Term__padding;
 
     &#{$term--JsonSchema}, &#{$term--TypeScript},
     &#{$term--git}, &#{$term--bash},
@@ -214,6 +222,7 @@ Term {
     &#{$term--Redux},
     &#{$term--MySQL}, &#{$term--MongoDB},
     &#{$term--PHP} {
+      display: inline-block;
       text-decoration: underline;
       order: -1;
     }
@@ -227,6 +236,7 @@ Term {
       order: 1;
     }
   }
+
   @at-root .Education__#{$entity}-- {
     &y2012-{
       &0 { @extend %Term--, %Term--#{$term--MySQL};}
@@ -303,6 +313,14 @@ Term {
       &17 { @extend %Term--, %Term--#{$term--git}; }
       &18 { @extend %Term--, %Term--#{$term--GitLab_CI}; }
       &19 { @extend %Term--, %Term--#{$term--Docker}; }
+    }
+  }
+
+  @at-root .#{$entity}-- {
+    @each $term in $terms {
+      &#{$term} {
+        @extend %#{$entity}--#{$term}
+      }
     }
   }
 }
