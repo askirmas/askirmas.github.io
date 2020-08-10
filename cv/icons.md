@@ -9,3 +9,9 @@
   - <img src='https://upload.wikimedia.org/wikipedia/commons/f/fb/.docx_icon.svg' style='height:24px;'/>
   - <img src='https://json-schema.org/assets/logo.svg' style='height:24px;'/>
   - <img src='https://upload.wikimedia.org/wikipedia/commons/c/c9/JSON_vector_logo.svg' style='height:24px;'/>
+
+  - <img src='https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg' style='height:24px;'/>
+
+  - <img src='https://symbols.getvecta.com/stencil_89/68_npm-icon.8355ce9423.svg' style='height:24px;'/>
+
+  

@@ -41,7 +41,7 @@
   &Russian { @include content-value("Mother tongue");}
 }
 
-.Hard_Skills__Term {
+.Core_Skills__Term {
   display: none;
   @extend %Term__padding;
 }
@@ -131,10 +131,9 @@
         );
       }
       &__Goal--#{$year}- {
-        &0 { @include goal-content("Managing"); }
-        &1 { @include goal-content("Video and audio processing"); }
-        &2 { @include goal-content("Researches"); }
-        &3 { @include goal-content("Software"); }
+        &0 { @include goal-content("Managing branch, hiring, and training staff"); }
+        &1 { @include goal-content("eLearning production"); }
+        &2 { @include goal-content("Researched automation of video and text processing"); }
       }
     }
   }
@@ -152,9 +151,14 @@
         );
       }
       &__Goal--#{$year}- {
-        &0 { @include goal-content("Software Engineering"); }
-        &1 { @include goal-content("System Engineering"); }
-        &2 { @include goal-content("Neural networks"); }
+        &0 { @include goal-content("Information fluctuation complexity"); }
+        &1 { @include goal-content("Neural networks"); }
+        &2 { @include goal-content("Software Engineering") {
+          font-weight: bold;
+        } }
+        &3 { @include goal-content("System Engineering") {
+          font-weight: bold;  
+        } }
       }
     }
   }
@@ -169,15 +173,14 @@
         );
       }
       &__Goal--#{$year}- {
-        &0 { @include goal-content("Programming language theory"); }
-        &1 { @include goal-content("Algorithms and calculus methods"); }
-        &2 { @include goal-content("Computational complexity"); }
-        &3 { @include goal-content("Data structures"); }
-        &4 { @include goal-content("Databases"); }
-        &5 { @include goal-content("Analytic geometry"); }
-        &6 { @include goal-content("Mathematical optimization"); }
-        &7 { @include goal-content("Mathematical analysis"); }
-        &8 { @include goal-content("Parallel programming"); }
+        &0 { @include goal-content("Algorithms and calculus methods, Computational complexity, Data structures"); }
+        &1 { @include goal-content("Databases"); }
+        &2 { @include goal-content("Mathematical analysis and statistics"); }
+        &3 { @include goal-content("Mathematical optimization"); }
+        &4 { @include goal-content("Parallel programming"); }
+        &5 { @include goal-content("Programming language theory") {
+          font-weight: bold;
+        } }
       }
     }
   }
@@ -190,6 +193,18 @@
           "1996 - 2006 Awardee of international and republic Math olympiads",
           "Physics and Mathematics Lyceum #27 @Kharkiv.Ukraine"
         );
+      }
+      &__Goal--#{$year}- {
+        &0 { @include goal-content("Boolean algebra") {
+          font-weight: bold;
+        } }
+        &1 { @include goal-content("Discrete math") {
+          font-weight: bold;
+        } }
+        &2 { @include goal-content("Geometry");
+          font-weight: bold;
+        }
+        &3 { @include goal-content("Probability theory"); }
       }
     }
   }
