@@ -20,7 +20,7 @@
       padding-left: 0;
     }
   }
-  &residence { @include content-value("Israel/Netanya");}
+  &residence { @include content-value("Netanya.Israel");}
   &github { @include content-value("github.com/askirmas");}
   &linkedin { @include content-value("linkedin.com/in/kirmas");}
 }
@@ -43,7 +43,7 @@
       &--#{$year} {
         @include content-apply(
           "2019 - 2020 Senior Fullstack Engineer",
-          "Cloudwize.io /*Cloud Management*/ @Israel/Netanya"
+          "Cloudwize.io /*Cloud Management*/ @Netanya.Israel"
         );
       }
       &__Goal--#{$year}- {
@@ -62,7 +62,7 @@
       &--#{$year} {
         @include content-apply(
           "2018 - 2019 Lead Software Engineer",
-          "Go-Be Marketing Ltd /*Sales Company*/ @Israel/Tel-Aviv"
+          "Go-Be Marketing Ltd /*Sales Company*/ @Tel-Aviv.Israel"
         );
       }
       &__Goal--#{$year}- {
@@ -81,8 +81,8 @@
     @at-root #{$root} {
       &--#{$year} {
         @include content-apply(
-          "2015 - 2017 Software Engineer"word wrap characters css,
-          "Intetics Inc @Ukraine/Kharkiv, Area9 @Denmark/Copenhagen"
+          "2015 - 2017 Software Engineer",
+          "Intetics Inc @Kharkiv.Ukraine, Area9 @Copenhagen.Denmark"
         );
       }
       &__Goal--#{$year}- {
@@ -100,7 +100,7 @@
       &--#{$year} {
         @include content-apply(
           "2014 - 2015 Freelance Developer",
-          "Eikoncraft /*Software service company*/ @USA/Dallas"
+          "Eikoncraft /*Software service company*/ @Dallas.USA"
         );
       }
       &__Goal--#{$year}- {
@@ -115,7 +115,7 @@
       &--#{$year} {
         @include content-apply(
           "2008 - 2014 Co-Founder, Branch Manager",
-          "New Educational Initiatives Llc ​/*eLearning company*/ @Russia/Moscow"
+          "New Educational Initiatives Llc ​/*eLearning company*/ @Moscow.Russia"
         );
       }
       &__Goal--#{$year}- {
@@ -136,7 +136,7 @@
       &--#{$year} {
         @include content-apply(
           "2012 - 2014 Master of Computer Science",
-          "Institute of Cybernetics @Ukraine/Kyiv. Institute of Physics and Technology @Russia/Moscow"
+          "Institute of Cybernetics @Kyiv.Ukraine. Institute of Physics and Technology @Moscow.Russia"
         );
       }
       &__Goal--#{$year}- {
@@ -153,19 +153,19 @@
       &--#{$year} {
         @include content-apply(
           "2006 - 2012 Bachelor of Applied Mathematics",
-          "Institute of Physics and Technology @Russia/Moscow"
+          "Institute of Physics and Technology @Moscow.Russia"
         );
       }
       &__Goal--#{$year}- {
-        &0 { @include goal-content("Databases"); }
-        &1 { @include goal-content("Mathematical optimization"); }
-        &2 { @include goal-content("Programming language theory"); }
-        &3 { @include goal-content("Computational complexity"); }
-        &4 { @include goal-content("Data structures"); }
-        &5 { @include goal-content("Algorithms and calculus methods"); }
-        &6 { @include goal-content("Mathematical analysis"); }
-        &7 { @include goal-content("Parallel programming"); }
-        &8 { @include goal-content("Analytic geometry"); }
+        &0 { @include goal-content("Programming language theory"); }
+        &1 { @include goal-content("Algorithms and calculus methods"); }
+        &2 { @include goal-content("Computational complexity"); }
+        &3 { @include goal-content("Data structures"); }
+        &4 { @include goal-content("Databases"); }
+        &5 { @include goal-content("Analytic geometry"); }
+        &6 { @include goal-content("Mathematical optimization"); }
+        &7 { @include goal-content("Mathematical analysis"); }
+        &8 { @include goal-content("Parallel programming"); }
       }
     }
   }
@@ -176,7 +176,7 @@
       &--#{$year} {
         @include content-apply(
           "1996 - 2006 Awardee of international and republic Math olympiads",
-          "Physics and Mathematics Lyceum #27 @Ukraine/Kharkiv"
+          "Physics and Mathematics Lyceum #27 @Kharkiv.Ukraine"
         );
       }
     }
@@ -186,6 +186,7 @@
 .Goal {
   order: 2;
 }
+
 Term {
   $entity: #{&};
   @at-root .#{&entity}-- {
