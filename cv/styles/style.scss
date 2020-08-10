@@ -32,7 +32,10 @@
 .Objectives { @include content-key("Objectives");}
 .Experience { @include content-key("Experience");}
 .Education { @include content-key("Education");}
-.Core_Skills { @include content-key("Core Skills");}
+.Core_Skills {
+  @include content-key("Competences");
+  line-height: 1.5em;
+}
 
 .Human_Languages {
   & { @include content-key("Languages");}
@@ -40,5 +43,6 @@
   &--Hebrew { @include content-key("Hebrew: ");}
   &--Ukrainian { @include content-key("Ukrainian: ");}
   &--Russian { @include content-key("Russian: ");}
+  &--JS { @include content-key("JavaScript: ");}
 }
 

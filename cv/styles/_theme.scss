@@ -1,8 +1,7 @@
 @use "@material/typography";
 @use "@material/elevation";
 
-$padding: 1rem;
-$icon-size: 1.5rem;
+@import "quarks";
 
 :root {
   @include typography.typography("body1");
@@ -107,13 +106,13 @@ a {
   flex-wrap: wrap;
   flex-direction: row;
   @include content-key {
-    order: -3;
+    order: #{$order-0-0};
     flex: 1;
     min-width: 100%;
   }
   @include content-value {
     display: block;
-    order: -2;
+    order: #{$order-0-1};
     min-width: 100% ;
     flex-grow: 1;
   }
