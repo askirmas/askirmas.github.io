@@ -87,7 +87,7 @@ wireframe.js
 wireframe.xml
 end
 
-subgraph bundler
+subgraph bundler_
 cssModules["cssModules:0|1"]
 bundler
 end
