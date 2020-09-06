@@ -106,7 +106,7 @@
         "null"
       ],
       "propertyNames": {
-        "oneOf": [
+        "anyOf": [
           {"const": "global"},
           {"format": "uri-reference"}
         ]
