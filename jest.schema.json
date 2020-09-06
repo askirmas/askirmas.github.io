@@ -471,7 +471,28 @@
     },
     "projects": {
       "title": "Run tests from one or more projects",
-      "type": "null"
+      "type": "array",
+      "default": null,
+      "items": {
+        "oneOf": [
+          {
+            "type": "string",
+            "format": "uri-reference",
+            "examples": ["<rootDir>", "<rootDir>/examples/*"]
+          },
+          { "allOf": [
+            {"$ref": "#"},
+            {
+              "required": ["displayName"],
+              "properties": {
+                "displayName": {
+                  "type": "string"
+                }
+              }
+            }
+          ] }
+        ]
+      }
     },
     "runTestsByPath": {
       "type": "boolean"
@@ -763,6 +784,22 @@
       "type": "boolean",
       "title": "Watch files for changes and rerun all tests. If you want to re-run only the tests related to the changed files, use the `--watch` option. ",
       "description": "Watch files for changes and rerun all tests when something changes. If you want to re-run only the tests that depend on the changed files, use the --watch option."
+    },
+    "--projects": {
+      "title": "un tests from one or more projects, found in the specified paths; also takes path globs. This option is the CLI equivalent of the projects configuration option. Note that if configuration files are found in the specified paths, all projects specified within those configuration files will be run.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference"
+      }
+    },
+    "--selectProjects": {
+      "title": "Run only the tests of the specified projects. Jest uses the attribute displayName in the configuration to identify each project. If you use this option, you should provide a displayName to all your projects.",
+      "type": "array",
+      "items": {
+        "title": "`enum: projects/*/displayName`",
+        "type": "string"
+      }
     }
   },
   "examples": [
