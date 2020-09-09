@@ -160,9 +160,12 @@
     },
     "globals": {
       "type": "object",
-      "default": [],
+      "default": {},
       "description": "A set of global variables that need to be available in all test environments.",
-      "title": "A set of global variables that need to be available in all test environments"
+      "title": "A set of global variables that need to be available in all test environments",
+      "properties": {
+        "ts-jest": {"$ref": "#/definitions/ts-jest"}
+      }
     },
     "globalSetup": {
       "type": [
@@ -856,6 +859,16 @@
         "type": "number",
         "minimum": 0,
         "maximum": 100
+      }
+    },
+    "ts-jest": {
+      "type": "object",
+      "description": "https://kulshekhar.github.io/ts-jest/user/config/#options",
+      "properties": {
+        "tsConfig": {
+          "type": "string",
+          "format": "uri-reference"
+        }
       }
     }
   }
