@@ -482,17 +482,13 @@
           },
           { "allOf": [
             {"$ref": "#"},
-            {
-              "required": ["displayName"],
-              "properties": {
-                "displayName": {
-                  "type": "string"
-                }
-              }
-            }
+            {"required": ["displayName"]}
           ] }
         ]
       }
+    },
+    "displayName": {
+      "type": "string"
     },
     "runTestsByPath": {
       "type": "boolean"
