@@ -7,10 +7,7 @@
   "type": "object",
   "additionalProperties": false,
   "patternProperties": {
-    "^-": {
-      "$comment": "Funny CLI-only decline",
-      "const": "null"
-    }
+    "^-": false
   },
   "properties": {
     "$schema": {
@@ -251,7 +248,16 @@
         "null"
       ],
       "description": "A preset that is used as a base for Jest's configuration. A preset should point to an npm module that has a jest-preset.json or jest-preset.js file at the root.",
-      "title": "A preset that is used as a base for Jest's configuration"
+      "title": "A preset that is used as a base for Jest's configuration",
+      "examples": [
+        "ts-jest",
+        "ts-jest/presets/default",
+        "ts-jest/presets/default-esm",
+        "ts-jest/presets/js-with-ts",
+        "ts-jest/presets/js-with-ts-esm",
+        "ts-jest/presets/js-with-babel",
+        "ts-jest/presets/js-with-babel-esm"
+      ]
     },
     "prettierPath": {
       "type": "string",
@@ -544,23 +550,19 @@
         {
           "\\.[tj]sx?$": ["babel-jest", {
             "presets": [
-                ["@babel/preset-env",
-                  {
-                    "targets": {
-                      "node": 10
-                    }
+              ["@babel/preset-env",
+                {
+                  "targets": {
+                    "node": 10
                   }
-                ]
-              ],
-              "plugins": [
-                "@babel/plugin-proposal-class-properties",
-                "@babel/plugin-transform-typescript"
-              ]            
-        }]
-
-        },
-        {
-
+                }
+              ]
+            ],
+            "plugins": [
+              "@babel/plugin-proposal-class-properties",
+              "@babel/plugin-transform-typescript"
+            ]
+          }]
         }
       ]
     },
@@ -804,53 +806,96 @@
   "examples": [
     {
       "preset": "ts-jest",
-      "testEnvironment": "node"
+      "collectCoverage": true,
+      "collectCoverageFrom": [
+        "**/*.{ts,tsx,js,jsx}",
+        "!**/*.d.ts",
+        "!**/node_modules/**",
+        "!**/coverage/**",
+        "!**/cypress/**",
+        "!**/migrations/**"
+      ],
+      "coverageThreshold": {
+        "global": {
+          "statements": 100,
+          "branches": 100,
+          "functions": 100,
+          "lines": 100
+        }
+      },
+      "testEnvironment": "node",
+      "verbose": true,
+      "bail": 1
     },
     {
       "transform": {
         "^.+\\.[tj]sx?$": "ts-jest"
-      }
+      },
+      "collectCoverage": true,
+      "collectCoverageFrom":         [
+        "**/*.{ts,tsx,js,jsx}",
+        "!**/*.d.ts",
+        "!**/node_modules/**",
+        "!**/coverage/**",
+        "!**/cypress/**",
+        "!**/migrations/**"
+      ],
+      "coverageThreshold": {
+        "global": {
+          "statements": 100,
+          "branches": 100,
+          "functions": 100,
+          "lines": 100
+        }
+      },
+      "testEnvironment": "node",
+      "verbose": true,
+      "bail": 1
+    },
+    {
+      "transform": {
+        "\\.[tj]sx?$": [
+          "babel-jest",
+          {
+            "presets": [
+              [
+                "@babel/preset-env",
+                {
+                  "targets": {
+                    "node": 10
+                  }
+                }
+              ]
+            ],
+            "plugins": [
+              "@babel/plugin-proposal-class-properties",
+              "@babel/plugin-transform-typescript"
+            ]
+          }
+        ]
+      },
+      "collectCoverage": true,
+      "collectCoverageFrom": [
+        "**/*.{ts,tsx,js,jsx}",
+        "!**/*.d.ts",
+        "!**/node_modules/**",
+        "!**/coverage/**",
+        "!**/cypress/**",
+        "!**/migrations/**"
+      ],
+      "coverageThreshold": {
+        "global": {
+          "statements": 100,
+          "branches": 100,
+          "functions": 100,
+          "lines": 100
+        }
+      },
+      "testEnvironment": "node",
+      "verbose": true,
+      "bail": 1
     }
   ],
-  "default": {
-    "collectCoverage": true,
-    "collectCoverageFrom":         [
-      "**/*.{ts,tsx,js,jsx}",
-      "!**/node_modules/**",
-      "!**/coverage/**",
-      "!**/cypress/**"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "statements": 100,
-        "branches": 100,
-        "functions": 100,
-        "lines": 100
-      }
-    },
-    "transform": {
-      "\\.[tj]sx?$": [
-        "babel-jest",
-        {
-          "presets": [
-            [
-              "@babel/preset-env",
-              {
-                "targets": {
-                  "node": 10
-                }
-              }
-            ]
-          ],
-          "plugins": [
-            "@babel/plugin-proposal-class-properties",
-            "@babel/plugin-transform-typescript"
-          ]
-        }
-      ]
-    },
-    "testEnvironment": "node"
-  },
   "definitions": {
     "CoverageThreshold": {
       "type": "object",
