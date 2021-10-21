@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft/2019-09/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "id": "compose_spec.json",
   "type": "object",
   "title": "Compose Specification",
@@ -74,30 +74,29 @@
     "service": {
       "id": "#/definitions/service",
       "type": "object",
-
+      "anyOf": [
+        {"required": ["build"]},
+        {"required": ["image"]}
+      ],
       "properties": {
         "deploy": {"$ref": "#/definitions/deployment"},
         "build": {
-          "oneOf": [
-            {"type": "string"},
-            {
-              "type": "object",
-              "properties": {
-                "context": {"type": "string"},
-                "dockerfile": {"type": "string"},
-                "args": {"$ref": "#/definitions/list_or_dict"},
-                "labels": {"$ref": "#/definitions/list_or_dict"},
-                "cache_from": {"type": "array", "items": {"type": "string"}},
-                "network": {"type": "string"},
-                "target": {"type": "string"},
-                "shm_size": {"type": ["integer", "string"]},
-                "extra_hosts": {"$ref": "#/definitions/list_or_dict"},
-                "isolation": {"type": "string"}
-              },
-              "additionalProperties": false,
-              "patternProperties": {"^x-": {}}
-            }
-          ]
+          "type": ["string", "object"],
+          "required": ["context"],    
+          "properties": {
+            "context": {"type": "string"},
+            "dockerfile": {"type": "string"},
+            "args": {"$ref": "#/definitions/list_or_dict"},
+            "labels": {"$ref": "#/definitions/list_or_dict"},
+            "cache_from": {"type": "array", "items": {"type": "string"}},
+            "network": {"type": "string"},
+            "target": {"type": "string"},
+            "shm_size": {"type": ["integer", "string"]},
+            "extra_hosts": {"$ref": "#/definitions/list_or_dict"},
+            "isolation": {"type": "string"}
+          },
+          "additionalProperties": false,
+          "patternProperties": {"^x-": {}}
         },
         "blkio_config": {
           "type": "object",
@@ -796,21 +795,6 @@
         "weight": {"type": "integer"}
       },
       "additionalProperties": false
-    },
-
-    "constraints": {
-      "service": {
-        "id": "#/definitions/constraints/service",
-        "anyOf": [
-          {"required": ["build"]},
-          {"required": ["image"]}
-        ],
-        "properties": {
-          "build": {
-            "required": ["context"]
-          }
-        }
-      }
     }
   }
 }
