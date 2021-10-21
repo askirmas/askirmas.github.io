@@ -75,29 +75,85 @@
       "id": "#/definitions/service",
       "type": "object",
       "anyOf": [
+        {
+          "required": ["build", "image"],
+          "description": "`build: ./dir, image: webapp:tag` This results in an image named `webapp` and tagged `tag`, built from `./dir.`"
+        },
         {"required": ["build"]},
         {"required": ["image"]}
       ],
       "properties": {
-        "deploy": {"$ref": "#/definitions/deployment"},
         "build": {
+          "title": "The `build` option is ignored when [deploying a stack in swarm mode](https://docs.docker.com/engine/reference/commandline/stack_deploy/). The `docker stack` command does not build images before deploying.",
+          "description": "https://docs.docker.com/compose/compose-file/compose-file-v3/#build",    
           "type": ["string", "object"],
           "required": ["context"],    
           "properties": {
-            "context": {"type": "string"},
+            "context": {
+              "title": "When the value supplied is a relative path, it is interpreted as relative to the location of the Compose file. This directory is also the build context that is sent to the Docker daemon.  Compose builds and tags it with a generated name, and uses that image thereafter.",
+              "description": "https://docs.docker.com/compose/compose-file/compose-file-v3/#context",
+              "type": "string",
+              "format": "uri-reference"
+            },
             "dockerfile": {"type": "string"},
-            "args": {"$ref": "#/definitions/list_or_dict"},
-            "labels": {"$ref": "#/definitions/list_or_dict"},
+            "args": {
+              "title": "In your Dockerfile, if you specify ARG before the FROM instruction, ARG is not available in the build instructions under FROM. If you need an argument to be available in both places, also specify it under the FROM instruction. https://docs.docker.com/engine/reference/builder/#understand-how-arg-and-from-interact",
+              "description": "https://docs.docker.com/compose/compose-file/compose-file-v3/#args",
+              "$ref": "#/definitions/list_or_dict",
+              "examples": [
+                {
+                  "buildno": 1,
+                  "gitcommithash": "cdc3b19"                  
+                }, 
+                [
+                  "buildno=1",
+                  "gitcommithash=cdc3b19"
+                ]
+              ]
+            },
+            "labels": {
+              "$ref": "#/definitions/list_or_dict",
+              "examples": [
+                {
+                  "com.example.description": "Accounting webapp",
+                  "com.example.department": "Finance",
+                  "com.example.label-with-empty-value": ""                  
+                }
+              ]
+            },
             "cache_from": {"type": "array", "items": {"type": "string"}},
-            "network": {"type": "string"},
-            "target": {"type": "string"},
+            "network": {
+              "title": "Set the network containers connect to for the `RUN` instructions during build. Use `none` to disable networking during build",
+              "type": "string",
+              "examples": [
+                "host",
+                "custom_network_1",
+                "none"
+              ]
+            },
+            "target": {
+              "title": "Build the specified stage as defined inside the `Dockerfile`. See the [multi-stage build docs](https://docs.docker.com/develop/develop-images/multistage-build/) for details.",
+              "description": "https://docs.docker.com/compose/compose-file/compose-file-v3/#target",
+              "type": "string"
+            },
             "shm_size": {"type": ["integer", "string"]},
             "extra_hosts": {"$ref": "#/definitions/list_or_dict"},
             "isolation": {"type": "string"}
           },
           "additionalProperties": false,
-          "patternProperties": {"^x-": {}}
+          "patternProperties": {"^x-": {}},
+          "examples": [
+            "./dir",
+            {
+              "context": "./dir",
+              "dockerfile": "Dockerfile-alternate",
+              "args": {
+                "buildno": 1
+              }
+            }
+          ]
         },
+        "deploy": {"$ref": "#/definitions/deployment"},
         "blkio_config": {
           "type": "object",
           "properties": {
@@ -154,27 +210,15 @@
             ]
           }
         },
-        "container_name": {"type": "string"},
-        "cpu_count": {"type": "integer", "minimum": 0},
-        "cpu_percent": {"type": "integer", "minimum": 0, "maximum": 100},
-        "cpu_shares": {"type": ["number", "string"]},
-        "cpu_quota": {"type": ["number", "string"]},
-        "cpu_period": {"type": ["number", "string"]},
-        "cpu_rt_period": {"type": ["number", "string"]},
-        "cpu_rt_runtime": {"type": ["number", "string"]},
-        "cpus": {"type": ["number", "string"]},
-        "cpuset": {"type": "string"},
-        "credential_spec": {
-          "type": "object",
-          "properties": {
-            "config": {"type": "string"},
-            "file": {"type": "string"},
-            "registry": {"type": "string"}
-          },
-          "additionalProperties": false,
-          "patternProperties": {"^x-": {}}
+        "container_name": {
+          "title": "Specify a custom container name, rather than a generated default name. Because Docker container names must be unique, you cannot scale a service beyond 1 container if you have specified a custom name. Attempting to do so results in an error.",
+          "description": "https://docs.docker.com/compose/compose-file/compose-file-v3/#container_name",
+          "type": "string",
+          "examples": ["my-web-container"]
         },
         "depends_on": {
+          "title": "There are several things to be aware of when using depends_on:     - depends_on does not wait for db and redis to be “ready” before starting web - only until they have been started. If you need to wait for a service to be ready, see [Controlling startup order](https://docs.docker.com/compose/startup-order/) for more on this problem and strategies for solving it.     - The depends_on option is ignored when deploying a stack in swarm mode with a version 3 Compose file.",
+          "description": "https://docs.docker.com/compose/compose-file/compose-file-v3/#depends_on",
           "oneOf": [
             {"$ref": "#/definitions/list_of_strings"},
             {
@@ -196,30 +240,184 @@
             }
           ]
         },
+        "entrypoint": {
+          "title": "Setting entrypoint both overrides any default entrypoint set on the service’s image with the ENTRYPOINT Dockerfile instruction, *and* clears out any default command on the image - meaning that if there’s a `CMD` instruction in the Dockerfile, it is ignored.",
+          "description": "https://docs.docker.com/compose/compose-file/compose-file-v3/#entrypoint",
+          "oneOf": [
+            {"type": "string"},
+            {"type": "array", "items": {"type": "string"}}
+          ],
+          "examples": [
+            "/code/entrypoint.sh",
+            ["php", "-d", "memory_limit=-1", "vendor/bin/phpunit"]
+          ]
+        },
+        "env_file": {
+          "title": "If you have specified a Compose file with `docker-compose -f FILE`, paths in `env_file` are relative to the directory that file is in. Environment variables declared in the [`environment`](https://docs.docker.com/compose/compose-file/compose-file-v3/#environment) section override these values – this holds true even if those values are empty or undefined. Compose expects each line in an env file to be in `VAR=VAL` format. If your service specifies a [build](https://docs.docker.com/compose/compose-file/compose-file-v3/#build) option, variables defined in environment files are not automatically visible during the build. Use the [`args`](https://docs.docker.com/compose/compose-file/compose-file-v3/#args) sub-option of `build` to define build-time environment variables. The files in the list are processed from the top down",
+          "description": "https://docs.docker.com/compose/compose-file/compose-file-v3/#env_file",
+          "$ref": "#/definitions/string_or_list"
+        },
+
+        "environment": {
+          "title": "Any boolean values (true, false, yes, no) need to be enclosed in quotes to ensure they are not converted to True or False by the YML parser. If your service specifies a [`build`](https://docs.docker.com/compose/compose-file/compose-file-v3/#build) option, variables defined in `environment` are not automatically visible during the build. Use the [args](https://docs.docker.com/compose/compose-file/compose-file-v3/#args) sub-option of build to define build-time environment variables.", 
+          "$ref": "#/definitions/list_or_dict",
+          "examples": [
+            {"environment": {
+              "RACK_ENV": "development",
+              "SHOW": "'true'",
+              "SESSION_SECRET": null              
+            }},
+            {"environment": [
+              "RACK_ENV=development",
+              "SHOW=true",
+              "SESSION_SECRET"
+            ]}
+          ]
+        },
+
+        "expose": {
+          "title": "Expose ports without publishing them to the host machine - they’ll only be accessible to linked services. Only the internal port can be specified.",
+          "description": "https://docs.docker.com/compose/compose-file/compose-file-v3/#expose",
+          "type": "array",
+          "items": {
+            "type": ["string", "number"],
+            "format": "expose"
+          },
+          "uniqueItems": true,
+          "examples": [
+            {"expose": ["3000", "8000"]}
+          ]
+        },
+        "external_links": {
+          "title": "Link to containers started outside this docker-compose.yml or even outside of Compose, especially for containers that provide shared or common services. Semantics when specifying both: `CONTAINER:ALIAS`. The externally-created containers must be connected to at least one of the same networks as the service that is linking to them. [Links](https://docs.docker.com/compose/compose-file/compose-file-v2/#links) are a legacy option. We recommend using [networks](https://docs.docker.com/compose/compose-file/compose-file-v3/#networks) instead. Option is ignored when [deploying a stack in swarm mode](https://docs.docker.com/engine/reference/commandline/stack_deploy/)",
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true,
+          "examples": [
+            [
+              "redis_1",
+              "project_db_1:mysql",
+              "project_db_1:postgresql"
+            ]
+          ]
+        },
+        "extra_hosts": {
+          "title": "Add hostname mappings. Use the same values as the docker client `--add-host` parameter. An entry with the ip address and hostname is created in `/etc/hosts` inside containers for this service, `162.242.195.82  somehost \\n 50.31.209.229   otherhost`",
+          "description": "https://docs.docker.com/compose/compose-file/compose-file-v3/#extra_hosts",
+          "$ref": "#/definitions/list_or_dict",
+          "examples": [
+            {"extra_hosts": [
+              "somehost:162.242.195.82",
+              "otherhost:50.31.209.229"
+            ]}
+          ]
+        },
+        "healthcheck": {
+          "title": "See the docs for the [HEALTHCHECK Dockerfile instruction](https://docs.docker.com/engine/reference/builder/#healthcheck) for details on how healthchecks work. To disable any default healthcheck set by the image, you can use `disable: true`. This is equivalent to specifying `test: [\"NONE\"]`.",
+          "description": "https://docs.docker.com/compose/compose-file/compose-file-v3/#healthcheck",
+          "type": "object",
+          "properties": {
+            "disable": {"type": "boolean"},
+            "interval": {"type": "string", "format": "duration"},
+            "retries": {"type": "number"},
+            "test": {
+              "oneOf": [
+                {
+                  "title": "Equivalent to specifying `CMD-SHELL` followed by that string. Wrapped in `/bin/sh`",
+                  "type": "string",
+                  "examples": [
+                    "curl -f https://localhost || exit 1"
+                  ]
+                },
+                {
+                  "type": "array", 
+                  "items": {"type": "string"},
+                  "oneOf": [
+                    {
+                      "title": "Disable any default healthcheck set by the image",
+                      "const": ["NONE"]
+                    },
+                    {
+                      "title": "Wrapped in /bin/sh",
+                      "minItems": 2,
+                      "maxItems": 2,
+                      "items": [
+                        {"const": "CMD-SHELL"},
+                        {"type": "string"}
+                      ],
+                      "examples": [
+                        ["CMD-SHELL", "curl -f http://localhost || exit 1"]
+                      ]
+                    },
+                    {
+                      "minItems": 2,
+                      "items": [{"const": "CMD"}],
+                      "additionalItems": {"type": "string"},
+                      "examples": [
+                        ["CMD", "curl", "-f", "http://localhost"]
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "examples": [
+                {"test": "curl -f https://localhost || exit 1"},
+                {"test": ["CMD-SHELL", "curl -f http://localhost || exit 1"]},
+                {"test": ["CMD", "curl", "-f", "http://localhost"]}
+              ]
+            },
+            "timeout": {"type": "string", "format": "duration"},
+            "start_period": {"type": "string", "format": "duration"}
+          },
+          "additionalProperties": false,
+          "patternProperties": {"^x-": {}},
+          "examples": [
+            {"healthcheck": {
+              "test": ["CMD", "curl", "-f", "http://localhost"],
+              "interval": "1m30s",
+              "timeout": "10s",
+              "retries": "3",
+              "start_period": "40s"
+            }},
+            {"healthcheck": {
+              "test": ["NONE"]
+            }},
+            {"healthcheck": {
+              "disable": true
+            }}            
+          ]
+        },
+        "cpu_count": {"type": "integer", "minimum": 0},
+        "cpu_percent": {"type": "integer", "minimum": 0, "maximum": 100},
+        "cpu_shares": {"type": ["number", "string"]},
+        "cpu_quota": {"type": ["number", "string"]},
+        "cpu_period": {"type": ["number", "string"]},
+        "cpu_rt_period": {"type": ["number", "string"]},
+        "cpu_rt_runtime": {"type": ["number", "string"]},
+        "cpus": {"type": ["number", "string"]},
+        "cpuset": {"type": "string"},
+        "credential_spec": {
+          "type": "object",
+          "properties": {
+            "config": {"type": "string"},
+            "file": {"type": "string"},
+            "registry": {"type": "string"}
+          },
+          "additionalProperties": false,
+          "patternProperties": {"^x-": {}}
+        },
+
         "device_cgroup_rules": {"$ref": "#/definitions/list_of_strings"},
         "devices": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
         "dns": {"$ref": "#/definitions/string_or_list"},
         "dns_opt": {"type": "array","items": {"type": "string"}, "uniqueItems": true},
         "dns_search": {"$ref": "#/definitions/string_or_list"},
         "domainname": {"type": "string"},
-        "entrypoint": {
-          "oneOf": [
-            {"type": "string"},
-            {"type": "array", "items": {"type": "string"}}
-          ]
-        },
-        "env_file": {"$ref": "#/definitions/string_or_list"},
-        "environment": {"$ref": "#/definitions/list_or_dict"},
 
-        "expose": {
-          "type": "array",
-          "items": {
-            "type": ["string", "number"],
-            "format": "expose"
-          },
-          "uniqueItems": true
-        },
+
+
         "extends": {
+          "deprecated": true,
           "oneOf": [
             {"type": "string"},
             {
@@ -234,8 +432,6 @@
             }
           ]
         },
-        "external_links": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
-        "extra_hosts": {"$ref": "#/definitions/list_or_dict"},
         "group_add": {
           "type": "array",
           "items": {
@@ -243,7 +439,6 @@
           },
           "uniqueItems": true
         },
-        "healthcheck": {"$ref": "#/definitions/healthcheck"},
         "hostname": {"type": "string"},
         "image": {"type": "string"},
         "init": {"type": "boolean"},
@@ -452,26 +647,6 @@
       },
       "patternProperties": {"^x-": {}},
       "additionalProperties": false
-    },
-
-    "healthcheck": {
-      "id": "#/definitions/healthcheck",
-      "type": "object",
-      "properties": {
-        "disable": {"type": "boolean"},
-        "interval": {"type": "string", "format": "duration"},
-        "retries": {"type": "number"},
-        "test": {
-          "oneOf": [
-            {"type": "string"},
-            {"type": "array", "items": {"type": "string"}}
-          ]
-        },
-        "timeout": {"type": "string", "format": "duration"},
-        "start_period": {"type": "string", "format": "duration"}
-      },
-      "additionalProperties": false,
-      "patternProperties": {"^x-": {}}
     },
     "deployment": {
       "id": "#/definitions/deployment",
