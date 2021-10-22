@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "grep": {
+      "title": "`grep`",
+      "type": "array",
+      "oneOf": [
+        {
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {"$ref": "#/definitions/options"},
+            {"$ref": "#/definitions/argument"}
+          ]
+        },
+        {
+          "minItems": 1,
+          "maxItems": 1,
+          "items": [
+            {"$ref": "#/definitions/argument"}
+          ]
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "options": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "quiet": {"enum": [true, null]},
+        "extended-regexp": {"enum": [true, null]}
+      }
+    },
+    "argument": {
+      "type": "string"
+    }
+  }
+}

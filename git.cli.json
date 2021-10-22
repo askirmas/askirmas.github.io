@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "required": ["git"],
+  "properties": {
+    "git": {
+      "title": "`git`",
+      "$ref": "#/definitions/commands"
+    }
+  },
+  "definitions": {
+    "commands": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "maxProperties": 1,
+      "properties": {
+        "commands": {
+          "status": {},
+          "branch": {},
+          "diff": {},
+          "config": {},
+          "commit": {},
+          "stash": {},
+          "rev-parse": {}
+        }
+      }    
+    }
+  }
+}
