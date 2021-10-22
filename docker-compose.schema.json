@@ -533,7 +533,15 @@
           "uniqueItems": true
         },
         "privileged": {"type": "boolean"},
-        "profiles": {"$ref": "#/definitions/list_of_strings"},
+        "profiles": {
+          "description": "Profiles allow adjusting the Compose application model for various usages and environments by selectively enabling services. If unassigned, the service is **always** started but if assigned, it is only started if the profile is activated. The core services of your application **should not be assigned** `profiles` so they will always be enabled and automatically started. When a service with assigned `profiles` is explicitly targeted on the command line its profiles will be enabled automatically and not of any dependencies. All services the targeted service `depends_on` must have a common profile with it, be always enabled (by omitting profiles) or have a matching profile enabled explicitly",
+          "title": "https://docs.docker.com/compose/profiles/",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.-]+$",
+          "$ref": "#/definitions/list_of_strings",
+          "examples": [
+            ["frontend", "debug"]
+          ]
+        },
         "pull_policy": {"type": "string", "enum": [
           "always", "never", "if_not_present", "build", "missing"
         ]},
