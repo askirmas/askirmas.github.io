@@ -578,7 +578,22 @@
     },
     "reporters": {
       "title": "Use this configuration option to add custom reporters to Jest",
-      "type": "null"
+      "type": ["null", "array"],
+      "items": {
+        "type": ["array", "string"],
+        "minItems": 1,
+        "additionalItems": true,
+        "items": [{"type": "string"}],
+        "examples": [
+          "default",
+          ["default", {"summaryThreshold": 20}],
+          "summary",
+          ["summary", {"summaryThreshold": 20}],
+          "jest-silent-reporter",
+          ["github-actions", {"silent": false}],
+          ["jest-junit", {"outputDirectory": "reports", "outputName": "jest-report.xml"}]
+        ]
+      }
     },
     "--all": {
       "description": "The opposite of `onlyChanged`. If `onlyChanged` is set by default, running jest with `--all` will force Jest to run all tests instead of running only tests related to changed files. ",
