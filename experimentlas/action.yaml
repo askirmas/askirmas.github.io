@@ -1,0 +1,40 @@
+name: experimental
+description: experimental
+
+runs:
+  using: composite
+  steps:
+    - run: |
+        _='Log level'
+        echo '::notice title={title}::{message}'
+        echo '::warning title={title}::{message}'
+        echo '::error title={title}::{message}'
+      
+    - run: |
+        _='Grouping ##[]'
+        echo '##[group]Abc'
+        echo "a\nb\nc"
+        echo '##[group]Def'
+        echo "d\ne\nf"
+        echo '##[group]Xyz'
+        echo "x\ny\nz"
+        echo '##[endgroup]'
+        echo '##[endgroup]'
+        echo '##[endgroup]'
+    - run: |
+        _='Grouping ::[]'
+        echo '::group::Abc'
+        echo "a\nb\nc"
+        echo '::group::Def'
+        echo "d\ne\nf"
+        echo '::group::Xyz'
+        echo "x\ny\nz"
+        echo '::endgroup::'
+        echo '::endgroup::'
+        echo '::endgroup::'
+    #- run: |
+    #    _='summary'
+    #    echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+    #- run: < Title
+    
+  
