@@ -1,0 +1,36 @@
+name: Manual workflow
+on:
+  push:
+    branches:
+      - '**'
+      
+jobs:
+  # https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions
+  # https://github.com/actions/toolkit/blob/main/docs/commands.md
+  # https://github.com/actions/toolkit/issues/1001
+  logs:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        _='Log level'
+        echo '::notice title={title}::{message}'
+        echo '::warning title={title}::{message}'
+        echo '::error title={title}::{message}'
+      
+    - run: |
+        _='Grouping ##[]'
+        echo '##[group]Abc'
+        echo '##[group]Def'
+        echo '##[endgroup]'
+        echo '##[endgroup]'
+    - run: |
+        _='Grouping ::[]'
+        echo '::group::Abc'
+        echo '::group::Def'
+        echo '::endgroup::'
+        echo '::endgroup::'
+    - run: |
+        _='summary'
+        echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+    - run: < Title
+    
