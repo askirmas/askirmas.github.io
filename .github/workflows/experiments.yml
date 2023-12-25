@@ -1,4 +1,4 @@
-name: Manual workflow
+name: Experiments
 on:
   push:
     branches:
@@ -42,8 +42,8 @@ jobs:
         
     - name: action
       uses: askirmas/askirmas.github.io/experimentlas@master
-    #- run: |
-    #    _='summary'
-    #    echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+    - run: |
+       _='summary'
+       echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
     #- run: < Title
     
