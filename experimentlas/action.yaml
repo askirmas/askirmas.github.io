@@ -4,13 +4,15 @@ description: experimental
 runs:
   using: composite
   steps:
-    - run: |
+    - shell: "sh"
+      run: |
         _='Log level'
         echo '::notice title={title}::{message}'
         echo '::warning title={title}::{message}'
         echo '::error title={title}::{message}'
       
-    - run: |
+    - shell: "sh"
+      run: |
         _='Grouping ##[]'
         echo '##[group]Abc'
         echo "a\nb\nc"
@@ -21,7 +23,8 @@ runs:
         echo '##[endgroup]'
         echo '##[endgroup]'
         echo '##[endgroup]'
-    - run: |
+    - shell: "sh"
+      run: |
         _='Grouping ::[]'
         echo '::group::Abc'
         echo "a\nb\nc"
@@ -32,9 +35,10 @@ runs:
         echo '::endgroup::'
         echo '::endgroup::'
         echo '::endgroup::'
-    #- run: |
-    #    _='summary'
-    #    echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
-    #- run: < Title
+    - shell: "sh"
+      run: |
+       _='summary'
+       echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+    # - run: < Title
     
   
