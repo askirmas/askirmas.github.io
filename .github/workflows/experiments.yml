@@ -39,6 +39,9 @@ jobs:
         echo '::endgroup::'
         echo '::endgroup::'
         echo '::endgroup::'
+        
+    - name: action
+      uses: askirmas/askirmas.github.io/experimentlas@master
     #- run: |
     #    _='summary'
     #    echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
